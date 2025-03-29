@@ -1,16 +1,21 @@
 # Mufashe Initiative Website
 
 ## Project Title:
+
 Mufashe Initiative - Supporting Young Mothers in Rwanda
 
 ## Description:
+
 Mufashe Initiative is an online platform that provides mentorship, mental health resources, and a supportive community for young women in Rwanda who became pregnant early. The platform aims to create a safe space where young mothers can find help, connect with mentors, and access useful resources.
 
 ## Team Members:
+
 - **Divine Nibuhoro**
 - **Daniel Iryivuze**
+- **Coline Gatete**
 
 ## Technologies Used:
+
 - **HTML** for structuring the web pages.
 - **SASS** (Syntactically Awesome Stylesheets) for styling, ensuring modularity and maintainability.
 - **JavaScript & jQuery** for interactivity.
@@ -21,11 +26,19 @@ Mufashe Initiative is an online platform that provides mentorship, mental health
 ## Development Process:
 
 ### 1. Project Setup & Planning:
-- **Review Figma Design:** Analyzed the Figma design to identify sections, elements, and styling.
-- **Project Structure:** Organized the project with a structured file system:
+
+- **Reviewed Figma Design:** Identified key sections and design elements.
+- **Structured the Project:** Organized files and directories efficiently:
   ```
   Mufashe/
   ├── index.html
+  ├── login.html  (Mentor login page)
+  ├── dashboard.html  (Mentor dashboard to see booked sessions)
+  ├── contact.html
+  ├── mental-health.html
+  ├── mentorship.html
+  ├── resources.html
+  ├── stories.html
   ├── css/
   │   ├── style.scss  (Main SASS file)
   │   ├── components/ (For partials, e.g., _variable.scss, _mixins.scss)
@@ -37,104 +50,115 @@ Mufashe Initiative is an online platform that provides mentorship, mental health
   │   ├── db.json (Mock API data)
   ├── README.md
   ```
-- **SASS Setup:** Configured SASS for styling with a "Live Sass Compiler" in VS Code.
+- **SASS Setup:** Configured and compiled SASS using "Live Sass Compiler" in VS Code.
 
 ### 2. HTML Structure:
-- Used **semantic HTML** elements (`<header>`, `<nav>`, `<main>`, `<article>`, `<footer>`) for logical content organization.
-- Ensured **clean and readable code** with proper indentation and comments.
-- Considered **accessibility** principles with appropriate ARIA attributes and structured headings.
+
+- Implemented **semantic HTML** for better readability and accessibility.
+- Ensured a well-structured layout with clean code and proper comments.
+- Applied ARIA attributes to improve accessibility.
 
 ### 3. SASS Styling:
-- Implemented **modular SASS**, organizing styles into partials for better maintainability.
-- Used **variables** for colors, fonts, and spacing values.
-- Applied **mixins** for reusable styles like buttons and forms.
-- Followed **CSS/SASS best practices** for maintainability.
-- Added **responsive design** using media queries for better mobile experience.
+
+- Used **modular SASS** by creating partials for better code management.
+- Defined **variables** for colors, fonts, and spacing.
+- Applied **mixins** for reusable styling components.
+- Designed a **responsive layout** using media queries.
 
 ### 4. JavaScript & Interactivity:
-- Used **JavaScript & jQuery** for dynamic content updates and interactivity.
-- Implemented **form validation** to ensure accurate user inputs.
-- Used **event listeners** for button clicks, form submissions, and navigation.
+
+- Implemented **event listeners** for dynamic content updates.
+- Added **form validation** for improved user experience.
+- Enhanced navigation and interactions with JavaScript & jQuery.
 
 ### 5. Backend Simulation & Data Fetching:
-- Used **JSON Server** to create a mock backend.
-- Implemented **AJAX requests** to fetch and manipulate data dynamically.
-- Allowed users to **create, read, update, and delete** data from the mock API.
+
+- Used **JSON Server** for mock backend.
+- Implemented **AJAX requests** for data retrieval and manipulation.
+- Supported **CRUD operations** to manage user data.
 
 ### 6. User Personalization:
-- Utilized **local storage** to save user preferences.
-- Implemented **cookies** for session tracking and personalization.
+
+- Stored user preferences using **local storage**.
+- Utilized **cookies** for session tracking.
 
 ### 7. Accessibility & Responsiveness:
-- Ensured all elements are accessible to users with disabilities.
-- Maintained a fully responsive layout across various screen sizes.
+
+- Ensured compliance with accessibility standards.
+- Optimized the site for various screen sizes.
 
 ### 8. Code Optimization & Documentation:
-- Refactored code for efficiency and maintainability.
-- Updated the README file to reflect new functionalities and API endpoints.
+
+- Refactored code for efficiency.
+- Updated the README with new features and instructions.
+
+## Challenges Faced:
+
+- **SASS Learning Curve:** Initially challenging but improved through practice.
+- **Mock API Setup:** Required research and testing to implement JSON Server effectively.
 
 ## How to Run the Project:
 
 ### 1. Clone the Repository:
+
 ```bash
  git clone https://github.com/Daniel-IRYIVUZE/mufashe_initiative.git
 ```
 
 ### 2. Navigate to the Project Folder:
+
 ```bash
  cd Mufashe
 ```
 
 ### 3. Install Dependencies (if using JSON Server):
+
 ```bash
  npm install -g json-server
 ```
 
 ### 4. Run the JSON Server:
+
 ```bash
  json-server --watch data/db.json --port 3000
 ```
 
-### 5. Compile SASS (if necessary):
-- Use the **Live Sass Compiler** in VS Code or run the following command:
+### 5. Compile SASS:
+
 ```bash
  sass --watch css/style.scss css/style.css
 ```
 
 ### 6. Open the Project in a Browser:
-- Open `index.html` in your browser manually, or run a simple HTTP server:
+
 ```bash
  npx http-server
 ```
 
 ### 7. Test Features:
-- Navigate through the site and test dynamic content.
-- Ensure form validation and API interactions work as expected.
+
+- Explore site features and validate functionality.
+- Test form validation and API interactions.
+- Log in as a mentor and check dashboard functionality.
 
 ## Key Features:
-- **Mentorship Program:** Connect young mothers with experienced mentors.
-- **Mental Health Support:** Access counseling services and self-care tips.
-- **Inspiring Stories:** Read real-life success stories from other young mothers.
-- **Resource Center:** Find scholarships, financial aid, and legal support.
-- **Community Forum:** Engage with a supportive network of women facing similar challenges.
 
-## Useful Links:
+- **Mentorship Program:** Connects young mothers with mentors.
+- **Mental Health Support:** Provides counseling and self-care resources.
+- **Inspiring Stories:** Showcases real-life success stories.
+- **Resource Center:** Lists scholarships, financial aid, and legal help.
+- **Community Forum:** Enables peer support and engagement.
+- **Mentor Dashboard:** Allows mentors to manage sessions.
+
+## Useful Link:
+
 - **User Research Document:** [Research Document](https://docs.google.com/document/d/1D9i_yRiZdA04hvgwubIZ4B1jnpHtXLyxdKUBskBCsqQ/edit?usp=sharing)
 
-## Evaluation Criteria:
-- **Accuracy:** Does the implementation match the Figma design?
-- **Code Quality:** Is the code clean, structured, and maintainable?
-- **Functionality:** Do JavaScript, AJAX, and API interactions work correctly?
-- **User Experience:** Is the interface intuitive and responsive?
-- **Accessibility:** Are best practices followed for an inclusive experience?
-- **Version Control:** Are commits regular and descriptive?
-- **Collaboration:** Are branches and pull requests used effectively?
-
 ## Pro Tips:
-- Start with the basic structure and gradually enhance styling and functionality.
-- Utilize browser developer tools for debugging.
-- Break down tasks into manageable chunks.
+
+- Start with the basics and enhance incrementally.
+- Use developer tools for debugging.
+- Break tasks into smaller steps for efficiency.
 - Seek help when needed!
 
-This project showcases front-end development, interactivity, and backend simulation, demonstrating the ability to build a functional and user-friendly web application.
-
+This project demonstrates front-end development, interactivity, and backend simulation, resulting in a functional and user-friendly web application.
