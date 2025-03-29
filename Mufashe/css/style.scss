@@ -1,0 +1,439 @@
+// style.scss
+@import "components/variables";
+@import "components/mixins";
+
+// Global Styles
+body {
+  font-family: $font-family;
+  margin: 0;
+  color: $primary-color;
+}
+
+header {
+  nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 5%;
+    background-color: rgb(236, 170, 170);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+
+    div:first-child {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: white;
+    }
+
+    div:nth-child(2) {
+      @include flex-center;
+      gap: 2rem;
+
+      a {
+        text-decoration: none;
+        color: white;
+        font-weight: 500;
+
+        &.active {
+          color: white;
+          border-bottom: 2px solid white;
+        }
+      }
+
+      button {
+        @include button-style;
+        padding: 0.5rem 1.5rem;
+      }
+    }
+  }
+}
+
+.main-content {
+  section:first-child {
+    text-align: center;
+    padding: 5rem 0;
+    background-size: cover;
+    h1 {
+      font-size: 2.5rem;
+      font-style: to-upper-case($string: "*");
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: lighten($primary-color, 20%);
+    }
+  }
+
+  button {
+    @include button-style;
+    display: block;
+    margin: 2rem auto;
+  }
+}
+
+.quick-access {
+  padding: 4rem 5%;
+  text-align: center;
+
+  h2 {
+    font-size: 2rem;
+    font-style: to-upper-case($string: "*");
+    margin-bottom: 1.5rem;
+  }
+
+  div {
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+}
+.quick-access-new {
+  padding: 2rem 5%;
+  background-color: #c4b2b2;
+
+  h2 {
+    font-size: 2rem;
+    font-style: to-upper-case($string: "*");
+  }
+
+  div {
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+}
+
+.emergency-support {
+  padding: 4rem 5%;
+
+  &__title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .footer__content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+
+    div {
+      background-color: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      text-align: center;
+
+      img {
+        width: 100%;
+        max-width: 300px;
+        border-radius: 15%;
+        margin-bottom: 1rem;
+      }
+
+      p {
+        font-style: italic;
+        margin: 1rem 0;
+      }
+
+      h5 {
+        color: $secondary-color;
+        font-style: to-upper-case($string: "*");
+        margin: 0;
+      }
+    }
+  }
+}
+
+.become-mentor {
+  padding: 4rem 5%;
+  background-color: $light-gray;
+
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .section-subtitle {
+      margin-bottom: 2rem;
+    }
+
+    
+    form .have {
+
+      background: #000;
+
+      input {
+        padding: 0.8rem;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-family: $font-family;
+      }
+
+      .join-btn {
+        @include button-style;
+        grid-column: span 2;
+        margin-top: 1rem;
+      }
+    }
+    form  {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+
+      input {
+        padding: 0.8rem;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-family: $font-family;
+      }
+
+      .join-btn {
+        @include button-style;
+        grid-column: span 2;
+        margin-top: 1rem;
+      }
+    }
+  }
+}
+
+.footer {
+  background-color: $primary-color;
+  color: white;
+  padding: 1rem 2%;
+
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+
+    h2 {
+     font-size: 40px;
+     font-style: to-upper-case($string: "*");
+    }
+
+    p{
+      font-size: 20px;
+      margin-left: 40px;
+    }
+
+    a {
+      display: block;
+      color: white;
+      text-decoration: none;
+      margin-bottom: 0.5rem;
+
+      &:hover {
+        color: $light-gray;
+      }
+    }
+  }
+
+  &__copyright {
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .emergency-support .footer__content {
+    grid-template-columns: 1fr;
+  }
+
+  .become-mentor form {
+    grid-template-columns: 1fr !important;
+    
+    .join-btn {
+      grid-column: span 1 !important;
+    }
+  }
+
+  .footer__content {
+    grid-template-columns: 1fr !important;
+    text-align: center;
+  }
+}
+
+.btn {
+    padding: 0.8rem 2rem;
+    border-radius: 25px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+
+    &--primary {
+        background-color: $primary-color;
+        color: white;
+    }
+
+    &--cta {
+        background-color: $secondary-color;
+        color: white;
+        font-size: 1.1rem;
+    }
+
+    &--secondary {
+        background-color: $accent-color;
+        color: white;
+    }
+
+    &--small {
+        padding: 0.5rem 1.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+// Header
+.header {
+    padding: 1rem 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+
+    .nav {
+        @include flex-center;
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+
+        &__links {
+            a {
+                margin-left: 2rem;
+                color: white;
+                text-decoration: none;
+
+                &.active {
+                    color: white;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+}
+
+// Hero Section
+.hero {
+    text-align: center;
+    padding: 4rem 1rem;
+    background: $light-bg;
+
+    &__title {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+
+    &__text {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+    }
+}
+
+// Steps Section
+.steps {
+    padding: 4rem 1rem;
+    text-align: left
+    ;
+
+    &__container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 3rem auto;
+    }
+
+    .step {
+        &__number {
+            @include flex-center;
+            width: 50px;
+            height: 50px;
+            background: $secondary-color;
+            color: white;
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            font-weight: 600;
+        }
+    }
+}
+
+// Mentors Section
+.mentors {
+    padding: 4rem 1rem;
+    background: $light-bg;
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 3rem auto;
+    }
+
+    .mentor-card {
+        background: white;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        text-align: center;
+
+        &__name {
+            color: $accent-color;
+            margin-bottom: 1rem;
+        }
+    }
+}
+
+// Become Mentor Section
+.become-mentor {
+    padding: 4rem 1rem;
+    text-align: center;
+
+    .mentor-form {
+        max-width: 600px;
+        margin: 2rem auto;
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(2, 1fr);
+
+        .form-textarea {
+            grid-column: 1 / -1;
+            height: 150px;
+        }
+    }
+}
+
+.main-content {
+  text-align: center;
+  padding: 30px;
+
+  h1 {
+    font-style: italic;
+    font-style: to-upper-case($string: "*");
+    color: $primary-color;
+  }
+
+}
+
+.quick-access-bg {
+  padding: 0px 10px;
+  h2 {
+    text-align: center;
+    color: $primary-color;
+    font-weight: 700;
+    font-style: to-upper-case($string: "*");
+  }
+ div {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    
+    img {
+      width: 100%;
+      border-radius: 10px;
+    }
+  }
+}
+
+

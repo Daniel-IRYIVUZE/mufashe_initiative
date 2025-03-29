@@ -1,0 +1,881 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mufashe Initiative provides mentorship, mental health resources, and community support for young mothers in Rwanda">
+    <title>Mufashe Initiative - Support for Young Mothers in Rwanda</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <!-- Accessibility Skip Link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Cookie Consent Banner -->
+    <div id="cookieConsent" class="cookie-consent">
+        <div class="cookie-content">
+            <p>We use cookies to enhance your experience. By continuing to browse, you agree to our use of cookies.</p>
+            <div class="cookie-buttons">
+                <button id="acceptCookies" class="btn btn-primary">Accept</button>
+                <button id="declineCookies" class="btn btn-outline-primary">Decline</button>
+                <a href="privacy.html" class="cookie-policy-link">Privacy Policy</a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Emergency Help Button (Fixed) -->
+    <button id="emergencyHelp" class="emergency-help-btn" aria-label="Emergency Help">
+        <i class="fas fa-phone-alt"></i> Need Immediate Help?
+    </button>
+    
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="assets/images/logo.png" alt="Mufashe Initiative Logo" width="40" height="40" class="d-inline-block align-top">
+                    <span class="brand-name">MUFASHE Initiative</span>
+                </a>
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link active" href="index.html">HOME</a></li>
+                        <li class="nav-item"><a class="nav-link" href="mentorship.html">MENTORSHIP</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="mentalHealthDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                MENTAL HEALTH
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="mentalHealthDropdown">
+                                <li><a class="dropdown-item" href="mental-health.html">Resources</a></li>
+                                <li><a class="dropdown-item" href="counseling.html">Counseling</a></li>
+                                <li><a class="dropdown-item" href="self-care.html">Self-Care Tips</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="stories.html">STORIES</a></li>
+                        <li class="nav-item"><a class="nav-link" href="resources.html">RESOURCES</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">CONTACT</a></li>
+                        <li class="nav-item">
+                            <a class="btn btn-primary join-btn" href="join.html" role="button">JOIN</a>
+                        </li>
+                        <li class="nav-item">
+                            <button id="themeToggle" class="btn theme-toggle" aria-label="Toggle dark mode">
+                                <i class="fas fa-moon"></i>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-overlay"></div>
+            <div class="container">
+                <div class="hero-content animate__animated animate__fadeIn">
+                    <h1>You Are Not Alone! Find Support & Help</h1>
+                    <p class="lead">A safe space for young mothers to heal, grow, and thrive in Rwanda</p>
+                    <div class="hero-buttons">
+                        <a href="#mentorship" class="btn btn-primary btn-lg">Get Mentorship</a>
+                        <a href="#stories" class="btn btn-outline-light btn-lg">Hear Stories</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Quick Stats Bar -->
+            <div class="stats-bar">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3 stat-item">
+                            <i class="fas fa-users"></i>
+                            <div>
+                                <span class="counter" data-target="1500">0</span>+
+                                <p>Members Supported</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 stat-item">
+                            <i class="fas fa-hands-helping"></i>
+                            <div>
+                                <span class="counter" data-target="200">0</span>+
+                                <p>Trained Mentors</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 stat-item">
+                            <i class="fas fa-book"></i>
+                            <div>
+                                <span class="counter" data-target="50">0</span>+
+                                <p>Educational Resources</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 stat-item">
+                            <i class="fas fa-heart"></i>
+                            <div>
+                                <span class="counter" data-target="85">0</span>%
+                                <p>Reported Improved Wellbeing</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Why We Exist Section -->
+        <section class="mission-section">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 mission-image">
+                        <img src="assets/images/mission-image.jpg" alt="Young mother with child" class="img-fluid rounded shadow">
+                    </div>
+                    <div class="col-lg-6 mission-content">
+                        <h2 class="section-title">Why We Exist</h2>
+                        <p>Every year, thousands of young women in Rwanda face early pregnancy with fear and uncertainty. Many feel isolated, judged, and without hope for their future.</p>
+                        <p>The Mufashe Initiative was founded in 2018 to address this critical need. Our mission is to provide comprehensive mentorship, mental health support, and educational resources to help young mothers build brighter futures for themselves and their children.</p>
+                        <div class="mission-values">
+                            <div class="value-item">
+                                <i class="fas fa-hand-holding-heart"></i>
+                                <h4>Compassion</h4>
+                                <p>We meet you where you are with understanding</p>
+                            </div>
+                            <div class="value-item">
+                                <i class="fas fa-shield-alt"></i>
+                                <h4>Safety</h4>
+                                <p>A judgment-free space to share and grow</p>
+                            </div>
+                            <div class="value-item">
+                                <i class="fas fa-seedling"></i>
+                                <h4>Growth</h4>
+                                <p>Tools to help you flourish despite challenges</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Services Section -->
+        <section class="services-section bg-light">
+            <div class="container">
+                <h2 class="section-title text-center">How We Support You</h2>
+                <p class="section-subtitle text-center">Comprehensive programs tailored for young mothers</p>
+                
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-hands-helping"></i>
+                            </div>
+                            <h3>Peer Mentorship</h3>
+                            <p>Connect with experienced mentors who've walked similar paths and can guide you through challenges.</p>
+                            <a href="mentorship.html" class="service-link">Learn more <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <h3>Mental Health Support</h3>
+                            <p>Access to counseling, support groups, and self-care resources to maintain emotional wellbeing.</p>
+                            <a href="mental-health.html" class="service-link">Learn more <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <h3>Education & Skills</h3>
+                            <p>Continuing education opportunities and vocational training to build sustainable livelihoods.</p>
+                            <a href="resources.html" class="service-link">Learn more <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-5">
+                    <a href="services.html" class="btn btn-outline-primary">View All Services</a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Stories Section -->
+        <section id="stories" class="stories-section">
+            <div class="container">
+                <h2 class="section-title text-center">Inspiring Stories From Brave Young Mothers</h2>
+                <p class="section-subtitle text-center">Real journeys of resilience and hope</p>
+                
+                <div class="stories-carousel owl-carousel owl-theme">
+                    <!-- Stories will be loaded dynamically from API -->
+                </div>
+                
+                <div class="text-center mt-4">
+                    <a href="stories.html" class="btn btn-primary">Read More Stories</a>
+                    <button id="shareStoryBtn" class="btn btn-outline-primary ms-3">Share Your Story</button>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Testimonials Section -->
+        <section class="testimonials-section bg-light">
+            <div class="container">
+                <h2 class="section-title text-center">What Our Members Say</h2>
+                
+                <div class="testimonial-slider">
+                    <div class="testimonial-item">
+                        <div class="testimonial-content">
+                            <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                            <p>Mufashe Initiative gave me hope when I had none. Through their mentorship program, I learned how to start my own business while caring for my baby. Today I employ three other young mothers!</p>
+                            <div class="testimonial-author">
+                                <img src="assets/images/testimonial1.jpg" alt="Claire" class="author-img">
+                                <div>
+                                    <h5>Claire Mugeni</h5>
+                                    <span>Kigali, Age 20</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-item">
+                        <div class="testimonial-content">
+                            <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                            <p>The counseling services helped me overcome postpartum depression. I didn't know these feelings were normal or that help was available. Now I'm back in school and thriving.</p>
+                            <div class="testimonial-author">
+                                <img src="assets/images/testimonial2.jpg" alt="Amina" class="author-img">
+                                <div>
+                                    <h5>Amina Uwase</h5>
+                                    <span>Musanze, Age 18</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-item">
+                        <div class="testimonial-content">
+                            <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                            <p>Being part of this community showed me I wasn't alone. The skills training helped me become financially independent, and now I mentor other young mothers in my village.</p>
+                            <div class="testimonial-author">
+                                <img src="assets/images/testimonial3.jpg" alt="Grace" class="author-img">
+                                <div>
+                                    <h5>Grace Imanishimwe</h5>
+                                    <span>Nyagatare, Age 22</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Join Section -->
+        <section id="mentorship" class="join-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 join-content">
+                        <h2 class="section-title">Join Our Supportive Community</h2>
+                        <p>Whether you're seeking support or want to give back as a mentor, we welcome you to our growing family.</p>
+                        
+                        <div class="benefits-list">
+                            <div class="benefit-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Personalized mentorship matching</span>
+                            </div>
+                            <div class="benefit-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Access to mental health professionals</span>
+                            </div>
+                            <div class="benefit-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Monthly skill-building workshops</span>
+                            </div>
+                            <div class="benefit-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Private online community forum</span>
+                            </div>
+                            <div class="benefit-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Local meetup groups across Rwanda</span>
+                            </div>
+                        </div>
+                        
+                        <div class="join-buttons">
+                            <a href="#joinForm" class="btn btn-primary">Join as Member</a>
+                            <a href="mentor-apply.html" class="btn btn-outline-light">Become a Mentor</a>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6">
+                        <form id="joinForm" class="join-form">
+                            <h3>Get Started Today</h3>
+                            
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="fullName" placeholder="Enter full names" required>
+                                <label for="fullName">Full Name</label>
+                            </div>
+                            
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <select class="form-select" id="gender" required>
+                                            <option value="" selected disabled>Choose...</option>
+                                            <option value="female">Female</option>
+                                            <option value="male">Male</option>
+                                            <option value="other">Other</option>
+                                            <option value="prefer-not-to-say">Prefer not to say</option>
+                                        </select>
+                                        <label for="gender">Gender</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="number" class="form-control" id="age" placeholder="Age" min="13" max="99" required>
+                                        <label for="age">Age</label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-floating mb-3">
+                                <input type="tel" class="form-control" id="phone" placeholder="Phone number" required>
+                                <label for="phone">Phone Number</label>
+                            </div>
+                            
+                            <div class="form-floating mb-3">
+                                <select class="form-select" id="district" required>
+                                    <option value="" selected disabled>Select your district</option>
+                                    <!-- Options will be loaded from API -->
+                                </select>
+                                <label for="district">District</label>
+                            </div>
+                            
+                            <div class="form-floating mb-3">
+                                <select class="form-select" id="supportType" required>
+                                    <option value="" selected disabled>What support are you seeking?</option>
+                                    <option value="mentorship">Mentorship</option>
+                                    <option value="counseling">Counseling</option>
+                                    <option value="education">Education Support</option>
+                                    <option value="skills">Skills Training</option>
+                                    <option value="all">All of the above</option>
+                                </select>
+                                <label for="supportType">Support Needed</label>
+                            </div>
+                            
+                            <div class="form-check mb-3">
+                                <input class="form-check-input" type="checkbox" id="consent" required>
+                                <label class="form-check-label" for="consent">
+                                    I consent to receiving communications from Mufashe Initiative
+                                </label>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary w-100">Submit Application</button>
+                            
+                            <div class="privacy-note">
+                                <small>We respect your privacy. Your information will never be shared without your permission.</small>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Resources Section -->
+        <section class="resources-section">
+            <div class="container">
+                <h2 class="section-title text-center">Helpful Resources</h2>
+                <p class="section-subtitle text-center">Educational materials for young mothers</p>
+                
+                <div class="resource-tabs">
+                    <ul class="nav nav-tabs" id="resourceTabs" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="health-tab" data-bs-toggle="tab" data-bs-target="#health" type="button" role="tab" aria-controls="health" aria-selected="true">
+                                <i class="fas fa-heartbeat"></i> Health
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="parenting-tab" data-bs-toggle="tab" data-bs-target="#parenting" type="button" role="tab" aria-controls="parenting" aria-selected="false">
+                                <i class="fas fa-baby"></i> Parenting
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="education-tab" data-bs-toggle="tab" data-bs-target="#education" type="button" role="tab" aria-controls="education" aria-selected="false">
+                                <i class="fas fa-book"></i> Education
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="legal-tab" data-bs-toggle="tab" data-bs-target="#legal" type="button" role="tab" aria-controls="legal" aria-selected="false">
+                                <i class="fas fa-balance-scale"></i> Legal Rights
+                            </button>
+                        </li>
+                    </ul>
+                    
+                    <div class="tab-content" id="resourceTabsContent">
+                        <div class="tab-pane fade show active" id="health" role="tabpanel" aria-labelledby="health-tab">
+                            <!-- Health resources will be loaded from API -->
+                        </div>
+                        <div class="tab-pane fade" id="parenting" role="tabpanel" aria-labelledby="parenting-tab">
+                            <!-- Parenting resources will be loaded from API -->
+                        </div>
+                        <div class="tab-pane fade" id="education" role="tabpanel" aria-labelledby="education-tab">
+                            <!-- Education resources will be loaded from API -->
+                        </div>
+                        <div class="tab-pane fade" id="legal" role="tabpanel" aria-labelledby="legal-tab">
+                            <!-- Legal resources will be loaded from API -->
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-4">
+                    <a href="resources.html" class="btn btn-outline-primary">Browse All Resources</a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Events Section -->
+        <section class="events-section bg-light">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Upcoming Events & Workshops</h2>
+                    <a href="events.html" class="view-all">View All Events <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="row">
+                    <!-- Events will be loaded from API -->
+                </div>
+            </div>
+        </section>
+        
+        <!-- Newsletter Section -->
+        <section class="newsletter-section">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <h3>Stay Updated</h3>
+                        <p>Subscribe to our newsletter for the latest resources, events, and inspiring stories delivered to your inbox.</p>
+                    </div>
+                    <div class="col-lg-6">
+                        <form id="newsletterForm" class="newsletter-form">
+                            <div class="input-group">
+                                <input type="email" class="form-control" placeholder="Your email address" aria-label="Your email address" required>
+                                <button class="btn btn-primary" type="submit">Subscribe</button>
+                            </div>
+                            <div class="form-check mt-2">
+                                <input class="form-check-input" type="checkbox" id="newsletterConsent" required checked>
+                                <label class="form-check-label" for="newsletterConsent">
+                                    I agree to receive email updates
+                                </label>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 footer-col">
+                    <div class="footer-logo">
+                        <img src="assets/images/logo-white.png" alt="Mufashe Initiative" class="img-fluid">
+                        <p>Empowering young mothers in Rwanda through mentorship, mental health support, and community.</p>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-4 footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="mentorship.html">Mentorship</a></li>
+                        <li><a href="mental-health.html">Mental Health</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-4 footer-col">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="donate.html">Donate</a></li>
+                        <li><a href="volunteer.html">Volunteer</a></li>
+                        <li><a href="partners.html">Partners</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-4 footer-col">
+                    <h4>Contact Us</h4>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>KG 123 St, Kigali, Rwanda</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone-alt"></i>
+                            <span>+250 788 123 456</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>info@mufashe.org</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <span>Mon-Fri: 8AM - 5PM</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p class="copyright">&copy; 2025 Mufashe Initiative. All Rights Reserved.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="footer-lang">
+                            <span>Language:</span>
+                            <select id="languageSelect" class="form-select form-select-sm">
+                                <option value="en">English</option>
+                                <option value="rw">Kinyarwanda</option>
+                                <option value="fr">French</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    
+    <!-- Modal for Emergency Help -->
+    <div class="modal fade" id="emergencyModal" tabindex="-1" aria-labelledby="emergencyModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="emergencyModalLabel">Immediate Help Resources</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="emergency-contact">
+                        <h6><i class="fas fa-ambulance"></i> Medical Emergency</h6>
+                        <p>Call 912 (Rwanda Emergency Number)</p>
+                    </div>
+                    <div class="emergency-contact">
+                        <h6><i class="fas fa-theater-masks"></i> Mental Health Crisis</h6>
+                        <p>Mufashe Hotline: +250 788 765 432 (24/7)</p>
+                    </div>
+                    <div class="emergency-contact">
+                        <h6><i class="fas fa-shield-alt"></i> Gender-Based Violence</h6>
+                        <p>Isange One Stop Center: 3029 (Toll-free)</p>
+                    </div>
+                    <div class="emergency-contact">
+                        <h6><i class="fas fa-baby"></i> Child Protection</h6>
+                        <p>National Child Helpline: 116 (Toll-free)</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <a href="tel:+250788765432" class="btn btn-primary">
+                        <i class="fas fa-phone-alt"></i> Call Our Hotline
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal for Share Your Story -->
+    <div class="modal fade" id="shareStoryModal" tabindex="-1" aria-labelledby="shareStoryModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="shareStoryModalLabel">Share Your Story</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="storyForm">
+                        <div class="mb-3">
+                            <label for="storyTitle" class="form-label">Title</label>
+                            <input type="text" class="form-control" id="storyTitle" placeholder="Give your story a title">
+                        </div>
+                        <div class="mb-3">
+                            <label for="storyContent" class="form-label">Your Story</label>
+                            <textarea class="form-control" id="storyContent" rows="6" placeholder="Share your journey..."></textarea>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="storyName" class="form-label">Your Name (optional)</label>
+                                <input type="text" class="form-control" id="storyName">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="storyLocation" class="form-label">Location (optional)</label>
+                                <input type="text" class="form-control" id="storyLocation">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="storyPhoto" class="form-label">Photo (optional)</label>
+                            <input class="form-control" type="file" id="storyPhoto">
+                        </div>
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="checkbox" id="storyAnonymous">
+                            <label class="form-check-label" for="storyAnonymous">
+                                Share anonymously
+                            </label>
+                        </div>
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="checkbox" id="storyConsent" required>
+                            <label class="form-check-label" for="storyConsent">
+                                I agree to have my story shared to inspire others (personal information will be kept private if requested)
+                            </label>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" id="submitStory">Submit Story</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    
+    <script>
+        // API Integration
+        $(document).ready(function() {
+            // Load districts from API
+            $.get('https://api.mufashe.org/v1/districts', function(data) {
+                const districtSelect = $('#district');
+                data.forEach(district => {
+                    districtSelect.append(`<option value="${district.id}">${district.name}</option>`);
+                });
+            });
+            
+            // Load stories from API
+            $.get('https://api.mufashe.org/v1/stories', function(stories) {
+                const carousel = $('.stories-carousel');
+                stories.slice(0, 5).forEach(story => {
+                    carousel.append(`
+                        <div class="story-item">
+                            <div class="story-card">
+                                <img src="${story.image || 'assets/images/default-story.jpg'}" alt="${story.title}">
+                                <div class="story-content">
+                                    <h4>${story.title}</h4>
+                                    <p>${story.excerpt}</p>
+                                    <a href="stories/${story.id}" class="read-more">Read Full Story</a>
+                                </div>
+                            </div>
+                        </div>
+                    `);
+                });
+                
+                // Initialize Owl Carousel
+                carousel.owlCarousel({
+                    loop: true,
+                    margin: 20,
+                    nav: true,
+                    dots: false,
+                    responsive: {
+                        0: { items: 1 },
+                        600: { items: 2 },
+                        1000: { items: 3 }
+                    }
+                });
+            });
+            
+            // Load resources from API
+            const resourceTypes = ['health', 'parenting', 'education', 'legal'];
+            resourceTypes.forEach(type => {
+                $.get(`https://api.mufashe.org/v1/resources?type=${type}`, function(resources) {
+                    const tabContent = $(`#${type}`);
+                    resources.slice(0, 3).forEach(resource => {
+                        tabContent.append(`
+                            <div class="resource-item">
+                                <div class="resource-icon">
+                                    <i class="${resource.icon || 'fas fa-file-alt'}"></i>
+                                </div>
+                                <div class="resource-details">
+                                    <h5>${resource.title}</h5>
+                                    <p>${resource.description}</p>
+                                    <div class="resource-links">
+                                        <a href="${resource.fileUrl}" download><i class="fas fa-download"></i> Download</a>
+                                        <a href="${resource.viewUrl}" target="_blank"><i class="fas fa-external-link-alt"></i> View Online</a>
+                                    </div>
+                                </div>
+                            </div>
+                        `);
+                    });
+                    
+                    if (resources.length > 3) {
+                        tabContent.append(`
+                            <div class="text-center mt-3">
+                                <a href="resources.html?type=${type}" class="btn btn-sm btn-outline-primary">
+                                    View All ${type.charAt(0).toUpperCase() + type.slice(1)} Resources
+                                </a>
+                            </div>
+                        `);
+                    }
+                });
+            });
+            
+            // Load events from API
+            $.get('https://api.mufashe.org/v1/events', function(events) {
+                const eventsContainer = $('.events-section .row');
+                events.slice(0, 3).forEach(event => {
+                    eventsContainer.append(`
+                        <div class="col-md-4">
+                            <div class="event-card">
+                                <div class="event-date">
+                                    <span class="event-day">${new Date(event.date).getDate()}</span>
+                                    <span class="event-month">${new Date(event.date).toLocaleString('default', { month: 'short' })}</span>
+                                </div>
+                                <div class="event-details">
+                                    <h5>${event.title}</h5>
+                                    <p><i class="fas fa-clock"></i> ${event.time}</p>
+                                    <p><i class="fas fa-map-marker-alt"></i> ${event.location}</p>
+                                    <a href="events/${event.id}" class="btn btn-sm btn-outline-primary">Details</a>
+                                </div>
+                            </div>
+                        </div>
+                    `);
+                });
+            });
+            
+            // Counter Animation
+            $('.counter').each(function() {
+                $(this).prop('Counter', 0).animate({
+                    Counter: $(this).data('target')
+                }, {
+                    duration: 2000,
+                    easing: 'swing',
+                    step: function(now) {
+                        $(this).text(Math.ceil(now));
+                    }
+                });
+            });
+            
+            // Theme Toggle
+            $('#themeToggle').click(function() {
+                $('body').toggleClass('dark-theme');
+                $(this).find('i').toggleClass('fa-moon fa-sun');
+                localStorage.setItem('theme', $('body').hasClass('dark-theme') ? 'dark' : 'light');
+            });
+            
+            // Check for saved theme preference
+            if (localStorage.getItem('theme') === 'dark') {
+                $('body').addClass('dark-theme');
+                $('#themeToggle i').removeClass('fa-moon').addClass('fa-sun');
+            }
+            
+            // Cookie Consent
+            if (!localStorage.getItem('cookieConsent')) {
+                $('#cookieConsent').show();
+            }
+            
+            $('#acceptCookies').click(function() {
+                localStorage.setItem('cookieConsent', 'accepted');
+                $('#cookieConsent').fadeOut();
+            });
+            
+            $('#declineCookies').click(function() {
+                localStorage.setItem('cookieConsent', 'declined');
+                $('#cookieConsent').fadeOut();
+            });
+            
+            // Emergency Help Modal
+            $('#emergencyHelp').click(function() {
+                $('#emergencyModal').modal('show');
+            });
+            
+            // Share Story Modal
+            $('#shareStoryBtn').click(function() {
+                $('#shareStoryModal').modal('show');
+            });
+            
+            // Back to Top Button
+            $(window).scroll(function() {
+                if ($(this).scrollTop() > 300) {
+                    $('#backToTop').fadeIn();
+                } else {
+                    $('#backToTop').fadeOut();
+                }
+            });
+            
+            $('#backToTop').click(function() {
+                $('html, body').animate({ scrollTop: 0 }, 'smooth');
+                return false;
+            });
+            
+            // Form Submissions
+            $('#joinForm').submit(function(e) {
+                e.preventDefault();
+                // Form validation and submission logic
+                // Would integrate with backend API in production
+                alert('Thank you for your application! We will contact you soon.');
+                $(this).trigger('reset');
+            });
+            
+            $('#newsletterForm').submit(function(e) {
+                e.preventDefault();
+                const email = $(this).find('input[type="email"]').val();
+                // Would integrate with newsletter API in production
+                alert(`Thank you for subscribing with ${email}!`);
+                $(this).trigger('reset');
+            });
+            
+            $('#submitStory').click(function() {
+                // Story submission logic
+                // Would integrate with backend API in production
+                alert('Thank you for sharing your story! Our team will review it before publishing.');
+                $('#shareStoryModal').modal('hide');
+                $('#storyForm').trigger('reset');
+            });
+            
+            // Language Selector
+            $('#languageSelect').change(function() {
+                // In production, this would redirect to the appropriate language version
+                alert('Language changed to: ' + $(this).val());
+            });
+        });
+    </script>
+</body>
+</html>
