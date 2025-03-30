@@ -38,12 +38,17 @@ Mufashe Initiative is an online platform that provides mentorship, mental health
   ├── mentorship.html
   ├── resources.html
   ├── stories.html
+  |── Register.html
   ├── css/
   │   ├── style.scss  (Main SASS file)
-  │   ├── components/ (For partials, e.g., _variable.scss, _mixins.scss)
+      ├── style.css
+  │   ├── components/ (For partials, e.g., _variable.scss,
+      ├── style.css.map
+   _mixins.scss)
   ├── js/
   │   ├── main.js (Handles interactivity)
   │   ├── api.js (Handles AJAX requests)
+      ├── script.js
   ├── images/
   ├── data/
   │   ├── db.json (Mock API data)
