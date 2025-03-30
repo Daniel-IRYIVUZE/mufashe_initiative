@@ -31,8 +31,8 @@ Mufashe Initiative is an online platform that provides mentorship, mental health
   ```
   Mufashe/
   ├── index.html
-  ├── login.html  (Mentor login page)
-  ├── dashboard.html  (Mentor dashboard to see booked sessions)
+  ├── login.html
+  ├── dashboard.html
   ├── contact.html
   ├── mental-health.html
   ├── mentorship.html
