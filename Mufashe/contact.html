@@ -3,69 +3,307 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mufashe Initiative - Home</title>
+    <meta name="description" content="Contact Mufashe Initiative - Get in touch with our support team">
+    <title>Mufashe Initiative - Contact</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-    <header>
-        <nav>
-            <div >MUFASHE Initiative</div>
-            <div >
-                <a href="index.html">HOME</a>
-                <a href="mentorship.html">MENTORSHIP</a>
-                <a href="mental-health.html">MENTAL HEALTH</a>
-                <a href="stories.html">STORIES</a>
-                <a href="resources.html">RESOURCES</a>
-                <a href="contact.html" class="active">CONTACT</a>
-                <button class="join">JOIN</button>
+<body class="light-theme">
+    <header class="site-header">
+        <nav class="main-navigation">
+            <div class="logo">
+                <span class="logo-icon"><i class="fas fa-hands-helping"></i></span>
+                <span>MUFASHE Initiative</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html"><i class="fas fa-home"></i> HOME</a></li>
+                <li><a href="mentorship.html"><i class="fas fa-user-graduate"></i> MENTORSHIP</a></li>
+                <li><a href="mental-health.html"><i class="fas fa-brain"></i> MENTAL HEALTH</a></li>
+                <li><a href="stories.html"><i class="fas fa-book-open"></i> STORIES</a></li>
+                <li><a href="resources.html"><i class="fas fa-book"></i> RESOURCES</a></li>
+                <li><a href="contact.html" class="active"><i class="fas fa-envelope"></i> CONTACT</a></li>
+                <li><a href="login.html" class="join-button"><i class="fas fa-user-plus"></i> JOIN</a></li>
+            </ul>
+            <div class="theme-toggle">
+                <button id="theme-switcher" aria-label="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
             </div>
         </nav>
     </header>
 
     <main class="main-content">
-               <section class="become-mentor">
-            <div class="container">
-                <h2 class="section-title">GET IN TOUCH</h2>
-                <form class="have">
-                    <input type="text" placeholder="Enter full names">
-                    <input type="text" placeholder="Choose gender">
-                    <input type="text" placeholder="Enter your age">
-                    <input type="text" placeholder="Enter mobile phone">
-                    <input type="text" placeholder="Enter your specialization">
-                    <input type="text" placeholder="Enter your location">
-                    <button class="join-btn">SEND</button>
-                  </form>
+        <section class="contact-hero">
+            <div class="hero-content">
+                <h1>We're Here to Help</h1>
+                <p>Get in touch with our team for support, questions, or partnership opportunities.</p>
+                <div class="hero-buttons">
+                    <a href="#contact-form" class="cta-button">Send a Message <i class="fas fa-envelope"></i></a>
+                    <a href="#offices" class="outline-button">Visit Our Offices <i class="fas fa-map-marker-alt"></i></a>
+                </div>
+            </div>
+            <div class="hero-overlay"></div>
+        </section>
+
+        <section class="contact-section">
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="section-header">
+                        <h2>Contact Information</h2>
+                        <div class="underline"></div>
+                    </div>
+                    <address>
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h3>Headquarters</h3>
+                                <p>KG 123 St, Kigali, Rwanda</p>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h3>Email</h3>
+                                <p>info@mufashe.org</p>
+                                <p>support@mufashe.org</p>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <h3>Phone</h3>
+                                <p>+250 780 123 456 (Office)</p>
+                                <p>+250 780 987 654 (Support)</p>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <h3>Working Hours</h3>
+                                <p>Monday-Friday: 8:00 AM - 5:00 PM</p>
+                                <p>Saturday: 9:00 AM - 1:00 PM</p>
+                            </div>
+                        </div>
+                    </address>
+                    
+                    <div class="emergency-contacts">
+                        <div class="section-header">
+                            <h3>Emergency Contacts</h3>
+                            <div class="underline"></div>
+                        </div>
+                        <div class="emergency-grid">
+                            <div class="emergency-card">
+                                <div class="emergency-icon">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                </div>
+                                <div>
+                                    <h4>Mental Health Support</h4>
+                                    <p>+250 780 162 164</p>
+                                    <p>24/7 availability</p>
+                                </div>
+                            </div>
+                            <div class="emergency-card">
+                                <div class="emergency-icon">
+                                    <i class="fas fa-baby"></i>
+                                </div>
+                                <div>
+                                    <h4>Childcare Assistance</h4>
+                                    <p>+250 789 051 013</p>
+                                    <p>6AM - 10PM daily</p>
+                                </div>
+                            </div>
+                            <div class="emergency-card">
+                                <div class="emergency-icon">
+                                    <i class="fas fa-shield-alt"></i>
+                                </div>
+                                <div>
+                                    <h4>Gender-Based Violence</h4>
+                                    <p>3512 (Toll-free)</p>
+                                    <p>24/7 hotline</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <form id="contact-form" class="contact-form" action="#" method="POST">
+                    <div class="section-header">
+                        <h2>Send Us a Message</h2>
+                        <div class="underline"></div>
+                        <p>Fill out the form below and we'll get back to you as soon as possible.</p>
+                    </div>
+                    <div class="form-group">
+                        <i class="fas fa-user"></i>
+                        <input type="text" id="fullname" name="fullname" placeholder="Full Name" required>
+                    </div>
+                    <div class="form-group">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" id="email" name="email" placeholder="Email Address" required>
+                    </div>
+                    <div class="form-group">
+                        <i class="fas fa-mobile-alt"></i>
+                        <input type="tel" id="phone" name="phone" placeholder="Phone Number">
+                    </div>
+                    <div class="form-group">
+                        <i class="fas fa-tag"></i>
+                        <select id="subject" name="subject" required>
+                            <option value="">Select a subject</option>
+                            <option value="mentorship">Mentorship Program</option>
+                            <option value="mental-health">Mental Health Support</option>
+                            <option value="resources">Educational Resources</option>
+                            <option value="partnership">Partnership Inquiry</option>
+                            <option value="other">Other Inquiry</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <i class="fas fa-comment-dots"></i>
+                        <textarea id="message" name="message" rows="5" placeholder="Your message..." required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message <i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </section>
+
+        <section id="offices" class="regional-offices">
+            <div class="section-header">
+                <h2>Our Regional Offices</h2>
+                <div class="underline"></div>
+                <p>Visit us at any of our locations across Rwanda for in-person support.</p>
+            </div>
+            <div class="offices-grid">
+                <div class="office-card">
+                    <div class="office-image">
+                        <img src="images/kigali-office.jpg" alt="Kigali office" loading="lazy">
+                    </div>
+                    <div class="office-content">
+                        <h3>Kigali Headquarters</h3>
+                        <p><i class="fas fa-map-marker-alt"></i> KG 123 St, Kigali</p>
+                        <p><i class="fas fa-phone"></i> +250 780 123 456</p>
+                        <p><i class="fas fa-envelope"></i> kigali@mufashe.org</p>
+                        <p><i class="fas fa-clock"></i> Mon-Fri: 8AM-5PM</p>
+                        <a href="https://maps.google.com" target="_blank" class="map-link">View on Map <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <div class="office-card">
+                    <div class="office-image">
+                        <img src="images/musanze-office.jpg" alt="Musanze office" loading="lazy">
+                    </div>
+                    <div class="office-content">
+                        <h3>Northern Province</h3>
+                        <p><i class="fas fa-map-marker-alt"></i> Musanze District</p>
+                        <p><i class="fas fa-phone"></i> +250 788 123 456</p>
+                        <p><i class="fas fa-envelope"></i> musanze@mufashe.org</p>
+                        <p><i class="fas fa-clock"></i> Mon-Fri: 8AM-4PM</p>
+                        <a href="https://maps.google.com" target="_blank" class="map-link">View on Map <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <div class="office-card">
+                    <div class="office-image">
+                        <img src="images/huye-office.jpg" alt="Huye office" loading="lazy">
+                    </div>
+                    <div class="office-content">
+                        <h3>Southern Province</h3>
+                        <p><i class="fas fa-map-marker-alt"></i> Huye District</p>
+                        <p><i class="fas fa-phone"></i> +250 788 234 567</p>
+                        <p><i class="fas fa-envelope"></i> huye@mufashe.org</p>
+                        <p><i class="fas fa-clock"></i> Mon-Fri: 8AM-4PM</p>
+                        <a href="https://maps.google.com" target="_blank" class="map-link">View on Map <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <div class="office-card">
+                    <div class="office-image">
+                        <img src="images/rubavu-office.jpg" alt="Rubavu office" loading="lazy">
+                    </div>
+                    <div class="office-content">
+                        <h3>Western Province</h3>
+                        <p><i class="fas fa-map-marker-alt"></i> Rubavu District</p>
+                        <p><i class="fas fa-phone"></i> +250 788 456 789</p>
+                        <p><i class="fas fa-envelope"></i> rubavu@mufashe.org</p>
+                        <p><i class="fas fa-clock"></i> Mon-Fri: 8AM-4PM</p>
+                        <a href="https://maps.google.com" target="_blank" class="map-link">View on Map <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-map">
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3987.490317489885!2d30.05870981475399!3d-1.953537998573963!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMcKwNTcnMTIuNyJTIDMwwrAwMyczNS4xIkU!5e0!3m2!1sen!2srw!4v1620000000000!5m2!1sen!2srw" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
         </section>
     </main>
 
-    <footer class="footer">
-        <div class="footer__content">
-            <div class="footer__links">
-                <h2>MUFASHE</h2>
-                 <p>Initiative</p>
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h2><i class="fas fa-hands-helping"></i> MUFASHE Initiative</h2>
+                <p>Empowering young mothers in Rwanda through mentorship, mental health support, and community building.</p>
+                <div class="newsletter">
+                    <input type="email" placeholder="Your email address">
+                    <button type="submit">Subscribe</button>
+                </div>
             </div>
-            <div class="footer__links">
-                <h4>Quick Links</h4>
-                <a href="index.html">Home</a>
-                <a href="mentorship.html">Mentorship</a>
-                <a href="mental-health.html">Mental Health</a>
-                <a href="stories.html">Stories</a>
-                <a href="contact.html">Contact</a>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                    <li><a href="mentorship.html"><i class="fas fa-chevron-right"></i> Mentorship</a></li>
+                    <li><a href="mental-health.html"><i class="fas fa-chevron-right"></i> Mental Health</a></li>
+                    <li><a href="stories.html"><i class="fas fa-chevron-right"></i> Stories</a></li>
+                    <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                </ul>
             </div>
-            <div class="footer__links">
-                <h4>Social Media Links</h4>
-                <a href="#">Facebook</a>
-                <a href="#">Instagram</a>
-                <a href="#">Twitter</a>
-                <a href="#">WhatsApp</a>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <address>
+                    <p><i class="fas fa-map-marker-alt"></i> KG 123 St, Kigali</p>
+                    <p><i class="fas fa-envelope"></i> Email: info@mufashe.org</p>
+                    <p><i class="fas fa-phone"></i> Phone: +250 780 123 456</p>
+                </address>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+                <div class="app-download">
+                    <button class="app-store">
+                        <i class="fab fa-apple"></i> App Store
+                    </button>
+                    <button class="play-store">
+                        <i class="fab fa-google-play"></i> Play Store
+                    </button>
+                </div>
             </div>
         </div>
-        <br>
-        <div class="footer__copyright">
-            <p style="text-align: center;">Copyright 2025. All Rights Reserved.</p>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Mufashe Initiative. All Rights Reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Sitemap</a>
+            </div>
         </div>
     </footer>
+
+    <script src="js/script.js"></script>
 </body>
 </html>

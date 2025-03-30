@@ -3,112 +3,435 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mufashe Initiative - Home</title>
+    <meta name="description" content="Resources for Young Mothers - Mufashe Initiative">
+    <title>Mufashe Initiative - Resources</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-    <header>
-        <nav>
-            <div >MUFASHE Initiative</div>
-            <div >
-                <a href="index.html">HOME</a>
-                <a href="mentorship.html">MENTORSHIP</a>
-                <a href="mental-health.html">MENTAL HEALTH</a>
-                <a href="stories.html">STORIES</a>
-                <a href="resources.html" class="active">RESOURCES</a>
-                <a href="contact.html">CONTACT</a>
-                <button>JOIN</button>
+<body class="light-theme">
+    <header class="site-header">
+        <nav class="main-navigation">
+            <div class="logo">
+                <span class="logo-icon"><i class="fas fa-hands-helping"></i></span>
+                <span>MUFASHE Initiative</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html"><i class="fas fa-home"></i> HOME</a></li>
+                <li><a href="mentorship.html"><i class="fas fa-user-graduate"></i> MENTORSHIP</a></li>
+                <li><a href="mental-health.html"><i class="fas fa-brain"></i> MENTAL HEALTH</a></li>
+                <li><a href="stories.html"><i class="fas fa-book-open"></i> STORIES</a></li>
+                <li><a href="resources.html" class="active"><i class="fas fa-book"></i> RESOURCES</a></li>
+                <li><a href="contact.html"><i class="fas fa-envelope"></i> CONTACT</a></li>
+                <li><a href="login.html" class="join-button"><i class="fas fa-user-plus"></i> JOIN</a></li>
+            </ul>
+            <div class="theme-toggle">
+                <button id="theme-switcher" aria-label="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
             </div>
         </nav>
     </header>
 
     <main class="main-content">
-    <section class="scholarships">
-        <div class="container">
-            <h2>SCHOLARSHIPS & EDUCATION HELP</h2>
-            <p>Learn About Educational Programs And Scholarships For Young Mothers.</p>
-            <button class="btn">Explore Options</button>
-        </div>
-    </section>
-    
-    <section class="financial-support">
-        <div class="container">
-            <h2>FINANCIAL & LEGAL SUPPORT</h2>
-            <p>Find Financial Aid Programs And Legal Guidance.</p>
-            <button class="btn">Learn More</button>
-        </div>
-    </section>
-    
-    <section class="emergency">
-        <div class="container">
-            <h2>EMERGENCY CONTACTS</h2>
-            <p><strong>Hotline Numbers for Urgent Help:</strong></p>
-            <p>📞 Mental Health Support: +250 780 162 164</p>
-            <p>📞 Childcare Assistance: +250 789 051 013</p>
-        </div>
-    </section>
-    
-    <section class="faqs">
-        <div class="container">
-            <h2>FAQS SECTION</h2>
-            <div class="faq-item">
-                <p class="question">CAN I GO BACK TO SCHOOL AFTER PREGNANCY?</p>
-                <p class="answer">✅ Yes, Here’s How...</p>
+        <section class="resources-hero">
+            <div class="hero-content">
+                <h1>Essential Resources for Young Mothers</h1>
+                <p>Access educational, financial, and legal support to help you build a brighter future.</p>
+                <div class="resource-scroll">
+                    <a href="#scholarships" class="scroll-link">
+                        <i class="fas fa-graduation-cap"></i> Scholarships
+                    </a>
+                    <a href="#financial" class="scroll-link">
+                        <i class="fas fa-coins"></i> Financial Help
+                    </a>
+                    <a href="#legal" class="scroll-link">
+                        <i class="fas fa-balance-scale"></i> Legal Support
+                    </a>
+                    <a href="#health" class="scroll-link">
+                        <i class="fas fa-heartbeat"></i> Health Resources
+                    </a>
+                </div>
             </div>
-        </div>
-    </section>
-    
-    <section class="stories">
-        <div class="container">
-            <h2>REAL STORIES FROM REAL MOTHERS</h2>
-            <div class="story">
-                <img src="images/young-mom.png" alt="Mother and child">
-                <p>"How I Went Back To School After Having A Baby..." <br> – By Mary</p>
-                <a href="#">Read More</a>
+            <div class="hero-overlay"></div>
+        </section>
+
+        <section id="scholarships" class="resource-section">
+            <div class="section-header">
+                <h2>Scholarships & Education Help</h2>
+                <div class="underline"></div>
+                <p>Learn about educational programs and scholarships specifically designed for young mothers in Rwanda.</p>
             </div>
-        </div>
-    </section>
-    
-    <section class="become-mentor">
-        <div class="container">
-            <h2>SHARE YOUR STORY</h2>
-            <form>
-                <input type="text" placeholder="Enter full names">
-                <input type="text" placeholder="Enter mobile phone">
-                <input type="text" placeholder="Enter your specialization">
-                <input type="text" placeholder="Enter your location">
-            </form>
-            <button class="btn">Share Story</button>
-        </div>
-    </section>
+            
+            <div class="scholarships-list">
+                <article class="scholarship-card">
+                    <div class="scholarship-icon">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <h3>Imbuto Foundation Scholarships</h3>
+                    <p>For young mothers pursuing secondary or university education</p>
+                    <div class="scholarship-details">
+                        <span><i class="fas fa-calendar-alt"></i> Deadline: March 31</span>
+                        <span><i class="fas fa-money-bill-wave"></i> Full tuition coverage</span>
+                    </div>
+                    <a href="https://imbutofoundation.org" target="_blank" class="resource-link">Visit Website <i class="fas fa-external-link-alt"></i></a>
+                </article>
+                <article class="scholarship-card">
+                    <div class="scholarship-icon">
+                        <i class="fas fa-school"></i>
+                    </div>
+                    <h3>MINEDUC Second Chance Program</h3>
+                    <p>Government initiative for young mothers to complete basic education</p>
+                    <div class="scholarship-details">
+                        <span><i class="fas fa-calendar-alt"></i> Rolling admissions</span>
+                        <span><i class="fas fa-child"></i> Childcare support available</span>
+                    </div>
+                    <a href="https://mineduc.gov.rw" target="_blank" class="resource-link">Learn More <i class="fas fa-external-link-alt"></i></a>
+                </article>
+                <article class="scholarship-card">
+                    <div class="scholarship-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h3>Women for Women Vocational Training</h3>
+                    <p>Skills development programs with childcare support</p>
+                    <div class="scholarship-details">
+                        <span><i class="fas fa-calendar-alt"></i> Next intake: May 15</span>
+                        <span><i class="fas fa-tools"></i> 6-month programs</span>
+                    </div>
+                    <a href="https://www.womenforwomen.org" target="_blank" class="resource-link">Apply Now <i class="fas fa-external-link-alt"></i></a>
+                </article>
+            </div>
+            
+            <div class="education-tips">
+                <h3><i class="fas fa-lightbulb"></i> Tips for Returning to School</h3>
+                <ol>
+                    <li>Research schools with flexible schedules or distance learning options</li>
+                    <li>Inquire about on-campus childcare services</li>
+                    <li>Connect with other student mothers for support</li>
+                    <li>Explore scholarship opportunities specifically for young parents</li>
+                    <li>Don't hesitate to ask for help from teachers and counselors</li>
+                </ol>
+            </div>
+            
+            <a href="contact.html" class="cta-button">Need Help Applying? Contact Us <i class="fas fa-arrow-right"></i></a>
+        </section>
+
+        <section id="financial" class="resource-section">
+            <div class="section-header">
+                <h2>Financial Support & Entrepreneurship</h2>
+                <div class="underline"></div>
+                <p>Access financial assistance and business development resources to achieve economic independence.</p>
+            </div>
+            
+            <div class="financial-resources">
+                <article class="financial-card">
+                    <div class="financial-icon">
+                        <i class="fas fa-piggy-bank"></i>
+                    </div>
+                    <h3>Youth Opportunity Fund</h3>
+                    <p>Small grants for young entrepreneurs aged 18-35</p>
+                    <div class="financial-details">
+                        <span><i class="fas fa-wallet"></i> Up to 1,000,000 RWF</span>
+                        <span><i class="fas fa-file-signature"></i> Business plan required</span>
+                    </div>
+                    <a href="#" class="resource-link">Application Details <i class="fas fa-external-link-alt"></i></a>
+                </article>
+                <article class="financial-card">
+                    <div class="financial-icon">
+                        <i class="fas fa-hand-holding-usd"></i>
+                    </div>
+                    <h3>Umurenge SACCO Loans</h3>
+                    <p>Low-interest loans through local savings cooperatives</p>
+                    <div class="financial-details">
+                        <span><i class="fas fa-percentage"></i> 12% interest rate</span>
+                        <span><i class="fas fa-users"></i> Group guarantees accepted</span>
+                    </div>
+                    <a href="#" class="resource-link">Find Your Local SACCO <i class="fas fa-external-link-alt"></i></a>
+                </article>
+                <article class="financial-card">
+                    <div class="financial-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h3>Business Development Training</h3>
+                    <p>Free workshops on starting and managing small businesses</p>
+                    <div class="financial-details">
+                        <span><i class="fas fa-map-marker-alt"></i> Available nationwide</span>
+                        <span><i class="fas fa-certificate"></i> Certificate provided</span>
+                    </div>
+                    <a href="#" class="resource-link">View Schedule <i class="fas fa-external-link-alt"></i></a>
+                </article>
+            </div>
+            
+            <div class="financial-tips">
+                <h3><i class="fas fa-book-open"></i> Financial Literacy Resources</h3>
+                <div class="tips-grid">
+                    <a href="#" class="tip-card">
+                        <i class="fas fa-calculator"></i>
+                        <span>Budgeting for Single Mothers</span>
+                    </a>
+                    <a href="#" class="tip-card">
+                        <i class="fas fa-piggy-bank"></i>
+                        <span>Saving Strategies on Limited Income</span>
+                    </a>
+                    <a href="#" class="tip-card">
+                        <i class="fas fa-landmark"></i>
+                        <span>Microfinance Options in Rwanda</span>
+                    </a>
+                    <a href="#" class="tip-card">
+                        <i class="fas fa-baby"></i>
+                        <span>Childcare Cost Reduction Tips</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="legal" class="resource-section">
+            <div class="section-header">
+                <h2>Legal Support & Rights Protection</h2>
+                <div class="underline"></div>
+                <p>Understand your legal rights and access free or low-cost legal assistance.</p>
+            </div>
+            
+            <div class="legal-resources">
+                <article class="legal-card">
+                    <div class="legal-icon">
+                        <i class="fas fa-child"></i>
+                    </div>
+                    <h3>Child Support Guidance</h3>
+                    <p>Know your rights and legal options regarding child support</p>
+                    <div class="legal-details">
+                        <span><i class="fas fa-file-alt"></i> Free guide available</span>
+                        <span><i class="fas fa-user-tie"></i> Legal consultation</span>
+                    </div>
+                    <a href="#" class="resource-link">Read Guide <i class="fas fa-external-link-alt"></i></a>
+                </article>
+                <article class="legal-card">
+                    <div class="legal-icon">
+                        <i class="fas fa-gavel"></i>
+                    </div>
+                    <h3>Free Legal Clinics</h3>
+                    <p>Monthly clinics offering free legal consultations</p>
+                    <div class="legal-details">
+                        <span><i class="fas fa-calendar-day"></i> First Tuesday each month</span>
+                        <span><i class="fas fa-map-marker-alt"></i> All districts</span>
+                    </div>
+                    <a href="#" class="resource-link">Find a Clinic <i class="fas fa-external-link-alt"></i></a>
+                </article>
+                <article class="legal-card">
+                    <div class="legal-icon">
+                        <i class="fas fa-birthday-cake"></i>
+                    </div>
+                    <h3>Birth Registration</h3>
+                    <p>Step-by-step guide to registering your child</p>
+                    <div class="legal-details">
+                        <span><i class="fas fa-clock"></i> Process takes 1-2 days</span>
+                        <span><i class="fas fa-money-bill-wave"></i> Free for newborns</span>
+                    </div>
+                    <a href="#" class="resource-link">View Process <i class="fas fa-external-link-alt"></i></a>
+                </article>
+            </div>
+            
+            <div class="emergency-contacts">
+                <h3><i class="fas fa-exclamation-triangle"></i> Emergency Legal Contacts</h3>
+                <div class="emergency-grid">
+                    <div class="emergency-card">
+                        <i class="fas fa-shield-alt"></i>
+                        <div>
+                            <h4>Gender-Based Violence Hotline</h4>
+                            <p>3512 (Toll-free)</p>
+                        </div>
+                    </div>
+                    <div class="emergency-card">
+                        <i class="fas fa-police-badge"></i>
+                        <div>
+                            <h4>Rwanda National Police</h4>
+                            <p>112</p>
+                        </div>
+                    </div>
+                    <div class="emergency-card">
+                        <i class="fas fa-balance-scale"></i>
+                        <div>
+                            <h4>Legal Aid Forum</h4>
+                            <p>+250 788 319 753</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="health" class="resource-section">
+            <div class="section-header">
+                <h2>Health & Childcare Resources</h2>
+                <div class="underline"></div>
+                <p>Access affordable healthcare services and childcare support in your community.</p>
+            </div>
+            
+            <div class="health-resources">
+                <article class="health-card">
+                    <div class="health-icon">
+                        <i class="fas fa-clinic-medical"></i>
+                    </div>
+                    <h3>Community Health Centers</h3>
+                    <p>Locations offering free prenatal and postnatal care</p>
+                    <div class="health-details">
+                        <span><i class="fas fa-map-marker-alt"></i> Nationwide coverage</span>
+                        <span><i class="fas fa-user-md"></i> Skilled professionals</span>
+                    </div>
+                    <a href="#" class="resource-link">Find Nearby Centers <i class="fas fa-external-link-alt"></i></a>
+                </article>
+                <article class="health-card">
+                    <div class="health-icon">
+                        <i class="fas fa-syringe"></i>
+                    </div>
+                    <h3>Child Vaccination Schedule</h3>
+                    <p>Complete guide to Rwanda's immunization program</p>
+                    <div class="health-details">
+                        <span><i class="fas fa-calendar-alt"></i> Age-specific schedule</span>
+                        <span><i class="fas fa-heartbeat"></i> Free at health centers</span>
+                    </div>
+                    <a href="#" class="resource-link">Download PDF <i class="fas fa-external-link-alt"></i></a>
+                </article>
+                <article class="health-card">
+                    <div class="health-icon">
+                        <i class="fas fa-baby-carriage"></i>
+                    </div>
+                    <h3>Affordable Childcare Options</h3>
+                    <p>List of registered daycare centers with subsidized rates</p>
+                    <div class="health-details">
+                        <span><i class="fas fa-money-bill-wave"></i> From 10,000 RWF/month</span>
+                        <span><i class="fas fa-star"></i> Quality certified</span>
+                    </div>
+                    <a href="#" class="resource-link">View List <i class="fas fa-external-link-alt"></i></a>
+                </article>
+            </div>
+            
+            <div class="parenting-resources">
+                <h3><i class="fas fa-book"></i> Parenting Resources</h3>
+                <div class="parenting-grid">
+                    <a href="#" class="parenting-card">
+                        <div class="parenting-icon">
+                            <i class="fas fa-baby"></i>
+                        </div>
+                        <h4>Newborn Care Basics</h4>
+                        <p>Essential guide for first-time mothers</p>
+                    </a>
+                    <a href="#" class="parenting-card">
+                        <div class="parenting-icon">
+                            <i class="fas fa-hands-helping"></i>
+                        </div>
+                        <h4>Positive Discipline Techniques</h4>
+                        <p>Effective parenting strategies</p>
+                    </a>
+                    <a href="#" class="parenting-card">
+                        <div class="parenting-icon">
+                            <i class="fas fa-apple-alt"></i>
+                        </div>
+                        <h4>Nutrition for Young Children</h4>
+                        <p>Healthy eating on a budget</p>
+                    </a>
+                    <a href="#" class="parenting-card">
+                        <div class="parenting-icon">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+                        <h4>Balancing School and Parenting</h4>
+                        <p>Time management tips</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="resource-request">
+            <div class="request-container">
+                <div class="section-header">
+                    <h2>Can't Find What You Need?</h2>
+                    <div class="underline"></div>
+                    <p>Let us know what additional resources would help you, and we'll work to provide them.</p>
+                </div>
+                <form class="request-form" action="#" method="POST">
+                    <div class="form-group">
+                        <i class="fas fa-user"></i>
+                        <input type="text" placeholder="Enter full names">
+                    </div>
+                    <div class="form-group">
+                        <i class="fas fa-mobile-alt"></i>
+                        <input type="tel" placeholder="Enter mobile phone">
+                    </div>
+                    <div class="form-group">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <input type="text" placeholder="Enter your location">
+                    </div>
+                    <div class="form-group">
+                        <i class="fas fa-search"></i>
+                        <textarea placeholder="Describe the resource or information you're looking for" rows="4"></textarea>
+                    </div>
+                    <button type="submit" class="submit-request">Submit Request <i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </section>
     </main>
-    <footer class="footer">
-        <div class="footer__content">
-            <div class="footer__links">
-                <h2>MUFASHE</h2>
-                 <p>Initiative</p>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h2><i class="fas fa-hands-helping"></i> MUFASHE Initiative</h2>
+                <p>Empowering young mothers in Rwanda through mentorship, mental health support, and community building.</p>
+                <div class="newsletter">
+                    <input type="email" placeholder="Your email address">
+                    <button type="submit">Subscribe</button>
+                </div>
             </div>
-            <div class="footer__links">
-                <h4>Quick Links</h4>
-                <a href="index.html">Home</a>
-                <a href="mentorship.html">Mentorship</a>
-                <a href="mental-health.html">Mental Health</a>
-                <a href="stories.html">Stories</a>
-                <a href="contact.html">Contact</a>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                    <li><a href="mentorship.html"><i class="fas fa-chevron-right"></i> Mentorship</a></li>
+                    <li><a href="mental-health.html"><i class="fas fa-chevron-right"></i> Mental Health</a></li>
+                    <li><a href="stories.html"><i class="fas fa-chevron-right"></i> Stories</a></li>
+                    <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                </ul>
             </div>
-            <div class="footer__links">
-                <h4>Social Media Links</h4>
-                <a href="#">Facebook</a>
-                <a href="#">Instagram</a>
-                <a href="#">Twitter</a>
-                <a href="#">WhatsApp</a>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <address>
+                    <p><i class="fas fa-map-marker-alt"></i> KG 123 St, Kigali</p>
+                    <p><i class="fas fa-envelope"></i> Email: info@mufashe.org</p>
+                    <p><i class="fas fa-phone"></i> Phone: +250 780 123 456</p>
+                </address>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+                <div class="app-download">
+                    <button class="app-store">
+                        <i class="fab fa-apple"></i> App Store
+                    </button>
+                    <button class="play-store">
+                        <i class="fab fa-google-play"></i> Play Store
+                    </button>
+                </div>
             </div>
         </div>
-        <br>
-        <div class="footer__copyright">
-            <p style="text-align: center;">Copyright 2025. All Rights Reserved.</p>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Mufashe Initiative. All Rights Reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Sitemap</a>
+            </div>
         </div>
     </footer>
+
+    <script src="js/script.js"></script>
 </body>
 </html>

@@ -3,85 +3,357 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mufashe Initiative - Home</title>
+    <meta name="description" content="Inspiring Stories from Young Mothers - Mufashe Initiative">
+    <title>Mufashe Initiative - Stories</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-    <header>
-        <nav>
-            <div >MUFASHE Initiative</div>
-            <div >
-                <a href="index.html">HOME</a>
-                <a href="mentorship.html">MENTORSHIP</a>
-                <a href="mental-health.html">MENTAL HEALTH</a>
-                <a href="stories.html" class="active">STORIES</a>
-                <a href="resources.html">RESOURCES</a>
-                <a href="contact.html">CONTACT</a>
-                <button>JOIN</button>
+<body class="light-theme">
+    <header class="site-header">
+        <nav class="main-navigation">
+            <div class="logo">
+                <span class="logo-icon"><i class="fas fa-hands-helping"></i></span>
+                <span>MUFASHE Initiative</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html"><i class="fas fa-home"></i> HOME</a></li>
+                <li><a href="mentorship.html"><i class="fas fa-user-graduate"></i> MENTORSHIP</a></li>
+                <li><a href="mental-health.html"><i class="fas fa-brain"></i> MENTAL HEALTH</a></li>
+                <li><a href="stories.html" class="active"><i class="fas fa-book-open"></i> STORIES</a></li>
+                <li><a href="resources.html"><i class="fas fa-book"></i> RESOURCES</a></li>
+                <li><a href="contact.html"><i class="fas fa-envelope"></i> CONTACT</a></li>
+                <li><a href="login.html" class="join-button"><i class="fas fa-user-plus"></i> JOIN</a></li>
+            </ul>
+            <div class="theme-toggle">
+                <button id="theme-switcher" aria-label="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
             </div>
         </nav>
     </header>
 
     <main class="main-content">
-        <section class="stories">
-            <h1>Real Stories from Real Mothers</h1>
-            <p>You’re Not Alone. Read Inspiring Journeys of Young Mothers Who Overcame Challenges.</p>
-            <article class="story">
-                <img src="images/young-mom.png" alt="Mother with baby">
-                <div class="story-text">
-                    <h2>"How I Went Back To School After Having A Baby"</h2>
-                    <p>By Mary</p>
-                    <a href="#">Read More !</a>
+        <section class="stories-hero">
+            <div class="hero-content">
+                <h1>Real Stories from Real Mothers</h1>
+                <p>You're not alone. Read inspiring journeys of young Rwandan women who overcame challenges and built bright futures.</p>
+                <div class="hero-buttons">
+                    <a href="#featured" class="cta-button">Read Stories <i class="fas fa-book-open"></i></a>
+                    <a href="#share" class="outline-button">Share Your Story <i class="fas fa-pen-fancy"></i></a>
                 </div>
-            </article>
-            <article class="story">
-                <img src="images/young-mom.png" alt="Mother with baby">
-                <div class="story-text">
-                    <h2>"How I Went Back To School After Having A Baby"</h2>
-                    <p>By Mary</p>
-                    <a href="#">Read More !</a>
-                </div>
-            </article>
+            </div>
+            <div class="hero-overlay"></div>
         </section>
 
-        <section class="become-mentor">
-            <h2>Share Your Story</h2>
-            <form>
-                <input type="text" placeholder="Enter full names">
-                <input type="text" placeholder="Enter mobile phone">
-                <input type="text" placeholder="Enter your specialization">
-                <input type="text" placeholder="Enter your location">
-            </form>
-            <button type="submit">Share Story</button>
+        <section id="featured" class="featured-stories">
+            <div class="section-header">
+                <h2>Featured Success Stories</h2>
+                <div class="underline"></div>
+                <p>These courageous women have walked paths similar to yours. Let their journeys inspire you.</p>
+            </div>
+            <div class="stories-grid">
+                <article class="story-card">
+                    <div class="story-image">
+                        <img src="images/story1.png" alt="Mary's story" loading="lazy">
+                        <div class="story-badge">Most Read</div>
+                    </div>
+                    <div class="story-content">
+                        <div class="story-meta">
+                            <span class="author"><i class="fas fa-user"></i> Mary</span>
+                            <span class="location"><i class="fas fa-map-marker-alt"></i> Kigali</span>
+                            <span class="date"><i class="far fa-calendar-alt"></i> March 15, 2024</span>
+                        </div>
+                        <h3>"How I Went Back To School After Having A Baby"</h3>
+                        <p class="story-excerpt">At 17, Mary thought her education was over when she became pregnant. Through the Mufashe Initiative, she found a mentor who helped her navigate returning to school while raising her daughter...</p>
+                        <div class="story-footer">
+                            <div class="story-stats">
+                                <span><i class="far fa-eye"></i> 1.2K</span>
+                                <span><i class="far fa-comment"></i> 34</span>
+                                <span><i class="far fa-heart"></i> 256</span>
+                            </div>
+                            <a href="stories/mary.html" class="read-story">Read Full Story <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+                <article class="story-card">
+                    <div class="story-image">
+                        <img src="images/story2.png" alt="Claire's story" loading="lazy">
+                    </div>
+                    <div class="story-content">
+                        <div class="story-meta">
+                            <span class="author"><i class="fas fa-user"></i> Claire</span>
+                            <span class="location"><i class="fas fa-map-marker-alt"></i> Rubavu</span>
+                            <span class="date"><i class="far fa-calendar-alt"></i> February 28, 2024</span>
+                        </div>
+                        <h3>"From Shame to Business Owner"</h3>
+                        <p class="story-excerpt">Claire faced rejection from her family when she became pregnant at 16. With Mufashe's entrepreneurship training and small business grant, she started a tailoring business that now employs three other young mothers...</p>
+                        <div class="story-footer">
+                            <div class="story-stats">
+                                <span><i class="far fa-eye"></i> 945</span>
+                                <span><i class="far fa-comment"></i> 28</span>
+                                <span><i class="far fa-heart"></i> 198</span>
+                            </div>
+                            <a href="stories/claire.html" class="read-story">Read Full Story <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+                <article class="story-card">
+                    <div class="story-image">
+                        <img src="images/story3.png" alt="Annette's story" loading="lazy">
+                        <div class="story-badge">New</div>
+                    </div>
+                    <div class="story-content">
+                        <div class="story-meta">
+                            <span class="author"><i class="fas fa-user"></i> Annette</span>
+                            <span class="location"><i class="fas fa-map-marker-alt"></i> Musanze</span>
+                            <span class="date"><i class="far fa-calendar-alt"></i> April 5, 2024</span>
+                        </div>
+                        <h3>"Finding Hope After Depression"</h3>
+                        <p class="story-excerpt">Annette struggled with severe postpartum depression after having twins at 19. Through Mufashe's mental health program, she received counseling and joined a support group. She now leads mental health awareness workshops...</p>
+                        <div class="story-footer">
+                            <div class="story-stats">
+                                <span><i class="far fa-eye"></i> 1.5K</span>
+                                <span><i class="far fa-comment"></i> 42</span>
+                                <span><i class="far fa-heart"></i> 312</span>
+                            </div>
+                            <a href="stories/annette.html" class="read-story">Read Full Story <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <a href="stories.html" class="view-all-stories">View All Stories <i class="fas fa-long-arrow-alt-right"></i></a>
+        </section>
+
+        <section class="story-categories">
+            <div class="section-header">
+                <h2>Browse Stories by Category</h2>
+                <div class="underline"></div>
+                <p>Find inspiration in stories that resonate with your current journey.</p>
+            </div>
+            <div class="categories-grid">
+                <a href="stories/education.html" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Education Journeys</h3>
+                    <p>Stories of young mothers who returned to school</p>
+                    <div class="category-count">24 Stories</div>
+                </a>
+                <a href="stories/business.html" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-business-time"></i>
+                    </div>
+                    <h3>Entrepreneurship</h3>
+                    <p>Building successful businesses as young moms</p>
+                    <div class="category-count">18 Stories</div>
+                </a>
+                <a href="stories/mental-health.html" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Mental Health</h3>
+                    <p>Overcoming depression and finding hope</p>
+                    <div class="category-count">15 Stories</div>
+                </a>
+                <a href="stories/community.html" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h3>Community Impact</h3>
+                    <p>Mothers giving back to their communities</p>
+                    <div class="category-count">9 Stories</div>
+                </a>
+            </div>
+        </section>
+
+        <section class="video-stories">
+            <div class="section-header">
+                <h2>Watch Their Stories</h2>
+                <div class="underline"></div>
+                <p>Hear directly from these inspiring women in their own words.</p>
+            </div>
+            <div class="videos-grid">
+                <article class="video-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/example1" title="Mary's education journey" allowfullscreen></iframe>
+                        <div class="play-button">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="video-content">
+                        <h3>Mary's University Journey</h3>
+                        <div class="video-meta">
+                            <span><i class="far fa-clock"></i> 4:32</span>
+                            <span><i class="far fa-eye"></i> 2.1K views</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="video-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/example2" title="Claire's business success" allowfullscreen></iframe>
+                        <div class="play-button">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="video-content">
+                        <h3>Claire's Tailoring Business</h3>
+                        <div class="video-meta">
+                            <span><i class="far fa-clock"></i> 6:15</span>
+                            <span><i class="far fa-eye"></i> 1.8K views</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="video-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/example3" title="Support group testimonial" allowfullscreen></iframe>
+                        <div class="play-button">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="video-content">
+                        <h3>Support Group Testimonials</h3>
+                        <div class="video-meta">
+                            <span><i class="far fa-clock"></i> 8:42</span>
+                            <span><i class="far fa-eye"></i> 3.2K views</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <a href="videos.html" class="view-all-videos">View More Videos <i class="fas fa-long-arrow-alt-right"></i></a>
+        </section>
+
+        <section id="share" class="share-story">
+            <div class="share-container">
+                <div class="section-header">
+                    <h2>Share Your Story</h2>
+                    <div class="underline"></div>
+                    <h3>Inspire Others With Your Journey</h3>
+                    <p>Your experience could inspire and help another young mother. Share your journey with our community.</p>
+                </div>
+                
+                <form class="story-submission" action="#" method="POST" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <i class="fas fa-user"></i>
+                        <input type="text" placeholder="Enter full names" required>
+                    </div>
+                    <div class="form-group">
+                        <i class="fas fa-mobile-alt"></i>
+                        <input type="tel" placeholder="Enter mobile phone" required>
+                    </div>
+                    <div class="form-group">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <input type="text" placeholder="Enter your location" required>
+                    </div>
+                    <div class="form-group">
+                        <i class="fas fa-heading"></i>
+                        <input type="text" placeholder="Story title" required>
+                    </div>
+                    <div class="form-group">
+                        <i class="fas fa-tag"></i>
+                        <select required>
+                            <option value="">Select story category</option>
+                            <option value="education">Education Journey</option>
+                            <option value="business">Business/Entrepreneurship</option>
+                            <option value="mental-health">Mental Health</option>
+                            <option value="parenting">Parenting</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <i class="fas fa-align-left"></i>
+                        <textarea placeholder="Tell your story (minimum 200 words)" rows="8" required></textarea>
+                    </div>
+                    <div class="form-group file-upload">
+                        <label for="photo">
+                            <i class="fas fa-camera"></i>
+                            <span>Upload a photo (optional)</span>
+                        </label>
+                        <input type="file" id="photo" name="photo" accept="image/*">
+                    </div>
+                    <div class="form-group consent">
+                        <input type="checkbox" id="consent" required>
+                        <label for="consent">I consent to having my story shared publicly on Mufashe Initiative platforms</label>
+                    </div>
+                    <button type="submit" class="submit-story">Submit Your Story <i class="fas fa-paper-plane"></i></button>
+                </form>
+                
+                <div class="story-guidelines">
+                    <h3><i class="fas fa-clipboard-list"></i> Story Submission Guidelines</h3>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Stories should be authentic and original</li>
+                        <li><i class="fas fa-check-circle"></i> Focus on your journey and lessons learned</li>
+                        <li><i class="fas fa-check-circle"></i> Be mindful of privacy - avoid full names of others</li>
+                        <li><i class="fas fa-check-circle"></i> Minimum 200 words</li>
+                        <li><i class="fas fa-check-circle"></i> Allow 2-3 weeks for review before publication</li>
+                    </ul>
+                </div>
+            </div>
         </section>
     </main>
-    <footer class="footer">
-        <div class="footer__content">
-            <div class="footer__links">
-                <h2>MUFASHE</h2>
-                 <p>Initiative</p>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h2><i class="fas fa-hands-helping"></i> MUFASHE Initiative</h2>
+                <p>Empowering young mothers in Rwanda through mentorship, mental health support, and community building.</p>
+                <div class="newsletter">
+                    <input type="email" placeholder="Your email address">
+                    <button type="submit">Subscribe</button>
+                </div>
             </div>
-            <div class="footer__links">
-                <h4>Quick Links</h4>
-                <a href="index.html">Home</a>
-                <a href="mentorship.html">Mentorship</a>
-                <a href="mental-health.html">Mental Health</a>
-                <a href="stories.html">Stories</a>
-                <a href="contact.html">Contact</a>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                    <li><a href="mentorship.html"><i class="fas fa-chevron-right"></i> Mentorship</a></li>
+                    <li><a href="mental-health.html"><i class="fas fa-chevron-right"></i> Mental Health</a></li>
+                    <li><a href="stories.html"><i class="fas fa-chevron-right"></i> Stories</a></li>
+                    <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                </ul>
             </div>
-            <div class="footer__links">
-                <h4>Social Media Links</h4>
-                <a href="#">Facebook</a>
-                <a href="#">Instagram</a>
-                <a href="#">Twitter</a>
-                <a href="#">WhatsApp</a>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <address>
+                    <p><i class="fas fa-map-marker-alt"></i> KG 123 St, Kigali</p>
+                    <p><i class="fas fa-envelope"></i> Email: info@mufashe.org</p>
+                    <p><i class="fas fa-phone"></i> Phone: +250 780 123 456</p>
+                </address>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+                <div class="app-download">
+                    <button class="app-store">
+                        <i class="fab fa-apple"></i> App Store
+                    </button>
+                    <button class="play-store">
+                        <i class="fab fa-google-play"></i> Play Store
+                    </button>
+                </div>
             </div>
         </div>
-        <br>
-        <div class="footer__copyright">
-            <p style="text-align: center;">Copyright 2025. All Rights Reserved.</p>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Mufashe Initiative. All Rights Reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Sitemap</a>
+            </div>
         </div>
     </footer>
+
+    <script src="js/script.js"></script>
 </body>
 </html>

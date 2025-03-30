@@ -12,7 +12,6 @@ Mufashe Initiative is an online platform that provides mentorship, mental health
 
 - **Divine Nibuhoro**
 - **Daniel Iryivuze**
-- **Coline Gatete**
 
 ## Technologies Used:
 

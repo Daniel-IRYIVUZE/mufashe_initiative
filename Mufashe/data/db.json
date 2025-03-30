@@ -1,0 +1,185 @@
+{
+    "users": [
+      {
+        "id": 1,
+        "name": "Claire U.",
+        "role": "mentor",
+        "avatar": "images/mentor-avatar.png",
+        "joinDate": "January 2023",
+        "rating": 4.7
+      }
+    ],
+    "mentors": [
+      {
+        "id": 1,
+        "name": "Claire U.",
+        "title": "Business Owner",
+        "avatar": "images/mentor-avatar.png",
+        "rating": 4.7,
+        "nextSession": "Tomorrow, 3:00 PM"
+      }
+    ],
+    "mentees": [
+      {
+        "id": 1,
+        "name": "Marie K.",
+        "avatar": "images/user-avatar.png",
+        "lastSession": "2 weeks ago",
+        "nextSession": "Tomorrow, 3:00 PM",
+        "progress": 65
+      },
+      {
+        "id": 2,
+        "name": "Alice M.",
+        "avatar": "images/user-avatar-2.png",
+        "lastSession": "1 week ago",
+        "nextSession": "June 18, 10:00 AM",
+        "progress": 40
+      },
+      {
+        "id": 3,
+        "name": "Grace T.",
+        "avatar": "images/user-avatar-3.png",
+        "lastSession": "3 days ago",
+        "nextSession": "June 20, 2:00 PM",
+        "progress": 25
+      }
+    ],
+    "sessions": [
+      {
+        "id": 1,
+        "menteeId": 1,
+        "menteeName": "Marie K.",
+        "date": "2023-06-15",
+        "time": "15:00",
+        "type": "career",
+        "mode": "online",
+        "notes": "Discuss career advancement opportunities",
+        "status": "upcoming"
+      },
+      {
+        "id": 2,
+        "menteeId": 2,
+        "menteeName": "Alice M.",
+        "date": "2023-06-18",
+        "time": "10:00",
+        "type": "education",
+        "mode": "in-person",
+        "notes": "Review education plan",
+        "status": "upcoming"
+      },
+      {
+        "id": 3,
+        "menteeId": 1,
+        "menteeName": "Marie K.",
+        "date": "2023-05-30",
+        "time": "14:00",
+        "type": "parenting",
+        "mode": "online",
+        "notes": "Parenting strategies discussion",
+        "status": "completed"
+      },
+      {
+        "id": 4,
+        "menteeId": 3,
+        "menteeName": "Grace T.",
+        "date": "2023-06-05",
+        "time": "16:00",
+        "type": "mental-health",
+        "mode": "phone",
+        "notes": "Stress management techniques",
+        "status": "completed"
+      },
+      {
+        "id": 5,
+        "menteeId": 2,
+        "menteeName": "Alice M.",
+        "date": "2023-06-01",
+        "time": "11:00",
+        "type": "career",
+        "mode": "online",
+        "notes": "Resume review",
+        "status": "completed"
+      }
+    ],
+    "events": [
+      {
+        "id": 1,
+        "title": "Parenting Workshop",
+        "date": "2023-06-12",
+        "time": "10:00 AM - 12:00 PM",
+        "location": "Kigali",
+        "type": "workshop"
+      },
+      {
+        "id": 2,
+        "title": "Career Development Seminar",
+        "date": "2023-06-19",
+        "time": "2:00 PM - 4:00 PM",
+        "location": "Online",
+        "type": "seminar"
+      }
+    ],
+    "updates": [
+      {
+        "id": 1,
+        "title": "New Support Group Forming",
+        "content": "A new support group for mothers returning to school is starting next week in your area.",
+        "type": "new",
+        "date": "2023-06-07T10:00:00Z"
+      },
+      {
+        "id": 2,
+        "title": "Scholarship Opportunity",
+        "content": "Applications are now open for the 2025 Young Mothers Education Fund.",
+        "type": "opportunity",
+        "date": "2023-06-05T09:00:00Z"
+      }
+    ],
+    "activities": [
+      {
+        "id": 1,
+        "type": "resource",
+        "content": "You saved \"Returning to School Guide\" to your resources",
+        "date": "2023-06-06T14:30:00Z",
+        "icon": "fas fa-book"
+      },
+      {
+        "id": 2,
+        "type": "post",
+        "content": "You posted in the \"Single Parents\" support group",
+        "date": "2023-05-30T16:45:00Z",
+        "icon": "fas fa-comment"
+      },
+      {
+        "id": 3,
+        "type": "session",
+        "content": "You completed your mentorship session with Marie",
+        "date": "2023-05-25T15:00:00Z",
+        "icon": "fas fa-user-graduate"
+      }
+    ],
+    "messages": [
+      {
+        "id": 1,
+        "sender": "Marie K.",
+        "content": "Hi Claire, I wanted to ask about the career guidance materials...",
+        "date": "2023-06-08T08:30:00Z",
+        "read": false
+      },
+      {
+        "id": 2,
+        "sender": "Mufashe Admin",
+        "content": "Reminder: Mentor meeting tomorrow at 10am",
+        "date": "2023-06-07T14:15:00Z",
+        "read": false
+      },
+      {
+        "id": 3,
+        "sender": "Alice M.",
+        "content": "Thank you for the resume review!",
+        "date": "2023-06-05T11:20:00Z",
+        "read": true
+      }
+    ]
+  }

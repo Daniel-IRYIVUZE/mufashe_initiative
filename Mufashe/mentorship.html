@@ -3,120 +3,358 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mufashe Initiative - Home</title>
+    <meta name="description" content="Mentorship Program for Young Mothers - Mufashe Initiative">
+    <title>Mufashe Initiative - Mentorship</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body style="background-color: rgb(240, 226, 220);">
-    <header>
-        <nav>
-            <div >MUFASHE Initiative</div>
-            <div >
-                <a href="index.html">HOME</a>
-                <a href="mentorship.html" class="active">MENTORSHIP</a>
-                <a href="mental-health.html">MENTAL HEALTH</a>
-                <a href="stories.html">STORIES</a>
-                <a href="resources.html">RESOURCES</a>
-                <a href="contact.html">CONTACT</a>
-                <button>JOIN</button>
+<body class="light-theme">
+    <header class="site-header">
+        <nav class="main-navigation">
+            <div class="logo">
+                <span class="logo-icon"><i class="fas fa-hands-helping"></i></span>
+                <span>MUFASHE Initiative</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html"><i class="fas fa-home"></i> HOME</a></li>
+                <li><a href="mentorship.html" class="active"><i class="fas fa-user-graduate"></i> MENTORSHIP</a></li>
+                <li><a href="mental-health.html"><i class="fas fa-brain"></i> MENTAL HEALTH</a></li>
+                <li><a href="stories.html"><i class="fas fa-book-open"></i> STORIES</a></li>
+                <li><a href="resources.html"><i class="fas fa-book"></i> RESOURCES</a></li>
+                <li><a href="contact.html"><i class="fas fa-envelope"></i> CONTACT</a></li>
+                <li><a href="login.html" class="join-button"><i class="fas fa-user-plus"></i> JOIN</a></li>
+            </ul>
+            <div class="theme-toggle">
+                <button id="theme-switcher" aria-label="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
             </div>
         </nav>
     </header>
 
     <main class="main-content">
-        <section>
-            <h1 >Find a Mentor Who Understands You</h1>
-            <p >Get guidance, encouragement, and support from women who have been in your shoes.</p>
-        </section> 
-        <button>
-            Apply for a Mentor
-        </button>
-        <section  class="quick-access-new">
-            <div>
-                <h2 class="emergency-support__title">
-                     How It Works Section
-            </h2 >
-            <p>Step 1 : <span>fill out short form about your needs</span></p>
-            <p>Step 2 : <span>We match you with a mentor based on your goals.</span></p>
-            <p>Step 3 : <span>Begin regular online or in-person mentorship sessions.</span></p>
-            </div>
-            <button>Get started</button>
-        </section>
-
-        <section class="emergency-support">
-            <h2 class="emergency-support__title">Find a Mentor Section</h2>
-            <div class="footer__content">
-                <div>
-              <h5># Amina</h5>               
-              <p>"I became a mother at 17.
-                Now I run a business and
-                want to help others."
-            <button>connect me !</button>  
-            </p> 
-            </div>
-            <div>
-                <h5># Amina</h5>               
-                <p>"I became a mother at 17.
-                    Now I run a business and
-                    want to help others."
-                <button>connect me !</button>  
-                </p> 
+        <section class="mentorship-hero">
+            <div class="hero-content">
+                <h1>Find a Mentor Who Understands You</h1>
+                <p>Get guidance, encouragement, and support from women who have walked similar paths.</p>
+                <div class="cta-container">
+                    <a href="#apply" class="cta-button pulse-animation">Apply for a Mentor <i class="fas fa-arrow-right"></i></a>
+                    <a href="#how-it-works" class="scroll-down">
+                        <i class="fas fa-chevron-down"></i>
+                    </a>
                 </div>
-            <div>
-            <h5># Amina</h5>               
-            <p>"I became a mother at 17.
-                Now I run a business and
-                want to help others."
-            <button>connect me !</button>  
-            </p> 
             </div>
-            </div>
-            <button>Meet More Mentors</button>
+            <div class="hero-overlay"></div>
         </section>
 
-        <section class="become-mentor">
-            <div class="container">
-                <h1 class="section-title">Want to Become a Mentor?</h1>
-                <h2 class="section-title"> Help Young Mothers Find Their Path</h2>
-                <p class="section-subtitle">If you have experience or expertise in mentorship, sign up and change lives.            </p>
-                <form>
-                    <input type="text" placeholder="Enter full names">
-                    <input type="text" placeholder="Enter mobile phone">
-                    <input type="text" placeholder="Enter your specialization">
-                    <input type="text" placeholder="Enter your location">
-                    <button class="join-btn">Sign up</button>
-                  </form>
-                 
+        <section id="how-it-works" class="how-it-works">
+            <div class="section-header">
+                <h2>How Our Mentorship Program Works</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="steps-container">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <div class="step-icon">
+                        <i class="fas fa-user-edit"></i>
+                    </div>
+                    <h3>Complete Your Profile</h3>
+                    <p>Tell us about yourself, your challenges, and your goals through our simple application form.</p>
+                    <div class="step-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <div class="step-icon">
+                        <i class="fas fa-people-arrows"></i>
+                    </div>
+                    <h3>Get Matched</h3>
+                    <p>We carefully match you with a mentor based on your needs, location, and aspirations.</p>
+                    <div class="step-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <div class="step-icon">
+                        <i class="fas fa-hiking"></i>
+                    </div>
+                    <h3>Start Your Journey</h3>
+                    <p>Begin regular mentorship sessions either online or in-person in your community.</p>
+                    <div class="step-check">
+                        <i class="fas fa-check"></i>
+                    </div>
+                </div>
+            </div>
+            <a href="#apply" class="get-started-button">Get Started Today <i class="fas fa-rocket"></i></a>
+        </section>
+
+        <section class="mentor-profiles">
+            <div class="section-header">
+                <h2>Meet Some of Our Mentors</h2>
+                <div class="underline"></div>
+                <p>These successful women were once young mothers facing challenges similar to yours.</p>
+            </div>
+            
+            <div class="mentors-grid">
+                <article class="mentor-card">
+                    <div class="mentor-image">
+                        <img src="images/mentor1.png" alt="Amina mentor" loading="lazy">
+                        <div class="mentor-overlay">
+                            <div class="mentor-social">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mentor-content">
+                        <h3>Amina</h3>
+                        <p class="mentor-location"><i class="fas fa-map-marker-alt"></i> Kigali | Business Owner</p>
+                        <p class="mentor-bio">"I became a mother at 17. Through determination and support, I now run a successful catering business and want to help others find their path."</p>
+                        <div class="mentor-expertise">
+                            <span><i class="fas fa-store"></i> Entrepreneuship</span>
+                            <span><i class="fas fa-user-friends"></i> Single Parenting</span>
+                            <span><i class="fas fa-coins"></i> Financial Literacy</span>
+                        </div>
+                        <div class="mentor-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span>4.5 (23)</span>
+                            </div>
+                        </div>
+                        <a href="login.html" class="connect-button">Connect with Amina <i class="fas fa-comments"></i></a>
+                    </div>
+                </article>
+                <article class="mentor-card">
+                    <div class="mentor-image">
+                        <img src="images/mentor2.png" alt="Claire mentor" loading="lazy">
+                        <div class="mentor-overlay">
+                            <div class="mentor-social">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mentor-content">
+                        <h3>Claire</h3>
+                        <p class="mentor-location"><i class="fas fa-map-marker-alt"></i> Musanze | Nurse</p>
+                        <p class="mentor-bio">"I returned to school after having my baby at 16. Now I'm a registered nurse helping young mothers navigate healthcare challenges."</p>
+                        <div class="mentor-expertise">
+                            <span><i class="fas fa-heartbeat"></i> Healthcare</span>
+                            <span><i class="fas fa-graduation-cap"></i> Returning to Education</span>
+                            <span><i class="fas fa-clock"></i> Time Management</span>
+                        </div>
+                        <div class="mentor-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>5.0 (18)</span>
+                            </div>
+                        </div>
+                        <a href="login.html" class="connect-button">Connect with Claire <i class="fas fa-comments"></i></a>
+                    </div>
+                </article>
+                <article class="mentor-card">
+                    <div class="mentor-image">
+                        <img src="images/mentor3.png" alt="Grace mentor" loading="lazy">
+                        <div class="mentor-overlay">
+                            <div class="mentor-social">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mentor-content">
+                        <h3>Grace</h3>
+                        <p class="mentor-location"><i class="fas fa-map-marker-alt"></i> Rubavu | IT Professional</p>
+                        <p class="mentor-bio">"As a teen mom in tech, I faced many doubts. Now I lead a team of developers and mentor young women entering STEM fields."</p>
+                        <div class="mentor-expertise">
+                            <span><i class="fas fa-laptop-code"></i> Technology Careers</span>
+                            <span><i class="fas fa-balance-scale"></i> Work-Life Balance</span>
+                            <span><i class="fas fa-people-carry"></i> Breaking Stereotypes</span>
+                        </div>
+                        <div class="mentor-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>5.0 (32)</span>
+                            </div>
+                        </div>
+                        <a href="login.html" class="connect-button">Connect with Grace <i class="fas fa-comments"></i></a>
+                    </div>
+                </article>
+            </div>
+            <a href="mentors.html" class="view-more-mentors">View More Mentor Profiles <i class="fas fa-long-arrow-alt-right"></i></a>
+        </section>
+
+        <section id="apply" class="mentee-application">
+            <div class="application-container">
+                <div class="section-header">
+                    <h2>Apply for a Mentor</h2>
+                    <div class="underline"></div>
+                    <p>Take the first step toward achieving your goals by connecting with an experienced mentor.</p>
+                </div>
+                <form class="application-form" action="#" method="POST">
+                    <div class="form-group">
+                        <i class="fas fa-user"></i>
+                        <input type="text" placeholder="Enter full names" required>
+                    </div>
+                    <div class="form-group">
+                        <i class="fas fa-birthday-cake"></i>
+                        <input type="number" placeholder="Enter your age" min="13" max="35" required>
+                    </div>
+                    <div class="form-group">
+                        <i class="fas fa-mobile-alt"></i>
+                        <input type="tel" placeholder="Enter mobile phone" required>
+                    </div>
+                    <div class="form-group">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <input type="text" placeholder="Enter your location" required>
+                    </div>
+                    <div class="form-group">
+                        <i class="fas fa-bullseye"></i>
+                        <select required>
+                            <option value="">What are your primary goals?</option>
+                            <option value="education">Continue my education</option>
+                            <option value="career">Start a career</option>
+                            <option value="business">Build a business</option>
+                            <option value="parenting">Improve parenting skills</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <i class="fas fa-comment-dots"></i>
+                        <textarea placeholder="Briefly describe your situation and what you hope to gain from mentorship" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-application">Submit Application <i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </section>
+
+        <section class="become-mentor-section">
+            <div class="mentor-container">
+                <div class="section-header">
+                    <h2>Want to Become a Mentor?</h2>
+                    <div class="underline"></div>
+                    <h3>Help Young Mothers Find Their Path</h3>
+                    <p>If you have experience overcoming challenges as a young mother, your guidance could change lives. We provide training and support for all our mentors.</p>
+                </div>
+                
+                <div class="mentor-benefits">
+                    <h4><i class="fas fa-gift"></i> Benefits of Being a Mentor:</h4>
+                    <ul>
+                        <li><i class="fas fa-heart"></i> Make a meaningful difference in someone's life</li>
+                        <li><i class="fas fa-chart-line"></i> Develop leadership and coaching skills</li>
+                        <li><i class="fas fa-users"></i> Join a supportive network of women</li>
+                        <li><i class="fas fa-graduation-cap"></i> Receive professional development training</li>
+                        <li><i class="fas fa-clock"></i> Flexible time commitment (4-6 hours/month)</li>
+                    </ul>
+                </div>
+                
+                <form class="mentor-signup-form" action="#" method="POST">
+                    <div class="form-group">
+                        <i class="fas fa-user"></i>
+                        <input type="text" placeholder="Enter full names" required>
+                    </div>
+                    <div class="form-group">
+                        <i class="fas fa-mobile-alt"></i>
+                        <input type="tel" placeholder="Enter mobile phone" required>
+                    </div>
+                    <div class="form-group">
+                        <i class="fas fa-briefcase"></i>
+                        <input type="text" placeholder="Your profession/specialization" required>
+                    </div>
+                    <div class="form-group">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <input type="text" placeholder="Enter your location" required>
+                    </div>
+                    <div class="form-group">
+                        <i class="fas fa-comment-dots"></i>
+                        <textarea placeholder="Briefly share your story and why you want to mentor" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="signup-button">Sign Up to Mentor <i class="fas fa-user-plus"></i></button>
+                </form>
             </div>
         </section>
     </main>
 
-    <footer class="footer">
-        <div class="footer__content">
-            <div class="footer__links">
-                <h2>MUFASHE</h2>
-                 <p>Initiative</p>
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h2><i class="fas fa-hands-helping"></i> MUFASHE Initiative</h2>
+                <p>Empowering young mothers in Rwanda through mentorship, mental health support, and community building.</p>
+                <div class="newsletter">
+                    <input type="email" placeholder="Your email address">
+                    <button type="submit">Subscribe</button>
+                </div>
             </div>
-            <div class="footer__links">
-                <h4>Quick Links</h4>
-                <a href="index.html">Home</a>
-                <a href="mentorship.html">Mentorship</a>
-                <a href="mental-health.html">Mental Health</a>
-                <a href="stories.html">Stories</a>
-                <a href="contact.html">Contact</a>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                    <li><a href="mentorship.html"><i class="fas fa-chevron-right"></i> Mentorship</a></li>
+                    <li><a href="mental-health.html"><i class="fas fa-chevron-right"></i> Mental Health</a></li>
+                    <li><a href="stories.html"><i class="fas fa-chevron-right"></i> Stories</a></li>
+                    <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                </ul>
             </div>
-            <div class="footer__links">
-                <h4>Social Media Links</h4>
-                <a href="#">Facebook</a>
-                <a href="#">Instagram</a>
-                <a href="#">Twitter</a>
-                <a href="#">WhatsApp</a>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <address>
+                    <p><i class="fas fa-map-marker-alt"></i> KG 123 St, Kigali</p>
+                    <p><i class="fas fa-envelope"></i> Email: info@mufashe.org</p>
+                    <p><i class="fas fa-phone"></i> Phone: +250 780 123 456</p>
+                </address>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+                <div class="app-download">
+                    <button class="app-store">
+                        <i class="fab fa-apple"></i> App Store
+                    </button>
+                    <button class="play-store">
+                        <i class="fab fa-google-play"></i> Play Store
+                    </button>
+                </div>
             </div>
         </div>
-        <br>
-        <div class="footer__copyright">
-            <p style="text-align: center;">Copyright 2025. All Rights Reserved.</p>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Mufashe Initiative. All Rights Reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Sitemap</a>
+            </div>
         </div>
     </footer>
+
+    <script src="js/script.js"></script>
 </body>
 </html>

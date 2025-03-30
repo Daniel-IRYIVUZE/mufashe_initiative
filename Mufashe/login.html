@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Login to Mufashe Initiative">
+    <title>Mufashe Initiative - Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="light-theme">
+    <header class="site-header">
+        <nav class="main-navigation">
+            <div class="logo">
+                <span class="logo-icon"><i class="fas fa-hands-helping"></i></span>
+                <span>MUFASHE Initiative</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html"><i class="fas fa-home"></i> HOME</a></li>
+                <li><a href="mentorship.html"><i class="fas fa-user-graduate"></i> MENTORSHIP</a></li>
+                <li><a href="mental-health.html"><i class="fas fa-brain"></i> MENTAL HEALTH</a></li>
+                <li><a href="stories.html"><i class="fas fa-book-open"></i> STORIES</a></li>
+                <li><a href="resources.html"><i class="fas fa-book"></i> RESOURCES</a></li>
+                <li><a href="contact.html"><i class="fas fa-envelope"></i> CONTACT</a></li>
+                <li><a href="register.html" class="join-button"><i class="fas fa-user-plus"></i> SIGNUP</a></li>
+            </ul>
+            <div class="theme-toggle">
+                <button id="theme-switcher" aria-label="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content auth-page">
+        <section class="auth-container">
+            <div class="auth-form">
+                <h1>Welcome Back</h1>
+                <p>Login to access your personalized dashboard and community features.</p>
+                
+                <form action="dashboard.html" method="POST" class="login-form">
+                    <div class="form-group">
+                        <label for="email">Email or Phone Number</label>
+                        <input type="text" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required>
+                        <a href="forgot-password.html" class="forgot-password">Forgot password?</a>
+                    </div>
+                    <button type="submit" class="auth-button">Login</button>
+                </form>
+                
+                <div class="auth-divider">
+                    <span>OR</span>
+                </div>
+                
+                <div class="social-login">
+                    <button class="social-button facebook">
+                        Continue with Facebook
+                    </button>
+                    <button class="social-button google">
+                        Continue with Google
+                    </button>
+                </div>
+                
+                <p class="auth-switch">Don't have an account? <a href="register.html">Sign up</a></p>
+            </div>
+            
+            <div class="auth-image">
+                <img src="images/auth-image.png" alt="Community support">
+                <div class="auth-quote">
+                    <p>"Mufashe helped me find my strength when I needed it most."</p>
+                    <footer>- Claire, Rubavu</footer>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h2><i class="fas fa-hands-helping"></i> MUFASHE Initiative</h2>
+                <p>Empowering young mothers in Rwanda through mentorship, mental health support, and community building.</p>
+                <div class="newsletter">
+                    <input type="email" placeholder="Your email address">
+                    <button type="submit">Subscribe</button>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                    <li><a href="mentorship.html"><i class="fas fa-chevron-right"></i> Mentorship</a></li>
+                    <li><a href="mental-health.html"><i class="fas fa-chevron-right"></i> Mental Health</a></li>
+                    <li><a href="stories.html"><i class="fas fa-chevron-right"></i> Stories</a></li>
+                    <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <address>
+                    <p><i class="fas fa-map-marker-alt"></i> KG 123 St, Kigali</p>
+                    <p><i class="fas fa-envelope"></i> Email: info@mufashe.org</p>
+                    <p><i class="fas fa-phone"></i> Phone: +250 780 123 456</p>
+                </address>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Mufashe Initiative. All Rights Reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Sitemap</a>
+            </div>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>

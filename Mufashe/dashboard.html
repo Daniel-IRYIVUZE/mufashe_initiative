@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mentor Dashboard - Mufashe Initiative">
+    <title>Mufashe Initiative - Mentor Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+    <header class="site-header">
+        <nav class="main-navigation">
+            <div class="logo">
+                <i class="fas fa-hands-helping logo-icon"></i>
+                <span>MUFASHE</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html"><i class="fas fa-home"></i> HOME</a></li>
+                <li><a href="mentorship.html"><i class="fas fa-user-graduate"></i> MENTORSHIP</a></li>
+                <li><a href="mental-health.html"><i class="fas fa-brain"></i> MENTAL HEALTH</a></li>
+                <li><a href="stories.html"><i class="fas fa-book-open"></i> STORIES</a></li>
+                <li><a href="resources.html"><i class="fas fa-book"></i> RESOURCES</a></li>
+                <li><a href="contact.html"><i class="fas fa-envelope"></i> CONTACT</a></li>
+                <li class="theme-toggle">
+                    <button id="themeToggleBtn"><i class="fas fa-moon"></i></button>
+                </li>
+                <li>
+                    <a href="profile.html" class="user-profile">
+                        <img src="images/user-avatar.png" alt="User profile" id="userAvatar">
+                    </a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content dashboard">
+        <aside class="dashboard-sidebar">
+            <div class="user-profile-card">
+                <img src="images/mentor-avatar.png" alt="User profile" class="profile-avatar" id="sidebarAvatar">
+                <h3>Hello, <span id="usernameDisplay">Claire U.</span></h3>
+                <p class="user-role" id="userRoleDisplay">Mentor</p>
+                <p><i class="fas fa-calendar-alt"></i> Joined January 2023</p>
+            </div>
+                        
+            <nav class="dashboard-nav">
+                <ul>
+                    <li><a href="dashboard.html" class="active"><i class="fas fa-tachometer-alt"></i> <span>Dashboard</span></a></li>
+                    <li><a href="profile.html"><i class="fas fa-user"></i> <span>My Profile</span></a></li>
+                    <li><a href="mentorship.html"><i class="fas fa-user-graduate"></i> <span>My Mentees</span></a></li>
+                    <li><a href="support-groups.html"><i class="fas fa-users"></i> <span>Support Groups</span></a></li>
+                    <li><a href="my-resources.html"><i class="fas fa-bookmark"></i> <span>Saved Resources</span></a></li>
+                    <li><a href="messages.html"><i class="fas fa-comments"></i> <span>Messages</span> <span class="notification-badge">3</span></a></li>
+                    <li><a href="settings.html"><i class="fas fa-cog"></i> <span>Settings</span></a></li>
+                    <li><a href="#" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> <span>Logout</span></a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <section class="dashboard-content">
+            <div class="dashboard-header">
+                <h1>Mentor Dashboard</h1>
+                <p>Welcome back! Here's your mentoring overview and activities.</p>
+                <div class="dashboard-stats">
+                    <div class="stat-card">
+                        <i class="fas fa-calendar-check"></i>
+                        <div>
+                            <h3>Upcoming Sessions</h3>
+                            <p id="upcomingSessionsCount">Loading...</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <h3>Completed Sessions</h3>
+                            <p id="completedSessionsCount">Loading...</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-users"></i>
+                        <div>
+                            <h3>Active Mentees</h3>
+                            <p id="menteesCount">Loading...</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-star"></i>
+                        <div>
+                            <h3>Your Rating</h3>
+                            <p id="mentorRating">Loading... <small>/5</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                    
+            <div class="dashboard-widgets">
+                <div class="widget upcoming-events">
+                    <div class="widget-header">
+                        <h2><i class="fas fa-calendar-alt"></i> Upcoming Events</h2>
+                        <a href="events.html" class="view-all">View All</a>
+                    </div>
+                    <div class="event-list" id="upcomingEventsContainer">
+                        <!-- Events will be loaded here -->
+                    </div>
+                </div>
+                            
+                <div class="widget mentorship-status">
+                    <div class="widget-header">
+                        <h2><i class="fas fa-user-graduate"></i> Recent Mentee</h2>
+                        <a href="mentorship.html" class="view-all">View All</a>
+                    </div>
+                    <div class="mentorship-card" id="recentMenteeContainer">
+                        <!-- Recent mentee will be loaded here -->
+                    </div>
+                </div>
+            </div>
+                    
+            <div class="dashboard-widgets">
+                <div class="widget community-updates">
+                    <div class="widget-header">
+                        <h2><i class="fas fa-bullhorn"></i> Community Updates</h2>
+                        <a href="#" class="view-all">View All</a>
+                    </div>
+                    <div id="communityUpdatesContainer">
+                        <!-- Updates will be loaded here -->
+                    </div>
+                </div>
+                            
+                <div class="widget quick-actions">
+                    <div class="widget-header">
+                        <h2><i class="fas fa-bolt"></i> Quick Actions</h2>
+                    </div>
+                    <div class="actions-grid">
+                        <a href="book-counseling.html" class="action-card">
+                            <i class="fas fa-heartbeat"></i>
+                            <h3>Book Counseling</h3>
+                            <p>Schedule a session with a mental health professional</p>
+                            <div class="action-hover"><i class="fas fa-arrow-right"></i></div>
+                        </a>
+                        <a href="find-mentor.html" class="action-card">
+                            <i class="fas fa-user-tie"></i>
+                            <h3>Find a Co-Mentor</h3>
+                            <p>Connect with another mentor</p>
+                            <div class="action-hover"><i class="fas fa-arrow-right"></i></div>
+                        </a>
+                        <a href="share-story.html" class="action-card">
+                            <i class="fas fa-pen-fancy"></i>
+                            <h3>Share Your Story</h3>
+                            <p>Inspire others with your journey</p>
+                            <div class="action-hover"><i class="fas fa-arrow-right"></i></div>
+                        </a>
+                        <a href="resources.html" class="action-card">
+                            <i class="fas fa-book-open"></i>
+                            <h3>Browse Resources</h3>
+                            <p>Access educational materials</p>
+                            <div class="action-hover"><i class="fas fa-arrow-right"></i></div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+                    
+            <!-- Mentor-Specific Section -->
+            <div class="widget mentor-sessions" id="mentorSessionsWidget">
+                <div class="widget-header">
+                    <h2><i class="fas fa-chalkboard-teacher"></i> Your Mentorship Sessions</h2>
+                    <button class="add-session-btn" id="addSessionBtn"><i class="fas fa-plus"></i> Add Session</button>
+                </div>
+                
+                <div class="session-tabs">
+                    <button class="session-tab active" data-tab="upcoming">Upcoming</button>
+                    <button class="session-tab" data-tab="completed">Completed</button>
+                    <button class="session-tab" data-tab="all">All Sessions</button>
+                </div>
+                
+                <div class="session-list" id="upcomingSessionsTab">
+                    <!-- Upcoming sessions will be loaded here -->
+                </div>
+                
+                <div class="session-list hidden" id="completedSessionsTab">
+                    <!-- Completed sessions will be loaded here -->
+                </div>
+                
+                <div class="session-list hidden" id="allSessionsTab">
+                    <!-- All sessions will be loaded here -->
+                </div>
+            </div>
+                    
+            <div class="widget recent-activity">
+                <div class="widget-header">
+                    <h2><i class="fas fa-history"></i> Recent Activity</h2>
+                    <a href="activity.html" class="view-all">View All</a>
+                </div>
+                <ul class="activity-list" id="recentActivityContainer">
+                    <!-- Activity will be loaded here -->
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <!-- Session Modal -->
+    <div class="modal" id="sessionModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 id="modalTitle">Add New Session</h2>
+            <form id="sessionForm">
+                <input type="hidden" id="sessionId">
+                <div class="form-group">
+                    <label for="menteeName">Mentee Name</label>
+                    <select id="menteeName" required>
+                        <option value="">Select Mentee</option>
+                        <!-- Mentees will be populated here -->
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="sessionDate">Date</label>
+                    <input type="date" id="sessionDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="sessionTime">Time</label>
+                    <input type="time" id="sessionTime" required>
+                </div>
+                <div class="form-group">
+                    <label for="sessionType">Session Type</label>
+                    <select id="sessionType" required>
+                        <option value="">Select type</option>
+                        <option value="career">Career Guidance</option>
+                        <option value="education">Education Planning</option>
+                        <option value="parenting">Parenting Skills</option>
+                        <option value="mental-health">Mental Health</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="sessionMode">Mode</label>
+                    <select id="sessionMode" required>
+                        <option value="online">Online</option>
+                        <option value="in-person">In-Person</option>
+                        <option value="phone">Phone Call</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="sessionNotes">Notes</label>
+                    <textarea id="sessionNotes" rows="3"></textarea>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="cancel-btn">Cancel</button>
+                    <button type="submit" class="save-btn">Save Session</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h2><i class="fas fa-hands-helping"></i> MUFASHE Initiative</h2>
+                <p>Empowering young mothers in Rwanda through mentorship, mental health support, and community building.</p>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                    <li><a href="mentorship.html"><i class="fas fa-chevron-right"></i> Mentorship</a></li>
+                    <li><a href="mental-health.html"><i class="fas fa-chevron-right"></i> Mental Health</a></li>
+                    <li><a href="stories.html"><i class="fas fa-chevron-right"></i> Stories</a></li>
+                    <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <address>
+                    <p><i class="fas fa-map-marker-alt"></i> KG 123 St, Kigali</p>
+                    <p><i class="fas fa-envelope"></i> info@mufashe.org</p>
+                    <p><i class="fas fa-phone"></i> +250 780 123 456</p>
+                </address>
+            </div>
+            <div class="footer-section">
+                <h3>Newsletter</h3>
+                <p>Subscribe to our newsletter for updates</p>
+                <form class="newsletter-form" id="newsletterForm">
+                    <input type="email" placeholder="Your email" required>
+                    <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Mufashe Initiative. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    
+    <!-- App Scripts -->
+    <script src="js/api.js"></script>
+    <script src="js/scriptdash.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

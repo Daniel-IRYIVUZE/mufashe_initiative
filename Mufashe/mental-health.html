@@ -3,133 +3,289 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mufashe Initiative - Home</title>
+    <meta name="description" content="Mental Health Support for Young Mothers - Mufashe Initiative">
+    <title>Mufashe Initiative - Mental Health</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-    <header>
-        <nav>
-            <div >MUFASHE Initiative</div>
-            <div >
-            <a href="index.html">HOME</a>
-            <a href="mentorship.html">MENTORSHIP</a>
-            <a href="mental-health.html" class="active">MENTAL HEALTH</a>
-            <a href="stories.html">STORIES</a>
-            <a href="resources.html">RESOURCES</a>
-            <a href="contact.html">CONTACT</a>
-            <button>JOIN</button>
+<body class="light-theme">
+    <header class="site-header">
+        <nav class="main-navigation">
+            <div class="logo">
+                <span class="logo-icon"><i class="fas fa-hands-helping"></i></span>
+                <span>MUFASHE Initiative</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html"><i class="fas fa-home"></i> HOME</a></li>
+                <li><a href="mentorship.html"><i class="fas fa-user-graduate"></i> MENTORSHIP</a></li>
+                <li><a href="mental-health.html" class="active"><i class="fas fa-brain"></i> MENTAL HEALTH</a></li>
+                <li><a href="stories.html"><i class="fas fa-book-open"></i> STORIES</a></li>
+                <li><a href="resources.html"><i class="fas fa-book"></i> RESOURCES</a></li>
+                <li><a href="contact.html"><i class="fas fa-envelope"></i> CONTACT</a></li>
+                <li><a href="login.html" class="join-button"><i class="fas fa-user-plus"></i> JOIN</a></li>
+            </ul>
+            <div class="theme-toggle">
+                <button id="theme-switcher" aria-label="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
             </div>
         </nav>
     </header>
 
     <main class="main-content">
-        <section>
-            <h1 >Your Mental Health Matters</h1>
-            <p >Find resources, counselling, and a community that supports you.</p>
+        <section class="mental-health-hero">
+            <div class="hero-content">
+                <h1>Your Mental Health Matters</h1>
+                <p>Find resources, counseling, and a community that supports your emotional well-being.</p>
+                <div class="cta-container">
+                    <a href="#counseling" class="cta-button pulse-animation">Talk to a Counselor <i class="fas fa-comments"></i></a>
+                    <a href="#resources" class="scroll-down">
+                        <i class="fas fa-chevron-down"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-overlay"></div>
+        </section>
 
-        <button>
-            Talk to a Counsellor
-        </button>
-    </section> 
-        <section class="quick-access-bg">
+        <section id="resources" class="mental-health-resources">
+            <div class="section-header">
+                <h2>Mental Health Articles & Tips</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="articles-grid">
+                <article class="article-card">
+                    <div class="article-image">
+                        <img src="images/stigma.png" alt="Overcoming stigma" loading="lazy">
+                        <div class="article-badge"><i class="fas fa-heart"></i> Popular</div>
+                    </div>
+                    <div class="article-content">
+                        <h3>How to Deal with Stigma and Shame</h3>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Understanding societal perceptions</li>
+                            <li><i class="fas fa-check-circle"></i> Building self-confidence</li>
+                            <li><i class="fas fa-check-circle"></i> Developing coping mechanisms</li>
+                            <li><i class="fas fa-check-circle"></i> Finding supportive communities</li>
+                            <li><i class="fas fa-check-circle"></i> Turning challenges into strengths</li>
+                        </ul>
+                        <div class="article-footer">
+                            <span class="read-time"><i class="far fa-clock"></i> 5 min read</span>
+                            <a href="articles/stigma.html" class="read-more">Read more <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+                <article class="article-card">
+                    <div class="article-image">
+                        <img src="images/postpartum.png" alt="Postpartum depression" loading="lazy">
+                    </div>
+                    <div class="article-content">
+                        <h3>Recognizing Postpartum Depression</h3>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Common symptoms to watch for</li>
+                            <li><i class="fas fa-check-circle"></i> When to seek professional help</li>
+                            <li><i class="fas fa-check-circle"></i> Self-care strategies</li>
+                            <li><i class="fas fa-check-circle"></i> Support systems for new mothers</li>
+                            <li><i class="fas fa-check-circle"></i> Treatment options available</li>
+                        </ul>
+                        <div class="article-footer">
+                            <span class="read-time"><i class="far fa-clock"></i> 7 min read</span>
+                            <a href="articles/postpartum.html" class="read-more">Read more <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+                <article class="article-card">
+                    <div class="article-image">
+                        <img src="images/stress.png" alt="Stress management" loading="lazy">
+                        <div class="article-badge"><i class="fas fa-fire"></i> Trending</div>
+                    </div>
+                    <div class="article-content">
+                        <h3>Stress Management for Young Mothers</h3>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Time management techniques</li>
+                            <li><i class="fas fa-check-circle"></i> Mindfulness exercises</li>
+                            <li><i class="fas fa-check-circle"></i> Affordable self-care ideas</li>
+                            <li><i class="fas fa-check-circle"></i> Balancing parenting and personal growth</li>
+                            <li><i class="fas fa-check-circle"></i> Building resilience</li>
+                        </ul>
+                        <div class="article-footer">
+                            <span class="read-time"><i class="far fa-clock"></i> 6 min read</span>
+                            <a href="articles/stress.html" class="read-more">Read more <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <a href="articles.html" class="view-all-articles">View All Articles <i class="fas fa-long-arrow-alt-right"></i></a>
+        </section>
+
+        <section id="counseling" class="counseling-section">
+            <div class="section-header">
+                <h2>Professional Counseling Services</h2>
+                <div class="underline"></div>
+                <p>Need to talk to someone? Our licensed counselors are here to listen and provide confidential support.</p>
+            </div>
             
-            <h2 class="emergency-support__title">
-                Mental Health Articles & Tips Section
-        </h2 >
-            <div>
-            <div>
-                <img alt="stigma" src="images/stigam.png">
-                <h5>How to Deal with Stigma and Shame</h5>
-                <ul>
-                    <li>Lorem ipsun now wants to drink milk Now</li>
-                    <li>Lorem ipsun now wants to drink milk Now</li>
-                    <li>Lorem ipsun now wants to drink milk Now</li>
-                    <li>Lorem ipsun now wants to drink milk Now</li>
-                    <li>Loren Suisun now wants to drink milk Now</li>
-                </ul>
-                <p>Read more
-                </p>
-            </div>
-            <div>
-                <img alt="stigma" src="images/stigam.png">
-                <h5>How to Deal with Stigma and Shame</h5>
-                <ul>
-                    <li>Lorem ipsun now wants to drink milk Now</li>
-                    <li>Lorem ipsun now wants to drink milk Now</li>
-                    <li>Lorem ipsun now wants to drink milk Now</li>
-                    <li>Lorem ipsun now wants to drink milk Now</li>
-                    <li>Loren Suisun now wants to drink milk Now</li>
-                </ul>
-                <p>Read more
-                </p>
-            </div>
-            <div>
-                <img alt="stigma" src="images/stigam.png">
-                <h5>How to Deal with Stigma and Shame</h5>
-                <ul>
-                    <li>Lorem ipsun now wants to drink milk Now</li>
-                    <li>Lorem ipsun now wants to drink milk Now</li>
-                    <li>Lorem ipsun now wants to drink milk Now</li>
-                    <li>Lorem ipsun now wants to drink milk Now</li>
-                    <li>Loren Suisun now wants to drink milk Now</li>
-                </ul>
-                <p>Read more
-                </p>
-            </div>
+            <div class="counseling-options">
+                <div class="option-card">
+                    <div class="option-icon">
+                        <i class="fas fa-user-friends"></i>
+                    </div>
+                    <h3>One-on-One Sessions</h3>
+                    <p>Private video or phone sessions with trained counselors</p>
+                    <div class="option-features">
+                        <span><i class="fas fa-check"></i> Confidential</span>
+                        <span><i class="fas fa-check"></i> Flexible scheduling</span>
+                        <span><i class="fas fa-check"></i> 50 minutes per session</span>
+                    </div>
+                    <a href="login.html" class="option-button">Book a Session <i class="fas fa-calendar-alt"></i></a>
+                </div>
+                <div class="option-card">
+                    <div class="option-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Support Groups</h3>
+                    <p>Connect with other young mothers facing similar challenges</p>
+                    <div class="option-features">
+                        <span><i class="fas fa-check"></i> Weekly meetings</span>
+                        <span><i class="fas fa-check"></i> Moderated by professionals</span>
+                        <span><i class="fas fa-check"></i> Safe environment</span>
+                    </div>
+                    <a href="login.html" class="option-button">Join a Group <i class="fas fa-sign-in-alt"></i></a>
+                </div>
+                <div class="option-card">
+                    <div class="option-icon">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <h3>Emergency Support</h3>
+                    <p>24/7 crisis intervention and immediate assistance</p>
+                    <div class="option-features">
+                        <span><i class="fas fa-check"></i> Available anytime</span>
+                        <span><i class="fas fa-check"></i> Immediate response</span>
+                        <span><i class="fas fa-check"></i> Confidential</span>
+                    </div>
+                    <a href="tel:+250780162164" class="emergency-button">Call Now <i class="fas fa-phone"></i></a>
+                </div>
             </div>
         </section>
 
-        <section class="emergency-support">
-            <h2 class="emergency-support__title">Inspiring Stories from Brave Young Mothers</h2>
-            <div>
-            <p>Need to talk to someone? Our counsellors are here to listen.</p>
+        <section class="self-assessment">
+            <div class="assessment-container">
+                <div class="assessment-content">
+                    <h2>Mental Health Self-Assessment</h2>
+                    <p>Take our brief questionnaire to understand your emotional well-being and get personalized recommendations.</p>
+                    <ul class="assessment-features">
+                        <li><i class="fas fa-lock"></i> Completely confidential</li>
+                        <li><i class="fas fa-clock"></i> Takes only 5-10 minutes</li>
+                        <li><i class="fas fa-chart-bar"></i> Personalized results</li>
+                        <li><i class="fas fa-hands-helping"></i> Resource recommendations</li>
+                    </ul>
+                    <a href="assessment.html" class="assessment-button">Start Assessment <i class="fas fa-play"></i></a>
+                </div>
+                <div class="assessment-image">
+                    <img src="images/assessment.png" alt="Mental health assessment" loading="lazy">
+                </div>
             </div>
-            <button>Book a Free Session</button>
         </section>
-        <section class="become-mentor">
-            <div class="container">
-                <h2 class="section-title">Join a Support Group</h2>
-                <h4>Find Strength in Community</h4>
-                <p class="section-subtitle">Join a small group of young mothers who share your journey.</p>
-                <form>
-                    <input type="text" placeholder="Enter full names">
-                    <input type="text" placeholder="Enter mobile phone">
-                    <input type="text" placeholder="Enter your specialization">
-                    <input type="text" placeholder="Enter your location">
-                    <button class="join-btn">JOIN US</button>
-                  </form>
-                 
+
+        <section class="support-group-section">
+            <div class="support-group-container">
+                <div class="section-header">
+                    <h2>Join a Support Group</h2>
+                    <div class="underline"></div>
+                    <h3>Find Strength in Community</h3>
+                    <p>Connect with other young mothers who understand your journey in our safe, moderated support groups.</p>
+                </div>
+                
+                <form class="support-group-form" action="#" method="POST">
+                    <div class="form-group">
+                        <i class="fas fa-user"></i>
+                        <input type="text" placeholder="Enter full names" required>
+                    </div>
+                    <div class="form-group">
+                        <i class="fas fa-mobile-alt"></i>
+                        <input type="tel" placeholder="Enter mobile phone" required>
+                    </div>
+                    <div class="form-group">
+                        <i class="fas fa-users"></i>
+                        <select required>
+                            <option value="">Select preferred group type</option>
+                            <option value="new-moms">New Mothers (0-1 year)</option>
+                            <option value="returning-school">Returning to School</option>
+                            <option value="entrepreneurs">Young Entrepreneur Mothers</option>
+                            <option value="general">General Support</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <input type="text" placeholder="Enter your location">
+                    </div>
+                    <button type="submit" class="join-btn">Join Support Group <i class="fas fa-user-plus"></i></button>
+                </form>
             </div>
         </section>
     </main>
 
-    <footer class="footer">
-        <div class="footer__content">
-            <div class="footer__links">
-                <h2>MUFASHE</h2>
-                 <p>Initiative</p>
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h2><i class="fas fa-hands-helping"></i> MUFASHE Initiative</h2>
+                <p>Empowering young mothers in Rwanda through mentorship, mental health support, and community building.</p>
+                <div class="newsletter">
+                    <input type="email" placeholder="Your email address">
+                    <button type="submit">Subscribe</button>
+                </div>
             </div>
-            <div class="footer__links">
-                <h4>Quick Links</h4>
-                <a href="index.html">Home</a>
-                <a href="mentorship.html">Mentorship</a>
-                <a href="mental-health.html">Mental Health</a>
-                <a href="stories.html">Stories</a>
-                <a href="contact.html">Contact</a>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                    <li><a href="mentorship.html"><i class="fas fa-chevron-right"></i> Mentorship</a></li>
+                    <li><a href="mental-health.html"><i class="fas fa-chevron-right"></i> Mental Health</a></li>
+                    <li><a href="stories.html"><i class="fas fa-chevron-right"></i> Stories</a></li>
+                    <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                </ul>
             </div>
-            <div class="footer__links">
-                <h4>Social Media Links</h4>
-                <a href="#">Facebook</a>
-                <a href="#">Instagram</a>
-                <a href="#">Twitter</a>
-                <a href="#">WhatsApp</a>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <address>
+                    <p><i class="fas fa-map-marker-alt"></i> KG 123 St, Kigali</p>
+                    <p><i class="fas fa-envelope"></i> Email: info@mufashe.org</p>
+                    <p><i class="fas fa-phone"></i> Phone: +250 780 123 456</p>
+                </address>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+                <div class="app-download">
+                    <button class="app-store">
+                        <i class="fab fa-apple"></i> App Store
+                    </button>
+                    <button class="play-store">
+                        <i class="fab fa-google-play"></i> Play Store
+                    </button>
+                </div>
             </div>
         </div>
-        <br>
-        <div class="footer__copyright">
-            <p style="text-align: center;">Copyright 2025. All Rights Reserved.</p>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Mufashe Initiative. All Rights Reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Sitemap</a>
+            </div>
         </div>
     </footer>
+
+    <script src="js/script.js"></script>
 </body>
 </html>

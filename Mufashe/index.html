@@ -3,114 +3,275 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mufashe Initiative - Supporting young mothers in Rwanda with mentorship, mental health resources, and community">
     <title>Mufashe Initiative - Home</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-    <header>
-        <nav>
-            <div >MUFASHE Initiative</div>
-            <div >
-                <a href="index.html" class="active">HOME</a>
-                <a href="Mentorship.html">MENTORSHIP</a>
-                <a href="mental-health.html">MENTAL HEALTH</a>
-                <a href="Stories.html">STORIES</a>
-                <a href="resources.html">RESOURCES</a>
-                <a href="contact.html">CONTACT</a>
-                <button>JOIN</button>
+<body class="light-theme">
+    <header class="site-header">
+        <nav class="main-navigation">
+            <div class="logo">
+                <span class="logo-icon"><i class="fas fa-hands-helping"></i></span>
+                <span>MUFASHE Initiative</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active"><i class="fas fa-home"></i> HOME</a></li>
+                <li><a href="mentorship.html"><i class="fas fa-user-graduate"></i> MENTORSHIP</a></li>
+                <li><a href="mental-health.html"><i class="fas fa-brain"></i> MENTAL HEALTH</a></li>
+                <li><a href="stories.html"><i class="fas fa-book-open"></i> STORIES</a></li>
+                <li><a href="resources.html"><i class="fas fa-book"></i> RESOURCES</a></li>
+                <li><a href="contact.html"><i class="fas fa-envelope"></i> CONTACT</a></li>
+                <li><a href="login.html" class="join-button"><i class="fas fa-user-plus"></i> JOIN</a></li>
+            </ul>
+            <div class="theme-toggle">
+                <button id="theme-switcher" aria-label="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
             </div>
         </nav>
     </header>
+
     <main class="main-content">
-        <Section style="background-image: url(images/image.png);">
-        <section style="min-height: 200px; padding: 5px 2px; text-align: center;">
-            <h1 style="justify-content: center; align-items: center; margin-top: 50px;">YOU ARE NOT ALONE! FIND SUPPORT & HELP. </h1>
-            <p >A safe space for young mothers to heal, grow, and thrive.</p>
-        <button>
-            Get mentorship
-        </button>
-    </section> 
-        <section class="quick-access">
-            <div>
-                <h2 class="emergency-support__title">
-                WHY WE EXIST
-            </h2 >
-            <div>
-                Every year, thousands of young women face early pregnancy with fear and uncertainty. Our mission is to provide mentorship, mental health support, and educational resources to help young mothers build a brighter future.
+        <section class="hero-banner">
+            <div class="hero-content">
+                <h1>You Are Not Alone! Find Support & Help</h1>
+                <p>A safe space for young mothers to heal, grow, and thrive.</p>
+                <div class="cta-container">
+                    <a href="mentorship.html" class="cta-button pulse-animation">Get Mentorship <i class="fas fa-arrow-right"></i></a>
+                    <a href="#mission" class="scroll-down">
+                        <i class="fas fa-chevron-down"></i>
+                    </a>
+                </div>
             </div>
+            <div class="hero-overlay"></div>
+        </section>
+
+        <section id="mission" class="mission-section">
+            <div class="section-header">
+                <h2>Why We Exist</h2>
+                <div class="underline"></div>
+            </div>
+            <p class="mission-statement">Every year, thousands of young women in Rwanda face early pregnancy with fear and uncertainty. Our mission is to provide mentorship, mental health support, and educational resources to help young mothers build a brighter future.</p>
+            
+            <div class="stats-container">
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 data-count="2000">0+</h3>
+                    <p>Young mothers supported annually</p>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3 data-count="85">0%</h3>
+                    <p>Success rate in continuing education</p>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h3 data-count="50">0+</h3>
+                    <p>Trained mentors across Rwanda</p>
+                </div>
             </div>
         </section>
-    </Section>
-        <section class="emergency-support">
-            <h2 class="emergency-support__title">INSPIRING STORIES FROM BRAVE YOUNG MOTHERS</h2>
-            <div class="footer__content">
-                <div>
-                <img alt="mother" src="images/woman.png">
-                <p>I thought my life was over,
-                    but now I’m a successful entrepreneur!
-                </p>
-                <h5>#MUGENI Claire</h5>
+
+        <section class="success-stories">
+            <div class="section-header">
+                <h2>Inspiring Stories From Brave Young Mothers</h2>
+                <div class="underline"></div>
             </div>
-            <div>
-                <img alt="moter" src="images/woman.png">
-                <p>I thought my life was over,
-                    but now I’m a successful entrepreneur!
-                </p>
-                <h5>#MUGENI Claire</h5>
+            <div class="stories-grid">
+                <article class="story-card">
+                    <div class="story-image">
+                        <img src="images/woman.png" alt="Claire Mugeni" loading="lazy">
+                        <div class="story-overlay"></div>
+                    </div>
+                    <div class="story-content">
+                        <p>"I thought my life was over, but with Mufashe's support, I'm now a successful entrepreneur!"</p>
+                        <footer>#MUGENI Claire, Kigali</footer>
+                    </div>
+                    <div class="story-social">
+                        <button class="story-like"><i class="far fa-heart"></i> Like</button>
+                        <button class="story-share"><i class="fas fa-share"></i> Share</button>
+                    </div>
+                </article>
+                <article class="story-card">
+                    <div class="story-image">
+                        <img src="images/woman2.png" alt="Grace Uwase" loading="lazy">
+                        <div class="story-overlay"></div>
+                    </div>
+                    <div class="story-content">
+                        <p>"The mentorship program helped me return to school and now I'm pursuing my nursing degree."</p>
+                        <footer>#UWASE Grace, Musanze</footer>
+                    </div>
+                    <div class="story-social">
+                        <button class="story-like"><i class="far fa-heart"></i> Like</button>
+                        <button class="story-share"><i class="fas fa-share"></i> Share</button>
+                    </div>
+                </article>
+                <article class="story-card">
+                    <div class="story-image">
+                        <img src="images/woman3.png" alt="Annette Mukandoli" loading="lazy">
+                        <div class="story-overlay"></div>
+                    </div>
+                    <div class="story-content">
+                        <p>"The mental health support saved me from depression. Now I help others in my community."</p>
+                        <footer>#MUKANDOLI Annette, Rubavu</footer>
+                    </div>
+                    <div class="story-social">
+                        <button class="story-like"><i class="far fa-heart"></i> Like</button>
+                        <button class="story-share"><i class="fas fa-share"></i> Share</button>
+                    </div>
+                </article>
             </div>
-            <div>
-                <img alt="moter" src="images/woman.png">
-                <p>I thought my life was over,
-                    but now I’m a successful entrepreneur!
-                </p>
-                <h5>#MUGENI Claire</h5>
-            </div>
+            <a href="stories.html" class="view-more">View More Success Stories <i class="fas fa-long-arrow-alt-right"></i></a>
+        </section>
+
+        <section class="join-section">
+            <div class="join-container">
+                <div class="section-header">
+                    <h2>Join Our Supportive Community</h2>
+                    <div class="underline"></div>
+                </div>
+                <p>Get mentorship, counseling, and connect with a group that understands your journey.</p>
+                <form class="join-form" action="#" method="POST">
+                    <div class="form-group">
+                        <i class="fas fa-user"></i>
+                        <input type="text" placeholder="Enter full names" required>
+                    </div>
+                    <div class="form-group">
+                        <i class="fas fa-venus-mars"></i>
+                        <select required>
+                            <option value="">Choose gender</option>
+                            <option value="female">Female</option>
+                            <option value="male">Male</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <i class="fas fa-birthday-cake"></i>
+                        <input type="number" placeholder="Enter your age" min="13" max="35" required>
+                    </div>
+                    <div class="form-group">
+                        <i class="fas fa-mobile-alt"></i>
+                        <input type="tel" placeholder="Enter mobile phone" required>
+                    </div>
+                    <div class="form-group">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <input type="text" placeholder="Enter your location" required>
+                    </div>
+                    <button type="submit" class="join-btn">Join Now <i class="fas fa-paper-plane"></i></button>
+                </form>
             </div>
         </section>
-        <section class="become-mentor">
-            <div class="container">
-                <h2 class="section-title">JOIN THE SUPPORTIVE TEAM</h2>
-                <p class="section-subtitle">Get mentorship,  counselling, and a group that understands you.</p>
-                <form>
-                    <input type="text" placeholder="Enter full names">
-                    <input type="text" placeholder="Choose gender">
-                    <input type="text" placeholder="Enter your age">
-                    <input type="text" placeholder="Enter mobile phone">
-                    <input type="text" placeholder="Enter your specialization">
-                    <input type="text" placeholder="Enter your location">
-                    <button class="join-btn">Join Now</button>
-                  </form>
+
+        <section class="quick-links">
+            <div class="section-header">
+                <h2>Quick Access to Resources</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="links-grid">
+                <a href="mental-health.html" class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Mental Health Support</h3>
+                    <p>Access counseling and mental health resources</p>
+                    <div class="resource-hover">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+                <a href="resources.html#scholarships" class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Education Scholarships</h3>
+                    <p>Find opportunities to continue your education</p>
+                    <div class="resource-hover">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+                <a href="resources.html#legal" class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h3>Legal Assistance</h3>
+                    <p>Get help with legal rights and documentation</p>
+                    <div class="resource-hover">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
             </div>
         </section>
     </main>
 
-    <footer class="footer">
-        <div class="footer__content">
-            <div class="footer__links">
-                <h2>MUFASHE</h2>
-                 <p>Initiative</p>
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h2><i class="fas fa-hands-helping"></i> MUFASHE Initiative</h2>
+                <p>Empowering young mothers in Rwanda through mentorship, mental health support, and community building.</p>
+                <div class="newsletter">
+                    <input type="email" placeholder="Your email address">
+                    <button type="submit">Subscribe</button>
+                </div>
             </div>
-            <div class="footer__links">
-                <h4>Quick Links</h4>
-                <a href="index.html">Home</a>
-                <a href="mentorship.html">Mentorship</a>
-                <a href="mental-health.html">Mental Health</a>
-                <a href="stories.html">Stories</a>
-                <a href="contact.html">Contact</a>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                    <li><a href="mentorship.html"><i class="fas fa-chevron-right"></i> Mentorship</a></li>
+                    <li><a href="mental-health.html"><i class="fas fa-chevron-right"></i> Mental Health</a></li>
+                    <li><a href="stories.html"><i class="fas fa-chevron-right"></i> Stories</a></li>
+                    <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                </ul>
             </div>
-            <div class="footer__links">
-                <h4>Social Media Links</h4>
-                <a href="#">Facebook</a>
-                <a href="#">Instagram</a>
-                <a href="#">Twitter</a>
-                <a href="#">WhatsApp</a>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <address>
+                    <p><i class="fas fa-map-marker-alt"></i> KG 123 St, Kigali</p>
+                    <p><i class="fas fa-envelope"></i> Email: info@mufashe.org</p>
+                    <p><i class="fas fa-phone"></i> Phone: +250 780 123 456</p>
+                </address>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+                <div class="app-download">
+                    <button class="app-store">
+                        <i class="fab fa-apple"></i> App Store
+                    </button>
+                    <button class="play-store">
+                        <i class="fab fa-google-play"></i> Play Store
+                    </button>
+                </div>
             </div>
         </div>
-        <br>
-        <div class="footer__copyright">
-            <p style="text-align: center;">Copyright 2025. All Rights Reserved.</p>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Mufashe Initiative. All Rights Reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Sitemap</a>
+            </div>
         </div>
     </footer>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
