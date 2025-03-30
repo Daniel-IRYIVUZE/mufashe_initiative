@@ -1,9 +1,9 @@
 // Variables
-$primary-color: #d67418;
-$secondary-color: #a044ff;
+$primary-color: #f88922;
+$secondary-color: #857e8b;
 $accent-color: #f76b1c;
 $light-text: #f8f9fa;
-$dark-text: #8a3b14;
+$dark-text: #e06b30;
 $light-bg: #f8f9fa;
 $dark-bg: #212529;
 $success-color: #28a745;
@@ -131,7 +131,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 0;
+    padding: 4rem 0;
     
     .logo {
         font-size: 1.5rem;
@@ -163,7 +163,7 @@ body {
                 align-items: center;
                 
                 i {
-                    margin-right: 8px;
+                    margin-right: 2px;
                 }
                 
                 &:hover {
@@ -224,7 +224,7 @@ body {
 // Hero Banner
 .hero-banner {
     height: 90vh;
-    background: url('../images/hero-bg.jpg') no-repeat center center/cover;
+    background: url('https://www.unesco.org/sites/default/files/styles/best_image/article/2024-07/UN0358839.jpg?itok=0guUf-Jf') no-repeat center center/cover;
     position: relative;
     margin-top: 70px;
     display: flex;
@@ -856,7 +856,6 @@ body {
     
     .footer-bottom {
         background-color: #1a252f;
-        padding: 1.5rem 0;
         text-align: center;
         
         p {
@@ -1032,7 +1031,7 @@ body {
 // Mentorship Hero
 .mentorship-hero {
     height: 80vh;
-    background: url('../images/mentorship-hero.jpg') no-repeat center center/cover;
+    background: url('https://www.globalbreastfeedingcollective.org/sites/unicef.org.globalbreastfeedingcollective/files/styles/standard_banner/public/UNI115923Homepage.JPG.webp?itok=q46iuWD5') no-repeat center center/cover;
     position: relative;
     margin-top: 70px;
     display: flex;
@@ -1719,7 +1718,7 @@ body.dark-theme {
 // Stories Page Specific Styles
 .stories-hero {
     height: 70vh;
-    background: url('../images/stories-hero.jpg') no-repeat center center/cover;
+    background: url('https://www.goerie.com/gcdn/authoring/2015/06/04/NETN/ghows-PA-1b047fc5-c50e-4b67-b529-03955f8f72ad-8eadb041.jpeg?width=660&height=434&fit=crop&format=pjpg&auto=webp') no-repeat center center/cover;
     position: relative;
     margin-top: 70px;
     display: flex;
@@ -2221,7 +2220,7 @@ body.dark-theme {
 
 .share-story {
     padding: 5rem 0;
-    background: url('../images/share-bg.jpg') no-repeat center center/cover;
+    background: url('https://cardiff.imgix.net/__data/assets/image/0018/36054/Mothers-of-Africa.png?w=873&h=491&fit=crop&q=60&auto=format') no-repeat center center/cover;
     position: relative;
     
     &::before {
@@ -2581,7 +2580,7 @@ body.dark-theme {
 // Resources Page Specific Styles
 .resources-hero {
     height: 70vh;
-    background: url('../images/resources-hero.jpg') no-repeat center center/cover;
+    background: url('https://kvinnatillkvinna.org/wp-content/uploads/2022/09/Kvinna-till-Kvinna-Empower-Rwanda-group.jpg') no-repeat center center/cover;
     position: relative;
     margin-top: 70px;
     display: flex;
@@ -3070,7 +3069,7 @@ body.dark-theme {
 // Resource Request Section
 .resource-request {
     padding: 5rem 0;
-    background: url('../images/request-bg.jpg') no-repeat center center/cover;
+    background: url('https://ethiopianmonitor.com/wp-content/uploads/2019/06/201905crd_drc_gcpea_-e1560700596513.jpg') no-repeat center center/cover;
     position: relative;
     
     &::before {
@@ -3306,7 +3305,7 @@ body.dark-theme {
 // Mental Health Page Specific Styles
 .mental-health-hero {
     height: 80vh;
-    background: url('../images/mental-health-hero.jpg') no-repeat center center/cover;
+    background: url('https://theadjeifoundation.com/wp-content/uploads/2024/01/annie-spratt-0cgpyigyIkM-unsplash-1024x682.jpg') no-repeat center center/cover;
     position: relative;
     margin-top: 70px;
     display: flex;
@@ -3773,7 +3772,7 @@ body.dark-theme {
 
 .support-group-section {
     padding: 5rem 0;
-    background: url('../images/support-group-bg.jpg') no-repeat center center/cover;
+    background: url('https://www.africanchangestories.org/wp-content/uploads/2024/04/The-volunteer-of-StrongMinds-Speaking-to-people-affected-by-depression-in-Ugandan.-1.jpg') no-repeat center center/cover;
     position: relative;
     
     &::before {
@@ -4025,7 +4024,7 @@ body.dark-theme {
 // Contact Page Specific Styles
 .contact-hero {
     height: 70vh;
-    background: url('../images/contact-hero.jpg') no-repeat center center/cover;
+    background: url('https://www.womankind.org.uk/wp-content/uploads/2020/04/womankind-fida-2016-thandiwe-muriu-133.jpg') no-repeat center center/cover;
     position: relative;
     margin-top: 70px;
     display: flex;
@@ -6021,15 +6020,12 @@ $header-height: 70px;
     
     .footer-content {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-template-columns: repeat(auto-fit);
         gap: 2rem;
-        margin-bottom: 2rem;
         
         .footer-section {
             h2, h3 {
-                margin-bottom: 1.5rem;
                 position: relative;
-                padding-bottom: 10px;
                 
                 &::after {
                     content: '';
