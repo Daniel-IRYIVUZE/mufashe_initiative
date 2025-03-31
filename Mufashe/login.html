@@ -17,6 +17,24 @@
             margin-bottom: 15px;
             display: none;
         }
+        .logout-button {
+            background-color: #ff3333;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            transition: background-color 0.3s;
+            margin-left: 15px;
+        }
+        .logout-button:hover {
+            background-color: #cc0000;
+        }
+        #logout-link {
+            display: none;
+        }
     </style>
 </head>
 <body class="light-theme">
@@ -33,6 +51,10 @@
                 <li><a href="stories.html"><i class="fas fa-book-open"></i> STORIES</a></li>
                 <li><a href="resources.html"><i class="fas fa-book"></i> RESOURCES</a></li>
                 <li><a href="contact.html"><i class="fas fa-envelope"></i> CONTACT</a></li>
+                <li id="auth-item">
+                    <a href="login.html" id="login-link"><i class="fas fa-sign-in-alt"></i> LOGIN</a>
+                    <a href="#" id="logout-link" onclick="logout()"><i class="fas fa-sign-out-alt"></i> LOGOUT</a>
+                </li>
                 <li><a href="register.html" class="join-button"><i class="fas fa-user-plus"></i> SIGN UP</a></li>
             </ul>
             <div class="theme-toggle">
@@ -140,7 +162,63 @@
     </footer>
     <script src="js/script.js"></script>
     <script>
+        // Check authentication status on page load
+        function checkAuth() {
+            const isLoggedIn = sessionStorage.getItem('isLoggedIn') === 'true';
+            const currentPage = window.location.pathname.split('/').pop();
+            
+            // Pages that require authentication
+            const protectedPages = ['dashboard.html'];
+            
+            // Pages that should not be accessible when logged in
+            const restrictedPages = ['index.html', 'login.html', 'register.html'];
+            
+            if (isLoggedIn && restrictedPages.includes(currentPage)) {
+                // If logged in but trying to access login/register/home, redirect to dashboard
+                window.location.href = 'dashboard.html';
+            } else if (!isLoggedIn && protectedPages.includes(currentPage)) {
+                // If not logged in but trying to access protected page, redirect to login
+                window.location.href = 'login.html';
+            }
+        }
+
+        // Update navigation based on login status
+        function updateNavigation() {
+            const isLoggedIn = sessionStorage.getItem('isLoggedIn') === 'true';
+            const loginLink = document.getElementById('login-link');
+            const logoutLink = document.getElementById('logout-link');
+            const registerLink = document.querySelector('.join-button');
+            
+            if (isLoggedIn) {
+                if (loginLink) loginLink.style.display = 'none';
+                if (logoutLink) logoutLink.style.display = 'block';
+                if (registerLink) registerLink.style.display = 'none';
+            } else {
+                if (loginLink) loginLink.style.display = 'block';
+                if (logoutLink) logoutLink.style.display = 'none';
+                if (registerLink) registerLink.style.display = 'block';
+            }
+        }
+
+        // Logout function
+        function logout() {
+            // Clear all session data
+            sessionStorage.removeItem('isLoggedIn');
+            sessionStorage.removeItem('username');
+            
+            // Clear remember me data
+            localStorage.removeItem('rememberedUser');
+            deleteCookie('rememberedUser');
+            
+            // Redirect to login page
+            window.location.href = 'login.html';
+        }
+
         document.addEventListener('DOMContentLoaded', function() {
+            // Run authentication checks
+            checkAuth();
+            updateNavigation();
+            
             // Check for saved credentials from cookies/local storage
             checkRememberedUser();
             
@@ -193,7 +271,7 @@
                 const date = new Date();
                 date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
                 const expires = "expires=" + date.toUTCString();
-                document.cookie = name + "=" + value + ";" + expires + ";path=/";
+                document.cookie = name + "=" + value + ";" + expires + ";path=/;SameSite=Strict";
             }
             
             function getCookie(name) {

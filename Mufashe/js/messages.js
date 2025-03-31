@@ -8,7 +8,7 @@ $(document).ready(function() {
           name: "Marie Uwimana",
           role: "Mentee",
           location: "Kigali",
-          avatar: "https://randomuser.me/api/portraits/women/1.jpg",
+          avatar: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNJryFTSQUV8Zuu_EGw2iUCpMbIIKWHBl2eQ&s",
           status: "active"
         },
         lastMessage: {
@@ -26,7 +26,7 @@ $(document).ready(function() {
           name: "Claudine Nyiraneza",
           role: "Mentee",
           location: "Northern",
-          avatar: "https://randomuser.me/api/portraits/women/2.jpg",
+          avatar: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNJryFTSQUV8Zuu_EGw2iUCpMbIIKWHBl2eQ&s",
           status: "active"
         },
         lastMessage: {
@@ -44,7 +44,7 @@ $(document).ready(function() {
           name: "Program Coordinator",
           role: "Staff",
           location: "Kigali",
-          avatar: "https://randomuser.me/api/portraits/men/1.jpg",
+          avatar: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNJryFTSQUV8Zuu_EGw2iUCpMbIIKWHBl2eQ&s",
           status: "active"
         },
         lastMessage: {
@@ -62,7 +62,7 @@ $(document).ready(function() {
         {
           id: 1,
           sender: 1,
-          text: "Hello Dr. Alice, I hope you're doing well!",
+          text: "Hello, I hope you're doing well!",
           time: "2025-03-18T09:30:00Z",
           read: true
         },
@@ -99,7 +99,7 @@ $(document).ready(function() {
         {
           id: 1,
           sender: 2,
-          text: "Good morning Dr. Alice",
+          text: "Good morning",
           time: "2025-03-20T08:00:00Z",
           read: true
         },
@@ -122,7 +122,7 @@ $(document).ready(function() {
         {
           id: 1,
           sender: 3,
-          text: "Hello Alice, just a reminder that the monthly report is due next week",
+          text: "Hello , just a reminder that the monthly report is due next week",
           time: "2025-03-19T09:00:00Z",
           read: true
         },
