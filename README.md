@@ -28,7 +28,7 @@ Mufashe Initiative is an online platform that provides mentorship, mental health
 
 - *Reviewed Figma Design:* Identified key sections and design elements.
 - *Structured the Project:* Organized files and directories efficiently:
-  
+```
   Mufashe/
   ├── css/
   │   ├── components/
@@ -74,7 +74,7 @@ Mufashe Initiative is an online platform that provides mentorship, mental health
   ├── package.json
   ├── package-lock.json
   ├── README.md
-  
+```
 - *SASS Setup:* Configured and compiled SASS using "Live Sass Compiler" in VS Code.
 
 ### 2. HTML Structure:
@@ -129,8 +129,7 @@ We have added a *Mentor Dashboard* to provide mentors with a structured interfac
 6. *Reports* - Allows mentors to track progress and submit reports.
 
 ### Mentor Dashboard Structure:
-
-
+```
 mentor-dashboard/
 ├── overview.html
 ├── my-mentees.html
@@ -138,7 +137,7 @@ mentor-dashboard/
 ├── messages.html
 ├── appointments.html
 ├── reports.html
-
+```
 
 ## Challenges Faced:
 
