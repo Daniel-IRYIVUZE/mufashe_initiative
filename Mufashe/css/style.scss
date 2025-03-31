@@ -442,6 +442,10 @@ body {
                     border-radius: 5px;
                     font-weight: 500;
                     
+                    a{
+                       text-decoration: none;
+                    }
+                    &
                     i {
                         margin-right: 5px;
                     }
@@ -1134,6 +1138,7 @@ body {
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 2rem;
         margin-bottom: 3rem;
+        margin-top: 6rem;
         
         .step-card {
             @include card-style;
@@ -1144,7 +1149,7 @@ body {
             
             .step-number {
                 position: absolute;
-                top: -20px;
+                top: 0.5px;
                 left: 50%;
                 transform: translateX(-50%);
                 width: 40px;

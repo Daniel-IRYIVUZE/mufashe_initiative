@@ -48,6 +48,12 @@
                 <h3>Hello, <span id="usernameDisplay">Claire U.</span></h3>
                 <p class="user-role" id="userRoleDisplay">Mentor</p>
                 <p><i class="fas fa-calendar-alt"></i> Joined January 2023</p>
+                <div class="profile-progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 85%;"></div>
+                    </div>
+                    <span>Profile 85% complete</span>
+                </div>
             </div>
                         
             <nav class="dashboard-nav">
@@ -170,13 +176,24 @@
             <div class="widget mentor-sessions" id="mentorSessionsWidget">
                 <div class="widget-header">
                     <h2><i class="fas fa-chalkboard-teacher"></i> Your Mentorship Sessions</h2>
-                    <button class="add-session-btn" id="addSessionBtn"><i class="fas fa-plus"></i> Add Session</button>
+                    <div class="widget-actions">
+                        <button class="btn btn-secondary" id="exportSessionsBtn">
+                            <i class="fas fa-file-export"></i> Export
+                        </button>
+                        <button class="btn btn-primary" id="addSessionBtn">
+                            <i class="fas fa-plus"></i> Add Session
+                        </button>
+                    </div>
                 </div>
                 
                 <div class="session-tabs">
                     <button class="session-tab active" data-tab="upcoming">Upcoming</button>
                     <button class="session-tab" data-tab="completed">Completed</button>
                     <button class="session-tab" data-tab="all">All Sessions</button>
+                    <div class="session-search">
+                        <input type="text" id="sessionSearch" placeholder="Search sessions...">
+                        <i class="fas fa-search"></i>
+                    </div>
                 </div>
                 
                 <div class="session-list" id="upcomingSessionsTab">
@@ -195,7 +212,15 @@
             <div class="widget recent-activity">
                 <div class="widget-header">
                     <h2><i class="fas fa-history"></i> Recent Activity</h2>
-                    <a href="activity.html" class="view-all">View All</a>
+                    <div class="activity-filter">
+                        <select id="activityFilter">
+                            <option value="all">All Activities</option>
+                            <option value="sessions">Sessions</option>
+                            <option value="messages">Messages</option>
+                            <option value="resources">Resources</option>
+                        </select>
+                        <a href="activity.html" class="view-all">View All</a>
+                    </div>
                 </div>
                 <ul class="activity-list" id="recentActivityContainer">
                     <!-- Activity will be loaded here -->
@@ -211,55 +236,101 @@
             <h2 id="modalTitle">Add New Session</h2>
             <form id="sessionForm">
                 <input type="hidden" id="sessionId">
-                <div class="form-group">
-                    <label for="menteeName">Mentee Name</label>
-                    <select id="menteeName" required>
-                        <option value="">Select Mentee</option>
-                        <!-- Mentees will be populated here -->
-                    </select>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="menteeName">Mentee Name</label>
+                        <select id="menteeName" required>
+                            <option value="">Select Mentee</option>
+                            <!-- Mentees will be populated here -->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="sessionType">Session Type</label>
+                        <select id="sessionType" required>
+                            <option value="">Select type</option>
+                            <option value="career">Career Guidance</option>
+                            <option value="education">Education Planning</option>
+                            <option value="parenting">Parenting Skills</option>
+                            <option value="mental-health">Mental Health</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="sessionDate">Date</label>
-                    <input type="date" id="sessionDate" required>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="sessionDate">Date</label>
+                        <input type="date" id="sessionDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="sessionTime">Time</label>
+                        <input type="time" id="sessionTime" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="sessionDuration">Duration (minutes)</label>
+                        <input type="number" id="sessionDuration" min="15" max="120" value="30">
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="sessionTime">Time</label>
-                    <input type="time" id="sessionTime" required>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="sessionMode">Mode</label>
+                        <select id="sessionMode" required>
+                            <option value="online">Online</option>
+                            <option value="in-person">In-Person</option>
+                            <option value="phone">Phone Call</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="sessionStatus">Status</label>
+                        <select id="sessionStatus">
+                            <option value="scheduled">Scheduled</option>
+                            <option value="confirmed">Confirmed</option>
+                            <option value="cancelled">Cancelled</option>
+                        </select>
+                    </div>
                 </div>
+                
                 <div class="form-group">
-                    <label for="sessionType">Session Type</label>
-                    <select id="sessionType" required>
-                        <option value="">Select type</option>
-                        <option value="career">Career Guidance</option>
-                        <option value="education">Education Planning</option>
-                        <option value="parenting">Parenting Skills</option>
-                        <option value="mental-health">Mental Health</option>
-                        <option value="other">Other</option>
-                    </select>
+                    <label for="sessionLocation">Location/Meeting Link</label>
+                    <input type="text" id="sessionLocation" placeholder="Enter location or meeting URL">
                 </div>
-                <div class="form-group">
-                    <label for="sessionMode">Mode</label>
-                    <select id="sessionMode" required>
-                        <option value="online">Online</option>
-                        <option value="in-person">In-Person</option>
-                        <option value="phone">Phone Call</option>
-                    </select>
-                </div>
+                
                 <div class="form-group">
                     <label for="sessionNotes">Notes</label>
-                    <textarea id="sessionNotes" rows="3"></textarea>
+                    <textarea id="sessionNotes" rows="3" placeholder="Any additional notes..."></textarea>
                 </div>
+                
                 <div class="form-actions">
-                    <button type="button" class="cancel-btn">Cancel</button>
-                    <button type="submit" class="save-btn">Save Session</button>
+                    <button type="button" class="btn btn-secondary cancel-btn">Cancel</button>
+                    <button type="submit" class="btn btn-primary save-btn">Save Session</button>
                 </div>
             </form>
         </div>
     </div>
+
+    <!-- Confirmation Modal -->
+    <div class="modal" id="confirmModal">
+        <div class="modal-content small">
+            <div class="modal-header">
+                <h3 id="confirmModalTitle">Confirm Action</h3>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p id="confirmModalMessage">Are you sure you want to perform this action?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="confirmModalCancel">Cancel</button>
+                <button type="button" class="btn btn-danger" id="confirmModalConfirm">Confirm</button>
+            </div>
+        </div>
+    </div>
+
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
     
     <!-- App Scripts -->
     <script src="js/api.js"></script>

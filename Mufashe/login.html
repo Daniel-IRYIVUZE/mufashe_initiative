@@ -8,6 +8,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        .error-message {
+            color: #ff3333;
+            background-color: #ffeeee;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            display: none;
+        }
+    </style>
 </head>
 <body class="light-theme">
     <header class="site-header">
@@ -23,7 +33,7 @@
                 <li><a href="stories.html"><i class="fas fa-book-open"></i> STORIES</a></li>
                 <li><a href="resources.html"><i class="fas fa-book"></i> RESOURCES</a></li>
                 <li><a href="contact.html"><i class="fas fa-envelope"></i> CONTACT</a></li>
-                <li><a href="register.html" class="join-button"><i class="fas fa-user-plus"></i> SIGNUP</a></li>
+                <li><a href="register.html" class="join-button"><i class="fas fa-user-plus"></i> SIGN UP</a></li>
             </ul>
             <div class="theme-toggle">
                 <button id="theme-switcher" aria-label="Toggle theme">
@@ -44,15 +54,21 @@
                 <h1>Welcome Back</h1>
                 <p>Login to access your personalized dashboard and community features.</p>
                 
-                <form action="dashboard.html" method="POST" class="login-form">
+                <div id="error-message" class="error-message"></div>
+                
+                <form id="login-form" class="login-form">
                     <div class="form-group">
-                        <label for="email">Email or Phone Number</label>
+                        <label for="email">Email or Username</label>
                         <input type="text" id="email" name="email" required>
                     </div>
                     <div class="form-group">
                         <label for="password">Password</label>
                         <input type="password" id="password" name="password" required>
-                        <a href="forgot-password.html" class="forgot-password">Forgot password?</a>
+                        <a href="/" class="forgot-password">Forgot password?</a>
+                    </div>
+                    <div class="form-group remember-me">
+                        <input type="checkbox" id="remember" name="remember">
+                        <label for="remember">Remember me</label>
                     </div>
                     <button type="submit" class="auth-button">Login</button>
                 </form>
@@ -62,9 +78,6 @@
                 </div>
                 
                 <div class="social-login">
-                    <button class="social-button facebook">
-                        Continue with Facebook
-                    </button>
                     <button class="social-button google">
                         Continue with Google
                     </button>
@@ -126,5 +139,83 @@
         </div>
     </footer>
     <script src="js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check for saved credentials from cookies/local storage
+            checkRememberedUser();
+            
+            // Handle form submission
+            document.getElementById('login-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const email = document.getElementById('email').value.trim();
+                const password = document.getElementById('password').value;
+                const rememberMe = document.getElementById('remember').checked;
+                
+                // Validate credentials
+                if ((email === 'daniel' && password === 'daniel@123') || 
+                    (email === 'divine' && password === 'divine@123')) {
+                    
+                    // Store user data in session storage
+                    sessionStorage.setItem('isLoggedIn', 'true');
+                    sessionStorage.setItem('username', email);
+                    
+                    // If "Remember me" is checked, store in local storage and cookie
+                    if (rememberMe) {
+                        localStorage.setItem('rememberedUser', email);
+                        setCookie('rememberedUser', email, 30); // Expires in 30 days
+                    } else {
+                        localStorage.removeItem('rememberedUser');
+                        deleteCookie('rememberedUser');
+                    }
+                    
+                    // Redirect to dashboard
+                    window.location.href = 'dashboard.html';
+                } else {
+                    // Show error message
+                    const errorElement = document.getElementById('error-message');
+                    errorElement.textContent = 'Invalid username or password. Please try again.';
+                    errorElement.style.display = 'block';
+                }
+            });
+            
+            // Check for remembered user
+            function checkRememberedUser() {
+                const rememberedUser = localStorage.getItem('rememberedUser') || getCookie('rememberedUser');
+                if (rememberedUser) {
+                    document.getElementById('email').value = rememberedUser;
+                    document.getElementById('remember').checked = true;
+                }
+            }
+            
+            // Cookie functions
+            function setCookie(name, value, days) {
+                const date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                const expires = "expires=" + date.toUTCString();
+                document.cookie = name + "=" + value + ";" + expires + ";path=/";
+            }
+            
+            function getCookie(name) {
+                const cookieName = name + "=";
+                const decodedCookie = decodeURIComponent(document.cookie);
+                const cookieArray = decodedCookie.split(';');
+                for(let i = 0; i < cookieArray.length; i++) {
+                    let cookie = cookieArray[i];
+                    while (cookie.charAt(0) === ' ') {
+                        cookie = cookie.substring(1);
+                    }
+                    if (cookie.indexOf(cookieName) === 0) {
+                        return cookie.substring(cookieName.length, cookie.length);
+                    }
+                }
+                return "";
+            }
+            
+            function deleteCookie(name) {
+                document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+            }
+        });
+    </script>
 </body>
 </html>
