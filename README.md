@@ -148,45 +148,45 @@ mentor-dashboard/
 
 ### 1. Clone the Repository:
 
-bash
+```bash
  git clone https://github.com/Daniel-IRYIVUZE/mufashe_initiative.git
-
+```
 
 ### 2. Navigate to the Project Folder:
 
-bash
+```bash
  cd Mufashe
-
+```
 
 ### 3. Install Dependencies (if using JSON Server):
 
-bash
+```bash
  npm install -g json-server
-
+```
 
 ### 4. Run the JSON Server:
 
-bash
+```bash
  json-server --watch data/db.json --port 3000
-
+```
 
 ### 5. Compile SASS:
 
-bash
+```bash
  sass --watch css/style.scss:css/style.css
  sass --watch scss/stylesdash.scss:css/stylesdash.css
-
+```
 ### 6. Open the Project in a Browser:
 
-bash
+```bash
  npx http-server
-
+```
 
 ### 7. Test Features:
 
 - Explore site features and validate functionality.
 - Test form validation and API interactions.
-- Log in as a mentor and check dashboard functionality.
+- Log in as a mentor and check the dashboard functionality.
 
 ## Key Features:
 
