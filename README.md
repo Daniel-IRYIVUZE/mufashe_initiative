@@ -173,8 +173,8 @@ bash
 ### 5. Compile SASS:
 
 bash
- sass --watch css/style.scss css/style.css
-
+ sass --watch css/style.scss:css/style.css
+ sass --watch scss/stylesdash.scss:css/stylesdash.css
 
 ### 6. Open the Project in a Browser:
 
