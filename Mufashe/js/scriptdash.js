@@ -524,7 +524,7 @@ $(document).ready(function() {
                 document.cookie = 'authToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
                 showToast('You have been logged out successfully', 'success');
                 setTimeout(() => {
-                    window.location.href = 'index.html';
+                    window.location.href = 'login.html';
                 }, 1500);
             }
         );

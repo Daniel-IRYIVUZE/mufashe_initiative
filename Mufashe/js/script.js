@@ -455,7 +455,7 @@ document.addEventListener('DOMContentLoaded', function() {
         e.preventDefault();
         // In a real app, you would call your logout API here
         localStorage.removeItem('authToken');
-        window.location.href = 'index.html';
+        window.location.href = 'login.html';
     });
     
     // Initialize

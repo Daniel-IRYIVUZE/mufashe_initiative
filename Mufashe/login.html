@@ -86,7 +86,7 @@
                     <div class="form-group">
                         <label for="password">Password</label>
                         <input type="password" id="password" name="password" required>
-                        <a href="/" class="forgot-password">Forgot password?</a>
+                        <a href="forgot-password.html" class="forgot-password">Forgot password?</a>
                     </div>
                     <div class="form-group remember-me">
                         <input type="checkbox" id="remember" name="remember">
@@ -151,7 +151,7 @@
                 <div class="social-links">
                     <a href="https://facebook.com" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                     <a href="https://instagram.com" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="https:Twitter.com" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://twitter.com" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                     <a href="https://linkedin.com" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
                 </div>
             </div>
@@ -160,9 +160,10 @@
             <p>&copy; 2025 Mufashe Initiative. All Rights Reserved.</p>
         </div>
     </footer>
+
     <script src="js/script.js"></script>
     <script>
-        // Check authentication status on page load
+        // Enhanced authentication check
         function checkAuth() {
             const isLoggedIn = sessionStorage.getItem('isLoggedIn') === 'true';
             const currentPage = window.location.pathname.split('/').pop();
@@ -170,16 +171,14 @@
             // Pages that require authentication
             const protectedPages = ['dashboard.html'];
             
-            // Pages that should not be accessible when logged in
-            const restrictedPages = ['index.html', 'login.html', 'register.html'];
-            
-            if (isLoggedIn && restrictedPages.includes(currentPage)) {
-                // If logged in but trying to access login/register/home, redirect to dashboard
-                window.location.href = 'dashboard.html';
-            } else if (!isLoggedIn && protectedPages.includes(currentPage)) {
-                // If not logged in but trying to access protected page, redirect to login
-                window.location.href = 'login.html';
+            // If user tries to access dashboard without being logged in
+            if (!isLoggedIn && protectedPages.includes(currentPage)) {
+                // Redirect to login page with a return URL parameter
+                window.location.href = `login.html?returnUrl=${encodeURIComponent(currentPage)}`;
+                return false;
             }
+            
+            return true;
         }
 
         // Update navigation based on login status
@@ -216,7 +215,10 @@
 
         document.addEventListener('DOMContentLoaded', function() {
             // Run authentication checks
-            checkAuth();
+            if (!checkAuth()) {
+                return;
+            }
+            
             updateNavigation();
             
             // Check for saved credentials from cookies/local storage
@@ -230,7 +232,7 @@
                 const password = document.getElementById('password').value;
                 const rememberMe = document.getElementById('remember').checked;
                 
-                // Validate credentials
+                // Validate credentials (in a real app, this would be a server-side check)
                 if ((email === 'daniel' && password === 'daniel@123') || 
                     (email === 'divine' && password === 'divine@123')) {
                     
@@ -247,8 +249,12 @@
                         deleteCookie('rememberedUser');
                     }
                     
-                    // Redirect to dashboard
-                    window.location.href = 'dashboard.html';
+                    // Check for return URL parameter
+                    const urlParams = new URLSearchParams(window.location.search);
+                    const returnUrl = urlParams.get('returnUrl');
+                    
+                    // Redirect to dashboard or the originally requested page
+                    window.location.href = returnUrl || 'dashboard.html';
                 } else {
                     // Show error message
                     const errorElement = document.getElementById('error-message');
