@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mufashe Initiative - Resources</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/stylesdash.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="logo-container">
+                <img src="https://t3.ftcdn.net/jpg/06/19/26/46/360_F_619264680_x2PBdGLF54sFe7kTBtAvZnPyXgvaRw0Y.jpg" alt="Mufashe Initiative Logo" class="logo">
+                <h1>Welcome</h1>
+            </div>
+            
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
+                    <li><a href="mentees.html"><i class="fas fa-users"></i> My Mentees</a></li>
+                    <li class="active"><a href="dashresources.html"><i class="fas fa-book"></i> Resources</a></li>
+                    <li><a href="messages.html"><i class="fas fa-envelope"></i> Messages</a></li>
+                    <li><a href="appointments.html"><i class="fas fa-calendar-alt"></i> Appointments</a></li>
+                    <li><a href="reports.html"><i class="fas fa-chart-bar"></i> Reports</a></li>
+                </ul>
+            </nav>
+            
+            <div class="user-profile">
+                <img src="https://t3.ftcdn.net/jpg/06/19/26/46/360_F_619264680_x2PBdGLF54sFe7kTBtAvZnPyXgvaRw0Y.jpg" alt="Mentor Profile" class="profile-img">
+                <div class="profile-info">
+                    <h3>Dr. Alice Uwase</h3>
+                    <p>Senior Mentor</p>
+                </div>
+                <button id="logout-btn" class="logout-btn"><i class="fas fa-sign-out-alt"></i></button>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <header class="main-header">
+                <h2>Resources Library</h2>
+                <div class="header-actions">
+                    <div class="search-container">
+                        <input type="text" id="search-input" placeholder="Search resources...">
+                        <button id="search-btn"><i class="fas fa-search"></i></button>
+                    </div>
+                    <div class="notification-bell">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-count">3</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Resource Categories -->
+            <section class="resource-categories">
+                <div class="section-header">
+                    <h3>Browse by Category</h3>
+                </div>
+                <div class="categories-grid">
+                    <div class="category-card" data-category="academic">
+                        <div class="category-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h4>Academic</h4>
+                        <p>Study guides, scholarship info, and learning resources</p>
+                    </div>
+                    <div class="category-card" data-category="career">
+                        <div class="category-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <h4>Career</h4>
+                        <p>Job search, resume building, and professional development</p>
+                    </div>
+                    <div class="category-card" data-category="health">
+                        <div class="category-icon">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <h4>Health & Wellness</h4>
+                        <p>Physical and mental health resources</p>
+                    </div>
+                    <div class="category-card" data-category="life-skills">
+                        <div class="category-icon">
+                            <i class="fas fa-hands-helping"></i>
+                        </div>
+                        <h4>Life Skills</h4>
+                        <p>Financial literacy, communication, and personal growth</p>
+                    </div>
+                    <div class="category-card" data-category="parenting">
+                        <div class="category-icon">
+                            <i class="fas fa-baby"></i>
+                        </div>
+                        <h4>Parenting</h4>
+                        <p>Childcare, parenting techniques, and family resources</p>
+                    </div>
+                    <div class="category-card" data-category="all">
+                        <div class="category-icon">
+                            <i class="fas fa-th-large"></i>
+                        </div>
+                        <h4>All Resources</h4>
+                        <p>View complete resource library</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Resources Section -->
+            <section class="resources-section">
+                <div class="section-header">
+                    <h3 id="resources-section-title">All Resources</h3>
+                    <div class="section-actions">
+                        <button id="add-resource-btn" class="btn-primary"><i class="fas fa-plus"></i> Add Resource</button>
+                        <select id="resource-sort">
+                            <option value="newest">Newest First</option>
+                            <option value="oldest">Oldest First</option>
+                            <option value="popular">Most Popular</option>
+                            <option value="title">By Title</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="resources-grid" id="resources-grid">
+                    <!-- Resources will be loaded here -->
+                </div>
+                
+                <div class="pagination">
+                    <button id="prev-page" class="btn-secondary" disabled><i class="fas fa-chevron-left"></i> Previous</button>
+                    <span id="page-info">Page 1 of 5</span>
+                    <button id="next-page" class="btn-secondary">Next <i class="fas fa-chevron-right"></i></button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Add Resource Modal -->
+    <div id="resource-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3>Add New Resource</h3>
+            <form id="resource-form">
+                <div class="form-group">
+                    <label for="resource-title">Title</label>
+                    <input type="text" id="resource-title" required>
+                </div>
+                <div class="form-group">
+                    <label for="resource-category">Category</label>
+                    <select id="resource-category" required>
+                        <option value="academic">Academic</option>
+                        <option value="career">Career</option>
+                        <option value="health">Health & Wellness</option>
+                        <option value="life-skills">Life Skills</option>
+                        <option value="parenting">Parenting</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="resource-type">Resource Type</label>
+                    <select id="resource-type" required>
+                        <option value="document">Document</option>
+                        <option value="video">Video</option>
+                        <option value="link">Web Link</option>
+                        <option value="presentation">Presentation</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="resource-description">Description</label>
+                    <textarea id="resource-description" rows="3" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="resource-file">Upload File</label>
+                    <input type="file" id="resource-file">
+                    <small>Supported formats: PDF, DOCX, PPTX, MP4, JPG, PNG</small>
+                </div>
+                <div class="form-group">
+                    <label for="resource-link">Or provide URL</label>
+                    <input type="url" id="resource-link" placeholder="https://example.com">
+                </div>
+                <div class="form-group">
+                    <label for="resource-tags">Tags (comma separated)</label>
+                    <input type="text" id="resource-tags" placeholder="education, career, youth">
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary close-modal-btn">Cancel</button>
+                    <button type="submit" class="btn-primary">Save Resource</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Resource Details Modal -->
+    <div id="resource-details-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="resource-details-header">
+                <div class="resource-type-icon">
+                    <i class="fas fa-file-alt" id="resource-details-icon"></i>
+                </div>
+                <div>
+                    <h3 id="resource-details-title">Resource Title</h3>
+                    <div class="resource-meta">
+                        <span id="resource-details-category">Category</span>
+                        <span id="resource-details-date">Added on 01 Jan 2023</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="resource-details-content">
+                <div class="resource-description">
+                    <h4>Description</h4>
+                    <p id="resource-details-description">Resource description goes here...</p>
+                </div>
+                
+                <div class="resource-preview" id="resource-preview">
+                    <!-- Resource preview will be shown here -->
+                </div>
+                
+                <div class="resource-actions">
+                    <button id="download-resource-btn" class="btn-primary"><i class="fas fa-download"></i> Download</button>
+                    <button id="share-resource-btn" class="btn-secondary"><i class="fas fa-share"></i> Share with Mentees</button>
+                    <button id="edit-resource-btn" class="btn-secondary"><i class="fas fa-edit"></i> Edit</button>
+                    <button id="delete-resource-btn" class="btn-danger"><i class="fas fa-trash"></i> Delete</button>
+                </div>
+                
+                <div class="resource-stats">
+                    <div class="stat-item">
+                        <i class="fas fa-download"></i>
+                        <span id="download-count">0</span> downloads
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-share"></i>
+                        <span id="share-count">0</span> shares
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-star"></i>
+                        <span id="rating">0.0</span> (0 ratings)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Share Resource Modal -->
+    <div id="share-resource-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3>Share Resource</h3>
+            <form id="share-resource-form">
+                <div class="form-group">
+                    <label>Resource</label>
+                    <p id="share-resource-title" class="form-static-text">Resource Title</p>
+                </div>
+                <div class="form-group">
+                    <label for="share-mentees">Select Mentees</label>
+                    <select id="share-mentees" multiple>
+                        <!-- Mentees will be loaded here -->
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="share-message">Message (optional)</label>
+                    <textarea id="share-message" rows="3" placeholder="Add a personal note..."></textarea>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary close-modal-btn">Cancel</button>
+                    <button type="submit" class="btn-primary">Share Resource</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div id="confirm-modal" class="modal">
+        <div class="modal-content confirm-modal">
+            <h3 id="confirm-title">Confirm Action</h3>
+            <p id="confirm-message">Are you sure you want to perform this action?</p>
+            <div class="form-actions">
+                <button type="button" class="btn-secondary" id="confirm-cancel">Cancel</button>
+                <button type="button" class="btn-danger" id="confirm-action">Confirm</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/resources.js"></script>
+</body>
+</html>

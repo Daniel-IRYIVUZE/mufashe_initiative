@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mufashe Initiative - Messages</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/stylesdash.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="logo-container">
+                <img src="https://t3.ftcdn.net/jpg/06/19/26/46/360_F_619264680_x2PBdGLF54sFe7kTBtAvZnPyXgvaRw0Y.jpg" alt="Mufashe Initiative Logo" class="logo">
+                <h1>Welcome</h1>
+            </div>
+            
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
+                    <li><a href="mentees.html"><i class="fas fa-users"></i> My Mentees</a></li>
+                    <li><a href="dashresources.html"><i class="fas fa-book"></i> Resources</a></li>
+                    <li class="active"><a href="messages.html"><i class="fas fa-envelope"></i> Messages</a></li>
+                    <li><a href="appointments.html"><i class="fas fa-calendar-alt"></i> Appointments</a></li>
+                    <li><a href="reports.html"><i class="fas fa-chart-bar"></i> Reports</a></li>
+                </ul>
+            </nav>
+            
+            <div class="user-profile">
+                <img src="https://t3.ftcdn.net/jpg/06/19/26/46/360_F_619264680_x2PBdGLF54sFe7kTBtAvZnPyXgvaRw0Y.jpg" alt="Mentor Profile" class="profile-img">
+                <div class="profile-info">
+                    <h3>Dr. Alice Uwase</h3>
+                    <p>Senior Mentor</p>
+                </div>
+                <button id="logout-btn" class="logout-btn"><i class="fas fa-sign-out-alt"></i></button>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <header class="main-header">
+                <h2>Messages</h2>
+                <div class="header-actions">
+                    <div class="notification-bell">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-count">3</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Messages Container -->
+            <div class="messages-container">
+                <!-- Conversations List -->
+                <aside class="conversations-list">
+                    <div class="conversations-header">
+                        <h3>Conversations</h3>
+                        <button id="new-message-btn" class="btn-primary"><i class="fas fa-plus"></i> New Message</button>
+                    </div>
+                    
+                    <div class="conversations-search">
+                        <input type="text" id="search-conversations" placeholder="Search conversations...">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    
+                    <div class="conversations-filter">
+                        <button class="filter-btn active" data-filter="all">All</button>
+                        <button class="filter-btn" data-filter="unread">Unread</button>
+                        <button class="filter-btn" data-filter="mentees">Mentees</button>
+                        <button class="filter-btn" data-filter="staff">Staff</button>
+                    </div>
+                    
+                    <ul class="conversations" id="conversations-list">
+                        <!-- Conversations will be loaded here -->
+                    </ul>
+                </aside>
+                
+                <!-- Messages Panel -->
+                <section class="messages-panel">
+                    <div class="messages-header" id="messages-header">
+                        <div class="message-recipient">
+                            <img id="message-avatar" src="https://ui-avatars.com/api/?name=Recipient&background=random" alt="Recipient" class="avatar">
+                            <div>
+                                <h3 id="recipient-name">Select a conversation</h3>
+                                <p id="recipient-status">Status information</p>
+                            </div>
+                        </div>
+                        <div class="message-actions">
+                            <button id="call-btn" class="btn-icon" title="Call"><i class="fas fa-phone"></i></button>
+                            <button id="video-call-btn" class="btn-icon" title="Video Call"><i class="fas fa-video"></i></button>
+                            <button id="info-btn" class="btn-icon" title="Info"><i class="fas fa-info-circle"></i></button>
+                        </div>
+                    </div>
+                    
+                    <div class="messages-content" id="messages-content">
+                        <div class="empty-state">
+                            <i class="fas fa-comments"></i>
+                            <h3>No conversation selected</h3>
+                            <p>Select a conversation from the list or start a new one</p>
+                            <button id="empty-new-message-btn" class="btn-primary"><i class="fas fa-plus"></i> New Message</button>
+                        </div>
+                    </div>
+                    
+                    <div class="message-composer" id="message-composer" style="display: none;">
+                        <div class="composer-toolbar">
+                            <button class="btn-icon" title="Attach File"><i class="fas fa-paperclip"></i></button>
+                            <button class="btn-icon" title="Insert Emoji"><i class="far fa-smile"></i></button>
+                        </div>
+                        <textarea id="message-input" placeholder="Type your message here..."></textarea>
+                        <div class="composer-actions">
+                            <button id="send-message-btn" class="btn-primary">Send</button>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Conversation Info Panel -->
+                <aside class="conversation-info" id="conversation-info">
+                    <div class="info-header">
+                        <h3>Conversation Info</h3>
+                        <button id="close-info-btn" class="btn-icon"><i class="fas fa-times"></i></button>
+                    </div>
+                    
+                    <div class="info-content">
+                        <div class="participant-info">
+                            <img id="info-avatar" src="https://ui-avatars.com/api/?name=Recipient&background=random" alt="Recipient" class="avatar-large">
+                            <h4 id="info-name">Recipient Name</h4>
+                            <p id="info-role">Mentee</p>
+                            <p id="info-location">Kigali, Rwanda</p>
+                            
+                            <div class="info-actions">
+                                <button id="info-message-btn" class="btn-secondary"><i class="fas fa-envelope"></i> Message</button>
+                                <button id="info-profile-btn" class="btn-secondary"><i class="fas fa-user"></i> Profile</button>
+                            </div>
+                        </div>
+                        
+                        <div class="shared-files">
+                            <h5>Shared Files</h5>
+                            <ul id="shared-files-list">
+                                <!-- Shared files will be listed here -->
+                            </ul>
+                        </div>
+                        
+                        <div class="conversation-actions">
+                            <button id="mute-conversation-btn" class="btn-secondary"><i class="fas fa-bell-slash"></i> Mute Notifications</button>
+                            <button id="delete-conversation-btn" class="btn-danger"><i class="fas fa-trash"></i> Delete Conversation</button>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </main>
+    </div>
+
+    <!-- New Message Modal -->
+    <div id="new-message-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3>New Message</h3>
+            <form id="new-message-form">
+                <div class="form-group">
+                    <label for="message-recipient">To:</label>
+                    <select id="message-recipient" required>
+                        <option value="">Select recipient</option>
+                        <optgroup label="Mentees">
+                            <!-- Mentees will be loaded here -->
+                        </optgroup>
+                        <optgroup label="Staff">
+                            <!-- Staff will be loaded here -->
+                        </optgroup>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message-subject">Subject (optional)</label>
+                    <input type="text" id="message-subject">
+                </div>
+                <div class="form-group">
+                    <label for="message-content">Message</label>
+                    <textarea id="message-content" rows="5" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="message-attachment">Attachment (optional)</label>
+                    <input type="file" id="message-attachment">
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary close-modal-btn">Cancel</button>
+                    <button type="submit" class="btn-primary">Send Message</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Attachment Preview Modal -->
+    <div id="attachment-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3 id="attachment-title">Attachment Preview</h3>
+            <div class="attachment-preview" id="attachment-preview">
+                <!-- Attachment preview will be shown here -->
+            </div>
+            <div class="attachment-actions">
+                <button id="download-attachment-btn" class="btn-primary"><i class="fas fa-download"></i> Download</button>
+                <button class="btn-secondary close-modal-btn">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div id="confirm-modal" class="modal">
+        <div class="modal-content confirm-modal">
+            <h3 id="confirm-title">Confirm Action</h3>
+            <p id="confirm-message">Are you sure you want to perform this action?</p>
+            <div class="form-actions">
+                <button type="button" class="btn-secondary" id="confirm-cancel">Cancel</button>
+                <button type="button" class="btn-danger" id="confirm-action">Confirm</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/messages.js"></script>
+</body>
+</html>

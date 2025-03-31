@@ -1,340 +1,268 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Mentor Dashboard - Mufashe Initiative">
     <title>Mufashe Initiative - Mentor Dashboard</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
-    <link rel="stylesheet" href="css/dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/stylesdash.css">
 </head>
 <body>
-    <header class="site-header">
-        <nav class="main-navigation">
-            <div class="logo">
-                <i class="fas fa-hands-helping logo-icon"></i>
-                <span>MUFASHE</span>
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="logo-container">
+                <img src="https://t3.ftcdn.net/jpg/06/19/26/46/360_F_619264680_x2PBdGLF54sFe7kTBtAvZnPyXgvaRw0Y.jpg" alt="Mufashe Initiative Logo" class="logo">
+                <h1>Welcome</h1>
             </div>
-            <ul class="nav-menu">
-                <li><a href="index.html"><i class="fas fa-home"></i> HOME</a></li>
-                <li><a href="mentorship.html"><i class="fas fa-user-graduate"></i> MENTORSHIP</a></li>
-                <li><a href="mental-health.html"><i class="fas fa-brain"></i> MENTAL HEALTH</a></li>
-                <li><a href="stories.html"><i class="fas fa-book-open"></i> STORIES</a></li>
-                <li><a href="resources.html"><i class="fas fa-book"></i> RESOURCES</a></li>
-                <li><a href="contact.html"><i class="fas fa-envelope"></i> CONTACT</a></li>
-                <li class="theme-toggle">
-                    <button id="themeToggleBtn"><i class="fas fa-moon"></i></button>
-                </li>
-                <li>
-                    <a href="profile.html" class="user-profile">
-                        <img src="images/user-avatar.png" alt="User profile" id="userAvatar">
-                    </a>
-                </li>
-            </ul>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </nav>
-    </header>
-
-    <main class="main-content dashboard">
-        <aside class="dashboard-sidebar">
-            <div class="user-profile-card">
-                <img src="images/mentor-avatar.png" alt="User profile" class="profile-avatar" id="sidebarAvatar">
-                <h3>Hello, <span id="usernameDisplay">Claire U.</span></h3>
-                <p class="user-role" id="userRoleDisplay">Mentor</p>
-                <p><i class="fas fa-calendar-alt"></i> Joined January 2023</p>
-                <div class="profile-progress">
-                    <div class="progress-bar">
-                        <div class="progress-fill" style="width: 85%;"></div>
-                    </div>
-                    <span>Profile 85% complete</span>
-                </div>
-            </div>
-                        
-            <nav class="dashboard-nav">
+            
+            <nav class="main-nav">
                 <ul>
-                    <li><a href="dashboard.html" class="active"><i class="fas fa-tachometer-alt"></i> <span>Dashboard</span></a></li>
-                    <li><a href="profile.html"><i class="fas fa-user"></i> <span>My Profile</span></a></li>
-                    <li><a href="mentorship.html"><i class="fas fa-user-graduate"></i> <span>My Mentees</span></a></li>
-                    <li><a href="support-groups.html"><i class="fas fa-users"></i> <span>Support Groups</span></a></li>
-                    <li><a href="my-resources.html"><i class="fas fa-bookmark"></i> <span>Saved Resources</span></a></li>
-                    <li><a href="messages.html"><i class="fas fa-comments"></i> <span>Messages</span> <span class="notification-badge">3</span></a></li>
-                    <li><a href="settings.html"><i class="fas fa-cog"></i> <span>Settings</span></a></li>
-                    <li><a href="#" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> <span>Logout</span></a></li>
+                    <li class="active"><a href="#dashboard"><i class="fas fa-home"></i> Dashboard</a></li>
+                    <li><a href="mentees.html"><i class="fas fa-users"></i> My Mentees</a></li>
+                    <li><a href="dashresources.html"><i class="fas fa-book"></i> Resources</a></li>
+                    <li><a href="messages.html"><i class="fas fa-envelope"></i> Messages</a></li>
+                    <li><a href="appointments.html"><i class="fas fa-calendar-alt"></i> Appointments</a></li>
+                    <li><a href="reports.html"><i class="fas fa-chart-bar"></i> Reports</a></li>
                 </ul>
             </nav>
+            
+            <div class="user-profile">
+                <img src="https://t3.ftcdn.net/jpg/06/19/26/46/360_F_619264680_x2PBdGLF54sFe7kTBtAvZnPyXgvaRw0Y.jpg" alt="Mentor Profile" class="profile-img">
+                <div class="profile-info">
+                    <h3>Dr. Alice Uwase</h3>
+                    <p>Senior Mentor</p>
+                </div>
+                <button id="logout-btn" class="logout-btn"><i class="fas fa-sign-out-alt"></i></button>
+            </div>
         </aside>
 
-        <section class="dashboard-content">
-            <div class="dashboard-header">
-                <h1>Mentor Dashboard</h1>
-                <p>Welcome back! Here's your mentoring overview and activities.</p>
-                <div class="dashboard-stats">
-                    <div class="stat-card">
-                        <i class="fas fa-calendar-check"></i>
-                        <div>
-                            <h3>Upcoming Sessions</h3>
-                            <p id="upcomingSessionsCount">Loading...</p>
-                        </div>
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <header class="main-header">
+                <h2>Mentor Dashboard</h2>
+                <div class="header-actions">
+                    <div class="search-container">
+                        <input type="text" id="search-input" placeholder="Search mentees, resources...">
+                        <button id="search-btn"><i class="fas fa-search"></i></button>
                     </div>
-                    <div class="stat-card">
-                        <i class="fas fa-check-circle"></i>
-                        <div>
-                            <h3>Completed Sessions</h3>
-                            <p id="completedSessionsCount">Loading...</p>
-                        </div>
-                    </div>
-                    <div class="stat-card">
-                        <i class="fas fa-users"></i>
-                        <div>
-                            <h3>Active Mentees</h3>
-                            <p id="menteesCount">Loading...</p>
-                        </div>
-                    </div>
-                    <div class="stat-card">
-                        <i class="fas fa-star"></i>
-                        <div>
-                            <h3>Your Rating</h3>
-                            <p id="mentorRating">Loading... <small>/5</small></p>
-                        </div>
+                    <div class="notification-bell">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-count">3</span>
                     </div>
                 </div>
-            </div>
-                    
-            <div class="dashboard-widgets">
-                <div class="widget upcoming-events">
-                    <div class="widget-header">
-                        <h2><i class="fas fa-calendar-alt"></i> Upcoming Events</h2>
-                        <a href="events.html" class="view-all">View All</a>
-                    </div>
-                    <div class="event-list" id="upcomingEventsContainer">
-                        <!-- Events will be loaded here -->
-                    </div>
-                </div>
-                            
-                <div class="widget mentorship-status">
-                    <div class="widget-header">
-                        <h2><i class="fas fa-user-graduate"></i> Recent Mentee</h2>
-                        <a href="mentorship.html" class="view-all">View All</a>
-                    </div>
-                    <div class="mentorship-card" id="recentMenteeContainer">
-                        <!-- Recent mentee will be loaded here -->
-                    </div>
-                </div>
-            </div>
-                    
-            <div class="dashboard-widgets">
-                <div class="widget community-updates">
-                    <div class="widget-header">
-                        <h2><i class="fas fa-bullhorn"></i> Community Updates</h2>
-                        <a href="#" class="view-all">View All</a>
-                    </div>
-                    <div id="communityUpdatesContainer">
-                        <!-- Updates will be loaded here -->
-                    </div>
-                </div>
-                            
-                <div class="widget quick-actions">
-                    <div class="widget-header">
-                        <h2><i class="fas fa-bolt"></i> Quick Actions</h2>
-                    </div>
-                    <div class="actions-grid">
-                        <a href="book-counseling.html" class="action-card">
-                            <i class="fas fa-heartbeat"></i>
-                            <h3>Book Counseling</h3>
-                            <p>Schedule a session with a mental health professional</p>
-                            <div class="action-hover"><i class="fas fa-arrow-right"></i></div>
-                        </a>
-                        <a href="find-mentor.html" class="action-card">
-                            <i class="fas fa-user-tie"></i>
-                            <h3>Find a Co-Mentor</h3>
-                            <p>Connect with another mentor</p>
-                            <div class="action-hover"><i class="fas fa-arrow-right"></i></div>
-                        </a>
-                        <a href="share-story.html" class="action-card">
-                            <i class="fas fa-pen-fancy"></i>
-                            <h3>Share Your Story</h3>
-                            <p>Inspire others with your journey</p>
-                            <div class="action-hover"><i class="fas fa-arrow-right"></i></div>
-                        </a>
-                        <a href="resources.html" class="action-card">
-                            <i class="fas fa-book-open"></i>
-                            <h3>Browse Resources</h3>
-                            <p>Access educational materials</p>
-                            <div class="action-hover"><i class="fas fa-arrow-right"></i></div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-                    
-            <!-- Mentor-Specific Section -->
-            <div class="widget mentor-sessions" id="mentorSessionsWidget">
-                <div class="widget-header">
-                    <h2><i class="fas fa-chalkboard-teacher"></i> Your Mentorship Sessions</h2>
-                    <div class="widget-actions">
-                        <button class="btn btn-secondary" id="exportSessionsBtn">
-                            <i class="fas fa-file-export"></i> Export
-                        </button>
-                        <button class="btn btn-primary" id="addSessionBtn">
-                            <i class="fas fa-plus"></i> Add Session
-                        </button>
-                    </div>
-                </div>
-                
-                <div class="session-tabs">
-                    <button class="session-tab active" data-tab="upcoming">Upcoming</button>
-                    <button class="session-tab" data-tab="completed">Completed</button>
-                    <button class="session-tab" data-tab="all">All Sessions</button>
-                    <div class="session-search">
-                        <input type="text" id="sessionSearch" placeholder="Search sessions...">
-                        <i class="fas fa-search"></i>
-                    </div>
-                </div>
-                
-                <div class="session-list" id="upcomingSessionsTab">
-                    <!-- Upcoming sessions will be loaded here -->
-                </div>
-                
-                <div class="session-list hidden" id="completedSessionsTab">
-                    <!-- Completed sessions will be loaded here -->
-                </div>
-                
-                <div class="session-list hidden" id="allSessionsTab">
-                    <!-- All sessions will be loaded here -->
-                </div>
-            </div>
-                    
-            <div class="widget recent-activity">
-                <div class="widget-header">
-                    <h2><i class="fas fa-history"></i> Recent Activity</h2>
-                    <div class="activity-filter">
-                        <select id="activityFilter">
-                            <option value="all">All Activities</option>
-                            <option value="sessions">Sessions</option>
-                            <option value="messages">Messages</option>
-                            <option value="resources">Resources</option>
-                        </select>
-                        <a href="activity.html" class="view-all">View All</a>
-                    </div>
-                </div>
-                <ul class="activity-list" id="recentActivityContainer">
-                    <!-- Activity will be loaded here -->
-                </ul>
-            </div>
-        </section>
-    </main>
+            </header>
 
-    <!-- Session Modal -->
-    <div class="modal" id="sessionModal">
+            <!-- Dashboard Stats -->
+            <section class="stats-section">
+                <div class="stat-card">
+                    <div class="stat-icon bg-purple">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Active Mentees</h3>
+                        <p id="active-mentees-count">12</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon bg-blue">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Upcoming Sessions</h3>
+                        <p id="upcoming-sessions-count">5</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon bg-green">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Unread Messages</h3>
+                        <p id="unread-messages-count">3</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon bg-orange">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Resources Shared</h3>
+                        <p id="resources-shared-count">24</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Recent Activity and Mentee Management -->
+            <section class="content-section">
+                <div class="mentee-management">
+                    <div class="section-header">
+                        <h3>My Mentees</h3>
+                        <div class="section-actions">
+                            <button id="add-mentee-btn" class="btn-primary"><i class="fas fa-plus"></i> Add New Mentee</button>
+                            <select id="mentee-filter">
+                                <option value="all">All Mentees</option>
+                                <option value="active">Active</option>
+                                <option value="inactive">Inactive</option>
+                                <option value="needs-attention">Needs Attention</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="mentee-table-container">
+                        <table id="mentee-table" class="mentee-table">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Age</th>
+                                    <th>Location</th>
+                                    <th>Status</th>
+                                    <th>Last Contact</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="mentee-table-body">
+                                <!-- Mentees will be dynamically loaded here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="recent-activity">
+                    <div class="section-header">
+                        <h3>Recent Activity</h3>
+                    </div>
+                    <ul class="activity-list" id="activity-list">
+                        <!-- Activities will be dynamically loaded here -->
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Upcoming Appointments -->
+            <section class="appointments-section">
+                <div class="section-header">
+                    <h3>Upcoming Appointments</h3>
+                    <button id="add-appointment-btn" class="btn-secondary"><i class="fas fa-plus"></i> Schedule New</button>
+                </div>
+                <div class="appointments-container" id="appointments-container">
+                    <!-- Appointments will be dynamically loaded here -->
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Add Mentee Modal -->
+    <div id="mentee-modal" class="modal">
         <div class="modal-content">
             <span class="close-modal">&times;</span>
-            <h2 id="modalTitle">Add New Session</h2>
-            <form id="sessionForm">
-                <input type="hidden" id="sessionId">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="menteeName">Mentee Name</label>
-                        <select id="menteeName" required>
-                            <option value="">Select Mentee</option>
-                            <!-- Mentees will be populated here -->
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="sessionType">Session Type</label>
-                        <select id="sessionType" required>
-                            <option value="">Select type</option>
-                            <option value="career">Career Guidance</option>
-                            <option value="education">Education Planning</option>
-                            <option value="parenting">Parenting Skills</option>
-                            <option value="mental-health">Mental Health</option>
-                            <option value="other">Other</option>
-                        </select>
-                    </div>
-                </div>
-                
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="sessionDate">Date</label>
-                        <input type="date" id="sessionDate" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="sessionTime">Time</label>
-                        <input type="time" id="sessionTime" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="sessionDuration">Duration (minutes)</label>
-                        <input type="number" id="sessionDuration" min="15" max="120" value="30">
-                    </div>
-                </div>
-                
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="sessionMode">Mode</label>
-                        <select id="sessionMode" required>
-                            <option value="online">Online</option>
-                            <option value="in-person">In-Person</option>
-                            <option value="phone">Phone Call</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="sessionStatus">Status</label>
-                        <select id="sessionStatus">
-                            <option value="scheduled">Scheduled</option>
-                            <option value="confirmed">Confirmed</option>
-                            <option value="cancelled">Cancelled</option>
-                        </select>
-                    </div>
-                </div>
-                
+            <h3>Add New Mentee</h3>
+            <form id="mentee-form">
                 <div class="form-group">
-                    <label for="sessionLocation">Location/Meeting Link</label>
-                    <input type="text" id="sessionLocation" placeholder="Enter location or meeting URL">
+                    <label for="mentee-name">Full Name</label>
+                    <input type="text" id="mentee-name" required>
                 </div>
-                
                 <div class="form-group">
-                    <label for="sessionNotes">Notes</label>
-                    <textarea id="sessionNotes" rows="3" placeholder="Any additional notes..."></textarea>
+                    <label for="mentee-age">Age</label>
+                    <input type="number" id="mentee-age" min="15" max="30" required>
                 </div>
-                
+                <div class="form-group">
+                    <label for="mentee-location">Location</label>
+                    <select id="mentee-location" required>
+                        <option value="">Select District</option>
+                        <option value="Kigali">Kigali</option>
+                        <option value="Northern">Northern Province</option>
+                        <option value="Southern">Southern Province</option>
+                        <option value="Eastern">Eastern Province</option>
+                        <option value="Western">Western Province</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="mentee-phone">Phone Number</label>
+                    <input type="tel" id="mentee-phone" pattern="[0-9]{10}" required>
+                </div>
+                <div class="form-group">
+                    <label for="mentee-email">Email (optional)</label>
+                    <input type="email" id="mentee-email">
+                </div>
+                <div class="form-group">
+                    <label for="mentee-status">Initial Status</label>
+                    <select id="mentee-status" required>
+                        <option value="active">Active</option>
+                        <option value="needs-attention">Needs Attention</option>
+                        <option value="inactive">Inactive</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="mentee-notes">Notes</label>
+                    <textarea id="mentee-notes" rows="3"></textarea>
+                </div>
                 <div class="form-actions">
-                    <button type="button" class="btn btn-secondary cancel-btn">Cancel</button>
-                    <button type="submit" class="btn btn-primary save-btn">Save Session</button>
+                    <button type="button" class="btn-secondary close-modal-btn">Cancel</button>
+                    <button type="submit" class="btn-primary">Save Mentee</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Add Appointment Modal -->
+    <div id="appointment-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3>Schedule New Appointment</h3>
+            <form id="appointment-form">
+                <div class="form-group">
+                    <label for="appointment-mentee">Mentee</label>
+                    <select id="appointment-mentee" required>
+                        <option value="">Select Mentee</option>
+                        <!-- Mentees will be dynamically loaded here -->
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="appointment-date">Date</label>
+                    <input type="date" id="appointment-date" required>
+                </div>
+                <div class="form-group">
+                    <label for="appointment-time">Time</label>
+                    <input type="time" id="appointment-time" required>
+                </div>
+                <div class="form-group">
+                    <label for="appointment-type">Type</label>
+                    <select id="appointment-type" required>
+                        <option value="in-person">In Person</option>
+                        <option value="video-call">Video Call</option>
+                        <option value="phone-call">Phone Call</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="appointment-location">Location/Details</label>
+                    <input type="text" id="appointment-location" required>
+                </div>
+                <div class="form-group">
+                    <label for="appointment-notes">Notes</label>
+                    <textarea id="appointment-notes" rows="3"></textarea>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary close-modal-btn">Cancel</button>
+                    <button type="submit" class="btn-primary">Schedule Appointment</button>
                 </div>
             </form>
         </div>
     </div>
 
     <!-- Confirmation Modal -->
-    <div class="modal" id="confirmModal">
-        <div class="modal-content small">
-            <div class="modal-header">
-                <h3 id="confirmModalTitle">Confirm Action</h3>
-                <span class="close-modal">&times;</span>
-            </div>
-            <div class="modal-body">
-                <p id="confirmModalMessage">Are you sure you want to perform this action?</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" id="confirmModalCancel">Cancel</button>
-                <button type="button" class="btn btn-danger" id="confirmModalConfirm">Confirm</button>
+    <div id="confirm-modal" class="modal">
+        <div class="modal-content confirm-modal">
+            <h3 id="confirm-title">Confirm Action</h3>
+            <p id="confirm-message">Are you sure you want to perform this action?</p>
+            <div class="form-actions">
+                <button type="button" class="btn-secondary" id="confirm-cancel">Cancel</button>
+                <button type="button" class="btn-danger" id="confirm-action">Confirm</button>
             </div>
         </div>
     </div>
 
-    <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
-    
-    <!-- App Scripts -->
-    <script src="js/api.js"></script>
     <script src="js/scriptdash.js"></script>
-    <script src="js/dashboard.js"></script>
 </body>
 </html>

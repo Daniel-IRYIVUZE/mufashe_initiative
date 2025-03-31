@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mufashe Initiative - Reports</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.css">
+    <link rel="stylesheet" href="css/stylespages.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="logo-container">
+                <img src="https://t3.ftcdn.net/jpg/06/19/26/46/360_F_619264680_x2PBdGLF54sFe7kTBtAvZnPyXgvaRw0Y.jpg" alt="Mufashe Initiative Logo" class="logo">
+                <h1>Welcome</h1>
+            </div>
+            
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
+                    <li><a href="mentees.html"><i class="fas fa-users"></i> My Mentees</a></li>
+                    <li><a href="dashresources.html"><i class="fas fa-book"></i> Resources</a></li>
+                    <li><a href="messages.html"><i class="fas fa-envelope"></i> Messages</a></li>
+                    <li><a href="appointments.html"><i class="fas fa-calendar-alt"></i> Appointments</a></li>
+                    <li class="active"><a href="reports.html"><i class="fas fa-chart-bar"></i> Reports</a></li>
+                </ul>
+            </nav>
+            
+            <div class="user-profile">
+                <img src="https://t3.ftcdn.net/jpg/06/19/26/46/360_F_619264680_x2PBdGLF54sFe7kTBtAvZnPyXgvaRw0Y.jpg" alt="Mentor Profile" class="profile-img">
+                <div class="profile-info">
+                    <h3>Dr. Alice Uwase</h3>
+                    <p>Senior Mentor</p>
+                </div>
+                <button id="logout-btn" class="logout-btn"><i class="fas fa-sign-out-alt"></i></button>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <header class="main-header">
+                <h2>Reports & Analytics</h2>
+                <div class="header-actions">
+                    <div class="notification-bell">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-count">3</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Report Filters -->
+            <section class="report-filters">
+                <div class="filter-row">
+                    <div class="filter-group">
+                        <label for="report-type">Report Type</label>
+                        <select id="report-type">
+                            <option value="mentoring">Mentoring Activity</option>
+                            <option value="mentee-progress">Mentee Progress</option>
+                            <option value="resource-usage">Resource Usage</option>
+                            <option value="session-types">Session Types</option>
+                            <option value="custom">Custom Report</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="time-period">Time Period</label>
+                        <select id="time-period">
+                            <option value="last-week">Last 7 Days</option>
+                            <option value="last-month" selected>Last 30 Days</option>
+                            <option value="last-quarter">Last 3 Months</option>
+                            <option value="last-year">Last 12 Months</option>
+                            <option value="custom">Custom Range</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group" id="custom-date-range" style="display: none;">
+                        <label for="start-date">From</label>
+                        <input type="date" id="start-date">
+                        
+                        <label for="end-date">To</label>
+                        <input type="date" id="end-date">
+                    </div>
+                    
+                    <button id="generate-report-btn" class="btn-primary"><i class="fas fa-sync-alt"></i> Generate</button>
+                    <button id="export-report-btn" class="btn-secondary"><i class="fas fa-download"></i> Export</button>
+                </div>
+                
+                <div class="filter-row" id="mentee-filter-row">
+                    <div class="filter-group">
+                        <label for="mentee-filter">Filter by Mentee</label>
+                        <select id="mentee-filter">
+                            <option value="all">All Mentees</option>
+                            <!-- Mentees will be loaded here -->
+                        </select>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Report Summary Cards -->
+            <section class="report-summary">
+                <div class="summary-card">
+                    <div class="summary-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="summary-content">
+                        <h4>Active Mentees</h4>
+                        <p id="active-mentees-count">12</p>
+                        <span class="summary-change positive"><i class="fas fa-arrow-up"></i> 2 from last month</span>
+                    </div>
+                </div>
+                
+                <div class="summary-card">
+                    <div class="summary-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <div class="summary-content">
+                        <h4>Sessions Completed</h4>
+                        <p id="sessions-completed-count">24</p>
+                        <span class="summary-change positive"><i class="fas fa-arrow-up"></i> 5 from last month</span>
+                    </div>
+                </div>
+                
+                <div class="summary-card">
+                    <div class="summary-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <div class="summary-content">
+                        <h4>Resources Shared</h4>
+                        <p id="resources-shared-count">18</p>
+                        <span class="summary-change neutral"><i class="fas fa-minus"></i> No change</span>
+                    </div>
+                </div>
+                
+                <div class="summary-card">
+                    <div class="summary-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <div class="summary-content">
+                        <h4>Messages Sent</h4>
+                        <p id="messages-sent-count">56</p>
+                        <span class="summary-change negative"><i class="fas fa-arrow-down"></i> 3 from last month</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Report Charts -->
+            <section class="report-charts">
+                <div class="chart-container">
+                    <div class="chart-header">
+                        <h4>Mentoring Sessions Over Time</h4>
+                        <select id="sessions-chart-type">
+                            <option value="line">Line Chart</option>
+                            <option value="bar">Bar Chart</option>
+                        </select>
+                    </div>
+                    <canvas id="sessions-chart"></canvas>
+                </div>
+                
+                <div class="chart-container">
+                    <div class="chart-header">
+                        <h4>Mentee Progress Status</h4>
+                    </div>
+                    <canvas id="progress-chart"></canvas>
+                </div>
+                
+                <div class="chart-container">
+                    <div class="chart-header">
+                        <h4>Session Types Distribution</h4>
+                    </div>
+                    <canvas id="session-types-chart"></canvas>
+                </div>
+                
+                <div class="chart-container">
+                    <div class="chart-header">
+                        <h4>Resource Usage by Category</h4>
+                    </div>
+                    <canvas id="resources-chart"></canvas>
+                </div>
+            </section>
+
+            <!-- Detailed Report Table -->
+            <section class="report-table-section">
+                <div class="section-header">
+                    <h3>Detailed Report Data</h3>
+                    <button id="export-table-btn" class="btn-secondary"><i class="fas fa-file-export"></i> Export Data</button>
+                </div>
+                
+                <div class="table-container">
+                    <table id="report-table">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Mentee</th>
+                                <th>Session Type</th>
+                                <th>Duration</th>
+                                <th>Topics Covered</th>
+                                <th>Resources Shared</th>
+                                <th>Follow-up</th>
+                            </tr>
+                        </thead>
+                        <tbody id="report-table-body">
+                            <!-- Report data will be loaded here -->
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="pagination">
+                    <button id="prev-page-btn" class="btn-secondary" disabled><i class="fas fa-chevron-left"></i> Previous</button>
+                    <span id="page-info">Page 1 of 5</span>
+                    <button id="next-page-btn" class="btn-secondary">Next <i class="fas fa-chevron-right"></i></button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Custom Report Builder Modal -->
+    <div id="custom-report-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3>Build Custom Report</h3>
+            <form id="custom-report-form">
+                <div class="form-group">
+                    <label for="report-name">Report Name</label>
+                    <input type="text" id="report-name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Select Data Points</label>
+                    <div class="checkboxes-grid">
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="include-sessions" checked>
+                            <label for="include-sessions">Mentoring Sessions</label>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="include-messages" checked>
+                            <label for="include-messages">Messages</label>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="include-resources">
+                            <label for="include-resources">Resources Shared</label>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="include-goals">
+                            <label for="include-goals">Goal Progress</label>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="include-demographics">
+                            <label for="include-demographics">Demographics</label>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="include-feedback">
+                            <label for="include-feedback">Mentee Feedback</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="report-timeframe">Time Frame</label>
+                    <select id="report-timeframe">
+                        <option value="last-month">Last Month</option>
+                        <option value="last-quarter">Last Quarter</option>
+                        <option value="last-year">Last Year</option>
+                        <option value="all-time">All Time</option>
+                        <option value="custom">Custom Range</option>
+                    </select>
+                </div>
+                
+                <div class="form-group" id="custom-timeframe-group" style="display: none;">
+                    <label for="custom-start-date">Start Date</label>
+                    <input type="date" id="custom-start-date">
+                    
+                    <label for="custom-end-date">End Date</label>
+                    <input type="date" id="custom-end-date">
+                </div>
+                
+                <div class="form-group">
+                    <label for="report-mentees">Filter by Mentee(s)</label>
+                    <select id="report-mentees" multiple>
+                        <!-- Mentees will be loaded here -->
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="report-format">Output Format</label>
+                    <select id="report-format">
+                        <option value="chart">Interactive Chart</option>
+                        <option value="table">Data Table</option>
+                        <option value="pdf">PDF Document</option>
+                        <option value="excel">Excel Spreadsheet</option>
+                    </select>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary close-modal-btn">Cancel</button>
+                    <button type="submit" class="btn-primary">Generate Report</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Report Export Options Modal -->
+    <div id="export-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3>Export Report</h3>
+            <form id="export-form">
+                <div class="form-group">
+                    <label for="export-format">Format</label>
+                    <select id="export-format">
+                        <option value="pdf">PDF Document</option>
+                        <option value="excel">Excel Spreadsheet</option>
+                        <option value="csv">CSV File</option>
+                        <option value="image">Image (PNG)</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="export-content">Content to Export</label>
+                    <select id="export-content">
+                        <option value="current-view">Current View</option>
+                        <option value="all-data">All Data</option>
+                        <option value="custom">Custom Selection</option>
+                    </select>
+                </div>
+                
+                <div class="form-group" id="custom-export-group" style="display: none;">
+                    <label>Select Components</label>
+                    <div class="checkboxes-grid">
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="export-charts" checked>
+                            <label for="export-charts">Charts</label>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="export-tables" checked>
+                            <label for="export-tables">Tables</label>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="export-summary">
+                            <label for="export-summary">Summary</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary close-modal-btn">Cancel</button>
+                    <button type="submit" class="btn-primary">Export Report</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div id="confirm-modal" class="modal">
+        <div class="modal-content confirm-modal">
+            <h3 id="confirm-title">Confirm Action</h3>
+            <p id="confirm-message">Are you sure you want to perform this action?</p>
+            <div class="form-actions">
+                <button type="button" class="btn-secondary" id="confirm-cancel">Cancel</button>
+                <button type="button" class="btn-danger" id="confirm-action">Confirm</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+    <script src="js/reports.js"></script>
+</body>
+</html>

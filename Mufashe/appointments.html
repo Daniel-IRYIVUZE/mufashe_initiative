@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mufashe Initiative - Appointments</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="css/stylesdash.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="logo-container">
+                <img src="https://t3.ftcdn.net/jpg/06/19/26/46/360_F_619264680_x2PBdGLF54sFe7kTBtAvZnPyXgvaRw0Y.jpg" alt="Mufashe Initiative Logo" class="logo">
+                <h1>Welcome</h1>
+            </div>
+            
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
+                    <li><a href="mentees.html"><i class="fas fa-users"></i> My Mentees</a></li>
+                    <li><a href="dashresources.html"><i class="fas fa-book"></i> Resources</a></li>
+                    <li><a href="messages.html"><i class="fas fa-envelope"></i> Messages</a></li>
+                    <li class="active"><a href="appointments.html"><i class="fas fa-calendar-alt"></i> Appointments</a></li>
+                    <li><a href="reports.html"><i class="fas fa-chart-bar"></i> Reports</a></li>
+                </ul>
+            </nav>
+            
+            <div class="user-profile">
+                <img src="https://t3.ftcdn.net/jpg/06/19/26/46/360_F_619264680_x2PBdGLF54sFe7kTBtAvZnPyXgvaRw0Y.jpg" alt="Mentor Profile" class="profile-img">
+                <div class="profile-info">
+                    <h3>Dr. Alice Uwase</h3>
+                    <p>Senior Mentor</p>
+                </div>
+                <button id="logout-btn" class="logout-btn"><i class="fas fa-sign-out-alt"></i></button>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <header class="main-header">
+                <h2>Appointments</h2>
+                <div class="header-actions">
+                    <div class="notification-bell">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-count">3</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Calendar Section -->
+            <section class="calendar-section">
+                <div class="section-header">
+                    <h3>My Schedule</h3>
+                    <div class="section-actions">
+                        <button id="today-btn" class="btn-secondary">Today</button>
+                        <div class="view-options">
+                            <button class="view-btn active" data-view="day">Day</button>
+                            <button class="view-btn" data-view="week">Week</button>
+                            <button class="view-btn" data-view="month">Month</button>
+                        </div>
+                        <button id="new-appointment-btn" class="btn-primary"><i class="fas fa-plus"></i> New Appointment</button>
+                    </div>
+                </div>
+                
+                <div class="calendar-container">
+                    <div class="calendar-header">
+                        <button id="prev-period-btn" class="btn-icon"><i class="fas fa-chevron-left"></i></button>
+                        <h4 id="current-period">March 2023</h4>
+                        <button id="next-period-btn" class="btn-icon"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                    
+                    <div class="calendar-view" id="calendar-view">
+                        <!-- Calendar will be rendered here -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Upcoming Appointments -->
+            <section class="upcoming-appointments">
+                <div class="section-header">
+                    <h3>Upcoming Appointments</h3>
+                    <div class="section-actions">
+                        <select id="appointment-filter">
+                            <option value="all">All Appointments</option>
+                            <option value="today">Today</option>
+                            <option value="week">This Week</option>
+                            <option value="month">This Month</option>
+                            <option value="past">Past Appointments</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="appointments-list" id="appointments-list">
+                    <!-- Appointments will be loaded here -->
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- New Appointment Modal -->
+    <div id="appointment-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3>Schedule New Appointment</h3>
+            <form id="appointment-form">
+                <div class="form-group">
+                    <label for="appointment-mentee">With</label>
+                    <select id="appointment-mentee" required>
+                        <option value="">Select Mentee</option>
+                        <!-- Mentees will be loaded here -->
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="appointment-title">Title</label>
+                    <input type="text" id="appointment-title" required>
+                </div>
+                <div class="form-group">
+                    <label for="appointment-date">Date & Time</label>
+                    <input type="text" id="appointment-date" class="datetime-input" placeholder="Select date and time" required>
+                </div>
+                <div class="form-group">
+                    <label for="appointment-duration">Duration</label>
+                    <select id="appointment-duration" required>
+                        <option value="30">30 minutes</option>
+                        <option value="60" selected>1 hour</option>
+                        <option value="90">1.5 hours</option>
+                        <option value="120">2 hours</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="appointment-type">Type</label>
+                    <select id="appointment-type" required>
+                        <option value="in-person">In Person</option>
+                        <option value="video-call">Video Call</option>
+                        <option value="phone-call">Phone Call</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="appointment-location">Location/Details</label>
+                    <input type="text" id="appointment-location" required>
+                </div>
+                <div class="form-group">
+                    <label for="appointment-notes">Notes</label>
+                    <textarea id="appointment-notes" rows="3"></textarea>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary close-modal-btn">Cancel</button>
+                    <button type="submit" class="btn-primary">Schedule Appointment</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Appointment Details Modal -->
+    <div id="appointment-details-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="appointment-details-header">
+                <h3 id="appointment-details-title">Appointment Title</h3>
+                <div class="appointment-meta">
+                    <span id="appointment-details-date">Date & Time</span>
+                    <span id="appointment-details-type">Type</span>
+                    <span id="appointment-details-status">Status</span>
+                </div>
+            </div>
+            
+            <div class="appointment-details-content">
+                <div class="detail-row">
+                    <div class="detail-label">With:</div>
+                    <div class="detail-value" id="appointment-details-mentee">Mentee Name</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">Location:</div>
+                    <div class="detail-value" id="appointment-details-location">Location details</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">Duration:</div>
+                    <div class="detail-value" id="appointment-details-duration">1 hour</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">Notes:</div>
+                    <div class="detail-value" id="appointment-details-notes">No notes provided</div>
+                </div>
+                
+                <div class="appointment-actions">
+                    <button id="edit-appointment-btn" class="btn-primary"><i class="fas fa-edit"></i> Edit</button>
+                    <button id="cancel-appointment-btn" class="btn-danger"><i class="fas fa-times"></i> Cancel</button>
+                    <button id="complete-appointment-btn" class="btn-secondary"><i class="fas fa-check"></i> Mark Complete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Appointment Reschedule Modal -->
+    <div id="reschedule-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3>Reschedule Appointment</h3>
+            <form id="reschedule-form">
+                <div class="form-group">
+                    <label for="reschedule-date">New Date & Time</label>
+                    <input type="text" id="reschedule-date" class="datetime-input" placeholder="Select new date and time" required>
+                </div>
+                <div class="form-group">
+                    <label for="reschedule-notes">Reason for Rescheduling (optional)</label>
+                    <textarea id="reschedule-notes" rows="3"></textarea>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary close-modal-btn">Cancel</button>
+                    <button type="submit" class="btn-primary">Confirm Reschedule</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div id="confirm-modal" class="modal">
+        <div class="modal-content confirm-modal">
+            <h3 id="confirm-title">Confirm Action</h3>
+            <p id="confirm-message">Are you sure you want to perform this action?</p>
+            <div class="form-actions">
+                <button type="button" class="btn-secondary" id="confirm-cancel">Cancel</button>
+                <button type="button" class="btn-danger" id="confirm-action">Confirm</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="js/appointments.js"></script>
+</body>
+</html>

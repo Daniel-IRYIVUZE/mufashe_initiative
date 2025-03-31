@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mufashe Initiative - My Mentees</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/stylesdash.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="logo-container">
+                <img src="https://t3.ftcdn.net/jpg/06/19/26/46/360_F_619264680_x2PBdGLF54sFe7kTBtAvZnPyXgvaRw0Y.jpg" alt="Mufashe Initiative Logo" class="logo">
+                <h1>Welcome</h1>
+            </div>
+            
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
+                    <li class="active"><a href="mentees.html"><i class="fas fa-users"></i> My Mentees</a></li>
+                    <li><a href="dashresources.html"><i class="fas fa-book"></i> Resources</a></li>
+                    <li><a href="messages.html"><i class="fas fa-envelope"></i> Messages</a></li>
+                    <li><a href="appointments.html"><i class="fas fa-calendar-alt"></i> Appointments</a></li>
+                    <li><a href="reports.html"><i class="fas fa-chart-bar"></i> Reports</a></li>
+                </ul>
+            </nav>
+            
+            <div class="user-profile">
+                <img src="https://t3.ftcdn.net/jpg/06/19/26/46/360_F_619264680_x2PBdGLF54sFe7kTBtAvZnPyXgvaRw0Y.jpg" alt="Mentor Profile" class="profile-img">
+                <div class="profile-info">
+                    <h3>Dr. Alice Uwase</h3>
+                    <p>Senior Mentor</p>
+                </div>
+                <button id="logout-btn" class="logout-btn"><i class="fas fa-sign-out-alt"></i></button>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <header class="main-header">
+                <h2>My Mentees</h2>
+                <div class="header-actions">
+                    <div class="search-container">
+                        <input type="text" id="search-input" placeholder="Search mentees...">
+                        <button id="search-btn"><i class="fas fa-search"></i></button>
+                    </div>
+                    <div class="notification-bell">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-count">3</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Mentee Management Section -->
+            <section class="mentee-management-section">
+                <div class="section-header">
+                    <h3>Mentee List</h3>
+                    <div class="section-actions">
+                        <button id="add-mentee-btn" class="btn-primary"><i class="fas fa-plus"></i> Add New Mentee</button>
+                        <select id="mentee-filter">
+                            <option value="all">All Mentees</option>
+                            <option value="active">Active</option>
+                            <option value="inactive">Inactive</option>
+                            <option value="needs-attention">Needs Attention</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="mentee-table-container">
+                    <table id="mentee-table" class="mentee-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Age</th>
+                                <th>Location</th>
+                                <th>Status</th>
+                                <th>Progress</th>
+                                <th>Last Contact</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="mentee-table-body">
+                            <!-- Mentees will be dynamically loaded here -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Mentee Details Section (shown when a mentee is selected) -->
+            <section class="mentee-details-section" id="mentee-details-section" style="display: none;">
+                <div class="section-header">
+                    <h3 id="mentee-details-name">Mentee Details</h3>
+                    <button id="close-details-btn" class="btn-secondary"><i class="fas fa-times"></i> Close</button>
+                </div>
+                
+                <div class="mentee-details-container">
+                    <div class="mentee-profile">
+                        <div class="profile-header">
+                            <img id="mentee-details-avatar" src="https://ui-avatars.com/api/?name=Mentee+Name&background=random" alt="Mentee Avatar" class="profile-avatar">
+                            <div class="profile-info">
+                                <h4 id="mentee-details-fullname">Full Name</h4>
+                                <p id="mentee-details-age-location">Age, Location</p>
+                                <p id="mentee-details-contact">Contact Info</p>
+                                <div class="profile-status">
+                                    <span id="mentee-details-status" class="status active">Active</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="profile-notes">
+                            <h5>Notes</h5>
+                            <p id="mentee-details-notes">No notes available.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mentee-progress">
+                        <div class="progress-tabs">
+                            <button class="tab-btn active" data-tab="goals">Goals</button>
+                            <button class="tab-btn" data-tab="sessions">Sessions</button>
+                            <button class="tab-btn" data-tab="resources">Resources</button>
+                            <button class="tab-btn" data-tab="history">History</button>
+                        </div>
+                        
+                        <div class="tab-content active" id="goals-tab">
+                            <div class="goals-header">
+                                <h4>Current Goals</h4>
+                                <button class="btn-primary btn-sm" id="add-goal-btn"><i class="fas fa-plus"></i> Add Goal</button>
+                            </div>
+                            <ul class="goals-list" id="goals-list">
+                                <!-- Goals will be loaded here -->
+                            </ul>
+                        </div>
+                        
+                        <div class="tab-content" id="sessions-tab">
+                            <div class="sessions-header">
+                                <h4>Recent Sessions</h4>
+                                <button class="btn-primary btn-sm" id="add-session-btn"><i class="fas fa-plus"></i> Add Session</button>
+                            </div>
+                            <ul class="sessions-list" id="sessions-list">
+                                <!-- Sessions will be loaded here -->
+                            </ul>
+                        </div>
+                        
+                        <div class="tab-content" id="resources-tab">
+                            <div class="resources-header">
+                                <h4>Shared Resources</h4>
+                                <button class="btn-primary btn-sm" id="share-resource-btn"><i class="fas fa-share"></i> Share Resource</button>
+                            </div>
+                            <div class="resources-grid" id="resources-grid">
+                                <!-- Resources will be loaded here -->
+                            </div>
+                        </div>
+                        
+                        <div class="tab-content" id="history-tab">
+                            <h4>Mentee History</h4>
+                            <div class="timeline" id="mentee-timeline">
+                                <!-- Timeline items will be loaded here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Add Mentee Modal -->
+    <div id="mentee-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3>Add New Mentee</h3>
+            <form id="mentee-form">
+                <div class="form-group">
+                    <label for="mentee-name">Full Name</label>
+                    <input type="text" id="mentee-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="mentee-age">Age</label>
+                    <input type="number" id="mentee-age" min="15" max="30" required>
+                </div>
+                <div class="form-group">
+                    <label for="mentee-location">Location</label>
+                    <select id="mentee-location" required>
+                        <option value="">Select District</option>
+                        <option value="Kigali">Kigali</option>
+                        <option value="Northern">Northern Province</option>
+                        <option value="Southern">Southern Province</option>
+                        <option value="Eastern">Eastern Province</option>
+                        <option value="Western">Western Province</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="mentee-phone">Phone Number</label>
+                    <input type="tel" id="mentee-phone" pattern="[0-9]{10}" required>
+                </div>
+                <div class="form-group">
+                    <label for="mentee-email">Email (optional)</label>
+                    <input type="email" id="mentee-email">
+                </div>
+                <div class="form-group">
+                    <label for="mentee-status">Initial Status</label>
+                    <select id="mentee-status" required>
+                        <option value="active">Active</option>
+                        <option value="needs-attention">Needs Attention</option>
+                        <option value="inactive">Inactive</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="mentee-notes">Notes</label>
+                    <textarea id="mentee-notes" rows="3"></textarea>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary close-modal-btn">Cancel</button>
+                    <button type="submit" class="btn-primary">Save Mentee</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Add Goal Modal -->
+    <div id="goal-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3>Add New Goal</h3>
+            <form id="goal-form">
+                <div class="form-group">
+                    <label for="goal-title">Goal Title</label>
+                    <input type="text" id="goal-title" required>
+                </div>
+                <div class="form-group">
+                    <label for="goal-description">Description</label>
+                    <textarea id="goal-description" rows="3" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="goal-category">Category</label>
+                    <select id="goal-category" required>
+                        <option value="academic">Academic</option>
+                        <option value="career">Career</option>
+                        <option value="personal">Personal Development</option>
+                        <option value="health">Health & Wellness</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="goal-due-date">Target Date</label>
+                    <input type="date" id="goal-due-date" required>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary close-modal-btn">Cancel</button>
+                    <button type="submit" class="btn-primary">Save Goal</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Add Session Modal -->
+    <div id="session-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3>Add Session Record</h3>
+            <form id="session-form">
+                <div class="form-group">
+                    <label for="session-date">Date</label>
+                    <input type="date" id="session-date" required>
+                </div>
+                <div class="form-group">
+                    <label for="session-type">Session Type</label>
+                    <select id="session-type" required>
+                        <option value="in-person">In Person</option>
+                        <option value="video-call">Video Call</option>
+                        <option value="phone-call">Phone Call</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="session-duration">Duration (minutes)</label>
+                    <input type="number" id="session-duration" min="15" max="240" value="60" required>
+                </div>
+                <div class="form-group">
+                    <label for="session-notes">Notes</label>
+                    <textarea id="session-notes" rows="5" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="session-followup">Follow-up Actions</label>
+                    <textarea id="session-followup" rows="3"></textarea>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary close-modal-btn">Cancel</button>
+                    <button type="submit" class="btn-primary">Save Session</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Share Resource Modal -->
+    <div id="resource-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3>Share Resource with Mentee</h3>
+            <form id="resource-form">
+                <div class="form-group">
+                    <label for="resource-select">Select Resource</label>
+                    <select id="resource-select" required>
+                        <option value="">Select a resource</option>
+                        <!-- Resources will be loaded dynamically -->
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="resource-notes">Notes (optional)</label>
+                    <textarea id="resource-notes" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="resource-followup">Suggested Follow-up</label>
+                    <textarea id="resource-followup" rows="3"></textarea>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary close-modal-btn">Cancel</button>
+                    <button type="submit" class="btn-primary">Share Resource</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div id="confirm-modal" class="modal">
+        <div class="modal-content confirm-modal">
+            <h3 id="confirm-title">Confirm Action</h3>
+            <p id="confirm-message">Are you sure you want to perform this action?</p>
+            <div class="form-actions">
+                <button type="button" class="btn-secondary" id="confirm-cancel">Cancel</button>
+                <button type="button" class="btn-danger" id="confirm-action">Confirm</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/mentees.js"></script>
+</body>
+</html>

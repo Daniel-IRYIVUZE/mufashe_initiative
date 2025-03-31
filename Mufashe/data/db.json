@@ -1,0 +1,98 @@
+{
+  "mentees": [
+    {
+      "id": "1",
+      "name": "Marie Uwimana",
+      "age": 19,
+      "location": "Kigali",
+      "phone": "0781234567",
+      "email": "marie.uwimana@example.com",
+      "status": "active",
+      "notes": "Excelling in her studies",
+      "lastContact": "2025-03-20T09:30:00Z"
+    },
+    {
+      "id": "2",
+      "name": "Claudine Nyiraneza",
+      "age": 21,
+      "location": "Northern",
+      "phone": "0782345678",
+      "email": null,
+      "status": "needs-attention",
+      "notes": "Needs counseling support",
+      "lastContact": "2025-03-10T14:15:00Z"
+    },
+    {
+      "id": "3",
+      "name": "Annette Mukamana",
+      "age": 20,
+      "location": "Southern",
+      "phone": "0783456789",
+      "email": "annette.m@example.com",
+      "status": "active",
+      "notes": "Interested in entrepreneurship",
+      "lastContact": "2025-03-18T11:00:00Z"
+    }
+  ],
+  "appointments": [
+    {
+      "id": "1",
+      "menteeId": 1,
+      "menteeName": "Marie Uwimana",
+      "date": "2025-03-01T10:00:00Z",
+      "type": "in-person",
+      "location": "Kigali Mentoring Center",
+      "notes": "Academic progress review"
+    },
+    {
+      "id": "2",
+      "menteeId": 2,
+      "menteeName": "Claudine Nyiraneza",
+      "date": "2025-03-03T14:00:00Z",
+      "type": "video-call",
+      "location": "Zoom Meeting",
+      "notes": "Mental health check-in"
+    },
+    {
+      "id": "3",
+      "menteeId": 3,
+      "menteeName": "Annette Mukamana",
+      "date": "2025-03-05T09:30:00Z",
+      "type": "in-person",
+      "location": "Southern Youth Center",
+      "notes": "Business plan discussion"
+    }
+  ],
+  "activities": [
+    {
+      "id": "1",
+      "icon": "fa-user-plus",
+      "description": "Added new mentee <strong>Marie Uwimana</strong> to the program",
+      "date": "2025-03-15T10:30:00Z"
+    },
+    {
+      "id": "2",
+      "icon": "fa-comments",
+      "description": "Had a counseling session with <strong>Claudine Nyiraneza</strong>",
+      "date": "2025-03-10T14:15:00Z"
+    },
+    {
+      "id": "3",
+      "icon": "fa-calendar-check",
+      "description": "Scheduled appointment with <strong>Annette Mukamana</strong> for June 5",
+      "date": "2025-03-18T09:00:00Z"
+    },
+    {
+      "id": "4",
+      "icon": "fa-book",
+      "description": "Shared resource <strong>'Parenting Guide for Young Mothers'</strong> with 3 mentees",
+      "date": "2025-03-20T16:45:00Z"
+    }
+  ],
+  "stats": {
+    "activeMentees": 12,
+    "upcomingSessions": 5,
+    "unreadMessages": 3,
+    "resourcesShared": 24
+  }
+}
