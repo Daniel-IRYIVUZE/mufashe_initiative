@@ -2,7 +2,7 @@
 $primary-color: #f88922;
 $secondary-color: #857e8b;
 $accent-color: #f76b1c;
-$light-text: #f8f9fa;
+$light-text: #ddeeff;
 $dark-text: #e06b30;
 $light-bg: #f8f9fa;
 $dark-bg: #212529;
@@ -1647,6 +1647,7 @@ body.dark-theme {
         background-color: lighten($dark-bg, 5%);
     }
     
+
     .mentor-card, .step-card, .mentor-benefits {
         background-color: lighten($dark-bg, 10%);
         color: $light-text;
