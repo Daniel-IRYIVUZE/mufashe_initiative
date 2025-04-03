@@ -200,6 +200,7 @@ mentor-dashboard/
 ## Useful Link:
 
 - *User Research Document:* [Research Document](https://docs.google.com/document/d/1D9i_yRiZdA04hvgwubIZ4B1jnpHtXLyxdKUBskBCsqQ/edit?usp=sharing)
+- *Presentation Document:* [Presentation Document](https://www.canva.com/design/DAGAxbiSdw4/85-8Yj9pFx25Rlp-qrgFvg/edit?utm_content=DAGAxbiSdw4&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 
 ## Pro Tips:
 
